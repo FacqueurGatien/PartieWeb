@@ -3723,11 +3723,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafacqueur\\Documents\\CDA_2210_Winform\\Winform\\ECF\\ECF_SPA\\Cereals\\CerealsApi\\CerealsApi.csproj",
+      "projectUniqueName": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Cereals\\CerealsApi\\CerealsApi.csproj",
       "projectName": "CerealsApi",
-      "projectPath": "C:\\Users\\gafacqueur\\Documents\\CDA_2210_Winform\\Winform\\ECF\\ECF_SPA\\Cereals\\CerealsApi\\CerealsApi.csproj",
+      "projectPath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Cereals\\CerealsApi\\CerealsApi.csproj",
       "packagesPath": "C:\\Users\\gafacqueur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gafacqueur\\Documents\\CDA_2210_Winform\\Winform\\ECF\\ECF_SPA\\Cereals\\CerealsApi\\obj\\",
+      "outputPath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Cereals\\CerealsApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

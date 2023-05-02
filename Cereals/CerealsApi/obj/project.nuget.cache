@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eftwz9aqQtmYnwzgaunE9mfpCtpzAg00Lnfenxgo0eNySBiLispoclQCvdHuRkrilh5YkkoouNRHXExnIud1Gg==",
+  "dgSpecHash": "onFb+kUslXjR45MTkoW+8LDAmliMu+UKPIKEPlqEzlArwGuODD/gnAephY30TpyRe9dTDs4IxtPoxYcZMjGjPQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gafacqueur\\Documents\\CDA_2210_Winform\\Winform\\ECF\\ECF_SPA\\Cereals\\CerealsApi\\CerealsApi.csproj",
+  "projectFilePath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Cereals\\CerealsApi\\CerealsApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gafacqueur\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\gafacqueur\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

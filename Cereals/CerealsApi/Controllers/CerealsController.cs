@@ -39,13 +39,15 @@ namespace CerealsApi.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Cereal value)
         {
-            Cereal c = new();
-            c.CerealId = id;
-            c.Name=value.Name;
-            c.Calories = value.Calories;
-            c.Protein=value.Protein;
-            context.Cereals.Update(c); 
-            context.SaveChanges();
+            Cereal c = Get(id);
+            if (c!=null)
+            {
+                c.Name = value.Name;
+                c.Calories = value.Calories;
+                c.Protein = value.Protein;
+                context.Cereals.Update(c);
+                context.SaveChanges();
+            }
         }
 
         // DELETE api/<CerealsController>/5
