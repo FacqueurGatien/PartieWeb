@@ -1,0 +1,14 @@
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\bin\Debug\net6.0\AlgoLexerApi.Models.deps.json
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\bin\Debug\net6.0\AlgoLexerApi.Models.runtimeconfig.json
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\bin\Debug\net6.0\AlgoLexerApi.Models.dll
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\bin\Debug\net6.0\AlgoLexerApi.Models.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\obj\Debug\net6.0\AlgoLexerApi.Models.csproj.AssemblyReference.cache
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\obj\Debug\net6.0\AlgoLexerApi.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\obj\Debug\net6.0\AlgoLexerApi.Models.AssemblyInfoInputs.cache
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\obj\Debug\net6.0\AlgoLexerApi.Models.AssemblyInfo.cs
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\obj\Debug\net6.0\AlgoLexerApi.Models.csproj.CoreCompileInputs.cache
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\obj\Debug\net6.0\AlgoLexerApi.Models.dll
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\obj\Debug\net6.0\refint\AlgoLexerApi.Models.dll
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\obj\Debug\net6.0\AlgoLexerApi.Models.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\obj\Debug\net6.0\AlgoLexerApi.Models.genruntimeconfig.cache
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Models\obj\Debug\net6.0\ref\AlgoLexerApi.Models.dll

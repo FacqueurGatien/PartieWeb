@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoLexer", "AlgoLexer\AlgoLexer.csproj", "{9236CCF4-B5A1-472B-9266-C5D5535CD5A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgoLexer", "AlgoLexer\AlgoLexer.csproj", "{9236CCF4-B5A1-472B-9266-C5D5535CD5A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoLexerApi.Models", "AlgoLexerApi.Models\AlgoLexerApi.Models.csproj", "{6B638316-7C1C-4D48-88C4-1E222354309A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgoLexerApi.Models", "AlgoLexerApi.Models\AlgoLexerApi.Models.csproj", "{6B638316-7C1C-4D48-88C4-1E222354309A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoLexerApi.Database", "AlgoLexerApi.Database\AlgoLexerApi.Database.csproj", "{55DAF11D-C977-400F-B95B-0B53EB3E3153}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6B638316-7C1C-4D48-88C4-1E222354309A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B638316-7C1C-4D48-88C4-1E222354309A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B638316-7C1C-4D48-88C4-1E222354309A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55DAF11D-C977-400F-B95B-0B53EB3E3153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55DAF11D-C977-400F-B95B-0B53EB3E3153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55DAF11D-C977-400F-B95B-0B53EB3E3153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55DAF11D-C977-400F-B95B-0B53EB3E3153}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

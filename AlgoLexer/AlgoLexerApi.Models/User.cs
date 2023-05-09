@@ -9,13 +9,17 @@ using System.Threading.Tasks;
 namespace AlgoLexerApi.Models
 {
     [Table("Users")]
-    internal class User : Model
+    public class User : Model
     {
         [Required]
         [Column("UserUserName")]
-        [MaxLength(16)]
+        [StringLength(maximumLength: 16,MinimumLength= 3)]
+/*        [RegularExpression(@"^[\p{L}]{2,}(?:[-]{0,1}[\p{L}]{2,}){0,1}$")]*/
+        [RegularExpression(@"^[a-zA-Z]+(?:\-[a-zA-Z]+)?$")]
         public string? UserName { get; set; }
+
         [Required]
+        [RegularExpression(@"^[a-zA-Z0-9]{8,}$")]
         [Column("UserPassword")]
         public string? Password { get; set; }
     }

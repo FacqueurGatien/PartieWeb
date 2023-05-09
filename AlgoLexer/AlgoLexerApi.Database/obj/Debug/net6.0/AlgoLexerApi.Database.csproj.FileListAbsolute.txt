@@ -1,0 +1,17 @@
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\bin\Debug\net6.0\AlgoLexerApi.Database.deps.json
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\bin\Debug\net6.0\AlgoLexerApi.Database.runtimeconfig.json
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\bin\Debug\net6.0\AlgoLexerApi.Database.dll
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\bin\Debug\net6.0\AlgoLexerApi.Database.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\bin\Debug\net6.0\AlgoLexerApi.Models.dll
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\bin\Debug\net6.0\AlgoLexerApi.Models.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\AlgoLexerApi.Database.csproj.AssemblyReference.cache
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\AlgoLexerApi.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\AlgoLexerApi.Database.AssemblyInfoInputs.cache
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\AlgoLexerApi.Database.AssemblyInfo.cs
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\AlgoLexerApi.Database.csproj.CoreCompileInputs.cache
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\AlgoLexerApi.Database.csproj.CopyComplete
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\AlgoLexerApi.Database.dll
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\refint\AlgoLexerApi.Database.dll
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\AlgoLexerApi.Database.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\AlgoLexerApi.Database.genruntimeconfig.cache
+C:\Users\gafacqueur\Documents\PartieWeb\AlgoLexer\AlgoLexerApi.Database\obj\Debug\net6.0\ref\AlgoLexerApi.Database.dll
