@@ -1,8 +1,11 @@
 ﻿using AlgoLexer.Extention;
 using AlgoLexerApi.Database;
-using AlgoLexerApi.Models;
+using AlgoLexerApi.Models.Models;
+using AlgoLexerApi.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Build.Evaluation;
+using Microsoft.EntityFrameworkCore;
 
 namespace AlgoLexer.Controllers
 {
@@ -17,10 +20,12 @@ namespace AlgoLexer.Controllers
         }
 
         [HttpPost]
-        public User? Login(User _user)
+        public async Task<ActionResult<UserReadViewModel?>>  Login(User _user)
         {
-            User user = _context.Users.FirstOrDefault(u=>u.UserName == _user.UserName);
-            return user.Password.CheckPassword(_user.Password)?user:default;
+            /*UserReadViewModel user = new UserReadViewModel() { Id = (await _context.Users.FirstOrDefaultAsync(u => u.UserName == _user.UserName)).Id, UserName = (await _context.Users.FirstOrDefaultAsync(u => u.UserName == _user.UserName)).UserName };
+            return (await _context.Users.FirstOrDefaultAsync(u => u.UserName == _user.UserName)).Password.CheckPassword(_user.Password) ? user : NotFound();*/
+            User user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == _user.UserName);
+            return user.Password.CheckPassword(_user.Password) ? new UserReadViewModel() { Id=user.Id ,UserName = user.UserName } : NotFound();
         }
     }
 }

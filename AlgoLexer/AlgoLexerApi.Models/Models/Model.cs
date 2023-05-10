@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlgoLexerApi.Models
+namespace AlgoLexerApi.Models.Models
 {
     public abstract class Model
     {

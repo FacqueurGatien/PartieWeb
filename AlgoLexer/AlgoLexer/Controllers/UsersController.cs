@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AlgoLexerApi.Database;
-using AlgoLexerApi.Models;
 using AlgoLexer.Extention;
+using AlgoLexerApi.Models.Models;
+using AlgoLexerApi.Models.ViewModels;
 
 namespace AlgoLexer.Controllers
 {
@@ -24,18 +25,38 @@ namespace AlgoLexer.Controllers
 
         // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<UserReadViewModel>>> GetUsers()
         {
           if (_context.Users == null)
           {
               return NotFound();
           }
-            return await _context.Users.ToListAsync();
+            List<UserReadViewModel> list = new List<UserReadViewModel>();
+            await _context.Users.ForEachAsync(u=> {
+                UserReadViewModel r = new UserReadViewModel() 
+                { 
+                    Id = u.Id,
+                    UserName = u.UserName
+                };
+                list.Add(r);
+            });
+
+/*            foreach (User u in _context.Users)
+            {
+                UserReadViewModel r = new UserReadViewModel()
+                {
+                    Id = u.Id,
+                    UserName = u.UserName
+                };
+                list.Add(r);
+            }*/
+
+            return list;
         }
 
         // GET: api/Users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        public async Task<ActionResult<UserReadViewModel>> GetUser(int id)
         {
           if (_context.Users == null)
           {
@@ -43,22 +64,38 @@ namespace AlgoLexer.Controllers
           }
             var user = await _context.Users.FindAsync(id);
 
+
             if (user == null)
             {
                 return NotFound();
             }
 
-            return user;
+            return new UserReadViewModel()
+            {
+                Id = user.Id,
+                UserName = user.UserName
+            };
         }
 
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        public async Task<IActionResult> PutUser(int id, UserUpdateViewModel user)
         {
             if (id != user.Id)
             {
                 return BadRequest();
+            }
+
+            User dbUser = _context.Users.FirstOrDefault(x => x.Id == id);
+
+            if (dbUser is User)
+            {
+                dbUser.UserName = user.UserName;
+            }
+            else
+            {
+                return NotFound();
             }
 
             _context.Entry(user).State = EntityState.Modified;

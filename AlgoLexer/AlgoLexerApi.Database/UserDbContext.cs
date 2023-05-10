@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using AlgoLexerApi.Models;
+using AlgoLexerApi.Models.Models;
 
 namespace AlgoLexerApi.Database
 {

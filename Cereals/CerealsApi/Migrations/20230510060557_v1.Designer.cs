@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CerealsApi.Migrations
 {
     [DbContext(typeof(CerealsDbContext))]
-    [Migration("20230502091706_cereals-v0")]
-    partial class cerealsv0
+    [Migration("20230510060557_v1")]
+    partial class v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,23 +26,26 @@ namespace CerealsApi.Migrations
 
             modelBuilder.Entity("CerealsApi.Models.Cereal", b =>
                 {
-                    b.Property<int>("CerealId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("cerealId");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CerealId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Calories")
                         .HasColumnType("int")
-                        .HasColumnName("cerialCalorie");
+                        .HasColumnName("cerealCalorie");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("cerialName");
+                        .HasColumnName("cerealName");
 
-                    b.HasKey("CerealId");
+                    b.Property<int>("Protein")
+                        .HasColumnType("int")
+                        .HasColumnName("cerealProtein");
+
+                    b.HasKey("Id");
 
                     b.ToTable("TBL_Cereals");
                 });

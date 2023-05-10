@@ -59,5 +59,14 @@ namespace AlgoLexer.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à @&quot;^[a-zA-Z]+(?:\-[a-zA-Z]+)?$&quot;.
+        /// </summary>
+        internal static string RegexName {
+            get {
+                return ResourceManager.GetString("RegexName", resourceCulture);
+            }
+        }
     }
 }

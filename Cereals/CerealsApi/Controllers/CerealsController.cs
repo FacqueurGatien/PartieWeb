@@ -21,11 +21,18 @@ namespace CerealsApi.Controllers
 
         // GET: api/<CerealsController>
         [HttpGet]
-        public IEnumerable<Cereal> Get()=> context.Cereals.ToList();
+        public IEnumerable<Cereal> Get() 
+        {
+            return context.Cereals.ToList();
+        }
+
         
         // GET api/<CerealsController>/5
         [HttpGet("{id}")]
-        public Cereal? Get(int id) => context.Cereals.FirstOrDefault(c=> c.CerealId == id);
+        public Cereal? Get(int id)
+        {
+            return context.Cereals.FirstOrDefault(c => c.Id == id);
+        }
 
         // POST api/<CerealsController>
         [HttpPost]
@@ -39,9 +46,9 @@ namespace CerealsApi.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Cereal value)
         {
-            if (Get(id) is Cereal c && value.CerealId == id)
+            if (Get(id) is Cereal c && c.Id == id)
             {
-                c = value;
+                c.UpdateFromModel(value);
                 context.Cereals.Update(c);
                 context.SaveChanges();
             }

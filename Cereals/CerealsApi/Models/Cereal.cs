@@ -1,14 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
+using CerealsApi;
+using System.Collections;
+using System;
 
 namespace CerealsApi.Models
 {
     [Table("TBL_Cereals")]
-    public class Cereal
+    public class Cereal : Model
     {
-        [Key]
-        [Column("cerealId")]
-        public int CerealId { get; set; }
         [Required]
         [Column("cerealName")]
         public string Name { get; set; }
@@ -18,5 +19,13 @@ namespace CerealsApi.Models
         [Required]
         [Column("cerealProtein")]
         public int Protein { get; set; }
+
+        public override void UpdateFromModel(Model value)
+        {
+            Cereal tt = value as Cereal;
+            this.Name = tt.Name;
+            this.Protein = tt.Protein;
+            this.Calories = tt.Calories;
+        }
     }
 }

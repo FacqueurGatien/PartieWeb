@@ -3,7 +3,6 @@ using CerealsApi.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,11 +10,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CerealsApi.Migrations
 {
     [DbContext(typeof(CerealsDbContext))]
-    [Migration("20230502092634_cereals-v0.5")]
-    partial class cerealsv05
+    partial class CerealsDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,12 +23,11 @@ namespace CerealsApi.Migrations
 
             modelBuilder.Entity("CerealsApi.Models.Cereal", b =>
                 {
-                    b.Property<int>("CerealId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("cerealId");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CerealId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Calories")
                         .HasColumnType("int")
@@ -46,7 +42,7 @@ namespace CerealsApi.Migrations
                         .HasColumnType("int")
                         .HasColumnName("cerealProtein");
 
-                    b.HasKey("CerealId");
+                    b.HasKey("Id");
 
                     b.ToTable("TBL_Cereals");
                 });
