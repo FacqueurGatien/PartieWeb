@@ -11,10 +11,10 @@ namespace AlgoLexer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginController : ControllerBase
+    public class UsersLoginController : ControllerBase
     {
         private UserDbContext _context;
-        public LoginController() 
+        public UsersLoginController() 
         {
             _context = new UserDbContext();
         }
