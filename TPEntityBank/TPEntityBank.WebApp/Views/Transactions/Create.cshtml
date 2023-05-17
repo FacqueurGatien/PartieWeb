@@ -1,0 +1,48 @@
+﻿@model TPEntityBank.Models.Transaction
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Transaction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TransactionDate" class="control-label"></label>
+                <input asp-for="TransactionDate" class="form-control" />
+                <span asp-validation-for="TransactionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompteDebiteur" class="control-label"></label>
+                <input asp-for="CompteDebiteur" class="form-control" />
+                <span asp-validation-for="CompteDebiteur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompteCrediteur" class="control-label"></label>
+                <input asp-for="CompteCrediteur" class="form-control" />
+                <span asp-validation-for="CompteCrediteur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Montant" class="control-label"></label>
+                <input asp-for="Montant" class="form-control" />
+                <span asp-validation-for="Montant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

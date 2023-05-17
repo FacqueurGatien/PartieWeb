@@ -1,0 +1,14 @@
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\bin\Debug\net6.0\TPEntityBank.Models.deps.json
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\bin\Debug\net6.0\TPEntityBank.Models.runtimeconfig.json
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\bin\Debug\net6.0\TPEntityBank.Models.dll
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\bin\Debug\net6.0\TPEntityBank.Models.pdb
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\obj\Debug\net6.0\TPEntityBank.Models.csproj.AssemblyReference.cache
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\obj\Debug\net6.0\TPEntityBank.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\obj\Debug\net6.0\TPEntityBank.Models.AssemblyInfoInputs.cache
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\obj\Debug\net6.0\TPEntityBank.Models.AssemblyInfo.cs
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\obj\Debug\net6.0\TPEntityBank.Models.csproj.CoreCompileInputs.cache
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\obj\Debug\net6.0\TPEntityBank.Models.dll
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\obj\Debug\net6.0\refint\TPEntityBank.Models.dll
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\obj\Debug\net6.0\TPEntityBank.Models.pdb
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\obj\Debug\net6.0\TPEntityBank.Models.genruntimeconfig.cache
+C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.Models\obj\Debug\net6.0\ref\TPEntityBank.Models.dll
