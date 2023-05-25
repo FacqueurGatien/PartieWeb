@@ -9,53 +9,71 @@
 html
 {
     font-size: 62.5%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 body
 {
     font-size: 1.6rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "a a a a" "b c c d" "b e e f" "b g h i" "b j j j";
+    grid-template-areas: "h h" "n m" "n m" "n m" "n f";
+    color: white;
+}
+.box
+{
+    font-size: 3rem;
+    font-weight: lighter;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    background-color: var(--un);
 }
 .grid :nth-child(1)
 {
-    grid-area: a;
+    grid-area: h;
 }
 .grid :nth-child(2)
 {
-    grid-area: b;
+    grid-area: n;
+}
+.grid :nth-child(3)
+{
+    grid-area: m;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "m1 m2 m2" "m3 m3 m4" "m5 m6 m7";
+}
+.grid :nth-child(4)
+{
+    grid-area: f;
 }
 .grid :nth-child(3) :nth-child(1)
 {
-    grid-area: c;
+    grid-area: m1;
 }
 .grid :nth-child(3) :nth-child(2)
 {
-    grid-area: d;
+    grid-area: m2;
 }
 .grid :nth-child(3) :nth-child(3)
 {
-    grid-area: e;
+    grid-area: m3;
     
 }
 .grid :nth-child(3) :nth-child(4)
 {
-    grid-area: f;
+    grid-area: m4;
 }
 .grid :nth-child(3) :nth-child(5)
 {
-    grid-area: g;
+    grid-area: m5;
 }
 .grid :nth-child(3) :nth-child(6)
 {
-    grid-area: h;
+    grid-area: m6;
 }
 .grid :nth-child(3) :nth-child(7)
 {
-    grid-area: i;
-}
-.grid :nth-child(4)
-{
-    grid-area: j;
+    grid-area: m7;
 }
