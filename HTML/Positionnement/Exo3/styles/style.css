@@ -1,0 +1,112 @@
+:root
+{
+    --un:rgb(184 204 252);
+    --deux:rgb(255 255 255);
+}
+*
+{
+    box-sizing: border-box;
+}
+html
+{
+    font-size: 62.5%;
+}
+body
+{
+    font-size: 1.6rem;
+    display: grid;
+    margin:0;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-areas:"H H A" "N M M" "N F F";
+}
+#header
+{
+    margin:0.5rem;
+    grid-area: H;
+    background-color: var(--un);
+}
+#add
+{
+    margin:0.5rem;
+    grid-area: A;
+    background-color: var(--un);
+}
+#main
+{
+    margin:0.5rem;
+    grid-area: M;
+    background-color: var(--un);
+}
+#section
+{
+    display: grid;
+    grid-template-columns: 2fr 4fr 4fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "N1 U D N2" "N1 T Q N2" "N1 C S N2";
+}
+#section :nth-child(1)
+{
+    grid-area: N1;
+}
+#section :nth-child(8)
+{
+    grid-area: N2;
+}
+#section :nth-child(2)
+{
+    background-color: var(--deux);
+    grid-area: U;
+}
+#section :nth-child(3)
+{
+    background-color: var(--deux);
+    grid-area: D;
+}
+#section :nth-child(4)
+{
+    background-color: var(--deux);
+    grid-area: T;
+}
+#section :nth-child(5)
+{
+    background-color: var(--deux);
+    grid-area: Q;
+}
+#section :nth-child(6)
+{
+    background-color: var(--deux);
+    grid-area: C;
+}
+#section :nth-child(7)
+{
+    background-color: var(--deux);
+    grid-area: S;
+}
+.article
+{
+    margin:0.5rem;
+    grid-area: F;
+    background-color: var(--un);
+}
+#nav
+{
+    margin:0.5rem;
+    grid-area: N;
+    background-color: var(--un);
+}
+#footer
+{
+    margin:0.5rem;
+    grid-area: F;
+    background-color: var(--un);
+}
+@media screen and (max-width:1024px)
+{
+    #section
+    {
+        grid-template-columns: 2fr 8fr 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "N1 U N2" "N1 D  N2" "N1 T N2" "N1 Q N2" "N1 C N2" "N1 S N2";
+    }
+}

@@ -3510,11 +3510,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafacqueur\\Desktop\\TPEntityBank\\TPEntityBank.Models\\TPEntityBank.Models.csproj",
+      "projectUniqueName": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\TPEntityBank\\TPEntityBank.Models\\TPEntityBank.Models.csproj",
       "projectName": "TPEntityBank.Models",
-      "projectPath": "C:\\Users\\gafacqueur\\Desktop\\TPEntityBank\\TPEntityBank.Models\\TPEntityBank.Models.csproj",
+      "projectPath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\TPEntityBank\\TPEntityBank.Models\\TPEntityBank.Models.csproj",
       "packagesPath": "C:\\Users\\gafacqueur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gafacqueur\\Desktop\\TPEntityBank\\TPEntityBank.Models\\obj\\",
+      "outputPath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\TPEntityBank\\TPEntityBank.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

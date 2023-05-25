@@ -1,0 +1,56 @@
+:root
+{
+    --primary: orangered;
+    --secondary: lightgray;
+    --ligth:white;
+}
+body
+{
+    margin:0;
+    background-color: var(--secondary);
+}
+#header
+{
+    background-color: var(--primary);
+}
+#header_titre
+{
+    margin:0;
+    padding: 20px 0;
+    text-align: center;
+    color: var(--ligth);
+}
+.main
+{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    width: 60%;
+    margin: auto;
+    margin-top: 4%;
+    grid-gap: 2%;
+}
+.cat_article
+{
+    width: 100%;
+    background-color: var(--ligth);
+}
+.cat_img
+{
+    width: 100%;
+}
+.cat_titre
+{
+    margin:5%;
+}
+.cat_paragraphe
+{
+    margin: 5%;
+}
+@media screen and (max-width:1024px)
+{
+    .main
+    {
+        display: grid;
+        grid-template-columns:1fr;
+    }
+}

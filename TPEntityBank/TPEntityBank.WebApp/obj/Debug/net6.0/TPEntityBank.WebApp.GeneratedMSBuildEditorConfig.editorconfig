@@ -9,77 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TPEntityBank.WebApp
 build_property.RootNamespace = TPEntityBank.WebApp
-build_property.ProjectDir = C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.WebApp\
+build_property.ProjectDir = C:\Users\gafacqueur\Documents\PartieWeb\TPEntityBank\TPEntityBank.WebApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\gafacqueur\Desktop\TPEntityBank\TPEntityBank.WebApp
+build_property.MSBuildProjectDirectory = C:\Users\gafacqueur\Documents\PartieWeb\TPEntityBank\TPEntityBank.WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Example/DataView.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Example/DataView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXBsZVxEYXRhVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Example/Index.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Example/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXBsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Example/ModelView.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Example/ModelView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXBsZVxNb2RlbFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Example/MySuperView.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Example/MySuperView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXBsZVxNeVN1cGVyVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Home/Index.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Home/Privacy.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Shared/Error.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Shared/_MySuperLayout.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Shared/_MySuperLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NeVN1cGVyTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Transactions/Create.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Transactions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Transactions/Delete.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Transactions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Transactions/Details.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Transactions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Transactions/Edit.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Transactions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Transactions/Index.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Transactions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/_ViewImports.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/_ViewStart.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gafacqueur/Desktop/TPEntityBank/TPEntityBank.WebApp/Views/Shared/_Layout.cshtml]
+[C:/Users/gafacqueur/Documents/PartieWeb/TPEntityBank/TPEntityBank.WebApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6t0lucb649

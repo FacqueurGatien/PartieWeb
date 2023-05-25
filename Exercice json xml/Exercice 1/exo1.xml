@@ -1,0 +1,43 @@
+<menu>
+    <listeeEntre>
+        <entree id=1>
+            <nom>Salade</nom>
+            <prix>4</prix>
+            <description>acompagner de vinaigrette maison </description>
+        </entree>
+        <entree id=2>
+            <nom>charcuterie</nom>
+            <prix>5</prix>
+            <description>assortiment de charcuterie</description>
+        </entree>
+    </listeeEntre>
+    <listePlat>
+        <plat id=1>
+            <nom>Entrecotte</nom>
+            <prix>7.5</prix>
+            <description>Entrecotte de boeuf avec des frites</description>
+        </plat>
+        <plat id=2>
+            <nom>Tagliatelle</nom>
+            <prix>6</prix>
+            <description>Tagliatelle carbonara</description>
+        </plat>
+        <plat id=3>
+            <nom>Pizza au saumon</nom>
+            <prix>6.5</prix>
+            <description>Pizza base creme au saumon</description>
+        </plat>
+    </listePlat>
+    <listeDessert>
+        <dessert id=1>
+            <nom>Creme brulée</nom>
+            <prix>3</prix>
+            <description>Creme bruller maison</description>
+        </dessert>
+        <dessert id=2>
+            <nom>Moeleux Chocolat</nom>
+            <prix>3.5</prix>
+            <description>Moeloeux au chocolat coeur fondant</description>
+        </dessert>
+    </listeDessert>
+</menu>

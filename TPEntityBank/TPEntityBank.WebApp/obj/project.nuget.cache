@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pvXk9xFFdK3itqHsxsHVvTYVZf2/Xungd8va1lGkjrnOF0IT+CX1bxtW8sLbciY+7CudAw/p5CSClUsZv8hunA==",
+  "dgSpecHash": "rc8oTgx6SSrCCqbKEtEj6V8xSF8ft9QsHMe0Bv5U+Pq8vtiKlbJUJNK4avkP4z9ItmL0GLTleyQIj/5lLHV/CQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gafacqueur\\Desktop\\TPEntityBank\\TPEntityBank.WebApp\\TPEntityBank.WebApp.csproj",
+  "projectFilePath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\TPEntityBank\\TPEntityBank.WebApp\\TPEntityBank.WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gafacqueur\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\gafacqueur\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
