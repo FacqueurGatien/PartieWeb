@@ -101,6 +101,7 @@ body
     grid-area: F;
     background-color: var(--un);
 }
+
 @media screen and (max-width:1024px)
 {
     #section
