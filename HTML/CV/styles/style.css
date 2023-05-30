@@ -16,104 +16,29 @@ body
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 70%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
-.titre
+p
 {
-    margin: 0;
+    margin: 0 1rem 0 1rem;
 }
-.paragraphe
+#header
 {
-    margin: 0%;
+    width: 100%;
+    background-image: url("/CV/img/WhatsApp\ Image\ 2022-12-11\ at\ 17.48.30.jpeg");
+    background-size: cover;
+    height: 32vw;
 }
-    #header
-    {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-        #pres
-        {
-            border: 2px solid black;
-            display: flex;
-            height: 13.6vw;
-        }
-            #nom
-            {
-                display: flex;
-                flex-direction: column;
-                width: 60%;
-                height: 100%;
-                margin: 0;
-            }
-                #nom > img
-                {
-                    width: 98%;
-                    z-index: 1;
-                } 
-            #contact
-            {
-                align-items: center;
-                width: 40%;
-                display: flex;
-                flex-direction: column;
-                flex-wrap: nowrap;
-                font-size: 1.8rem;
-                padding: 2rem 0 0 2rem;
-                overflow: auto;
-            }
-
-        #profil
-        {
-            border: 2px solid black;
-            padding: 1rem;
-            height: 6.7vw;
-            overflow: auto;
-        }
-            #profil > p
-            {
-                margin:1rem;
-            }
-    #main
-    {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 23vw;
-    }
-        #exp
-        {
-            border: 2px solid black;
-            width: 70%;
-            display: flex;
-            flex-direction: column;
-        }
-        #nav
-        {
-            border: 2px solid black;
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-        }
-            #langue
-            {
-                display: flex;
-                flex-direction: column;
-                height: 50%;
-            }
-            #interet
-            {
-                display: flex;
-                flex-direction: column;
-                height: 50%;
-            }
-
-
-    #footer
-    {
-        background-color: cadetblue;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: 7vw;
-    }
+#main
+{
+    overflow: auto;
+}
+#nav
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 5rem;
+    justify-content: space-around;
+    overflow: auto;
+}
