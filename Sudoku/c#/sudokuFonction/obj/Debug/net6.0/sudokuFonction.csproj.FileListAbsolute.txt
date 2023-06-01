@@ -1,0 +1,15 @@
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\bin\Debug\net6.0\sudokuFonction.exe
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\bin\Debug\net6.0\sudokuFonction.deps.json
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\bin\Debug\net6.0\sudokuFonction.runtimeconfig.json
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\bin\Debug\net6.0\sudokuFonction.dll
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\bin\Debug\net6.0\sudokuFonction.pdb
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\obj\Debug\net6.0\sudokuFonction.csproj.AssemblyReference.cache
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\obj\Debug\net6.0\sudokuFonction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\obj\Debug\net6.0\sudokuFonction.AssemblyInfoInputs.cache
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\obj\Debug\net6.0\sudokuFonction.AssemblyInfo.cs
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\obj\Debug\net6.0\sudokuFonction.csproj.CoreCompileInputs.cache
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\obj\Debug\net6.0\sudokuFonction.dll
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\obj\Debug\net6.0\refint\sudokuFonction.dll
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\obj\Debug\net6.0\sudokuFonction.pdb
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\obj\Debug\net6.0\sudokuFonction.genruntimeconfig.cache
+C:\Users\Sora\Documents\ToutEmbal\sudokuFonction\sudokuFonction\obj\Debug\net6.0\ref\sudokuFonction.dll
