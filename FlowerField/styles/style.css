@@ -1,0 +1,8 @@
+#field
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.imgFlower{ 
+    width: 100px;
+}
