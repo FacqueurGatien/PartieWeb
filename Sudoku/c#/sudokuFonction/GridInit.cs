@@ -23,7 +23,7 @@ namespace sudokuFonction
         public GridInit()
         {
             grid = new int[3, 3, 3, 3];
-            DisposingArrayZero();
+            DisposingArray();//
             essaie= 0;
         }
         public void DisposingZero()
@@ -327,12 +327,37 @@ namespace sudokuFonction
             }
             return true;
         }
+        public int CountOccurence(int[] array , int chiffre)
+        {
+            int counterChiffre = 0;
+            foreach (int i in array)
+            {
+                if (i == chiffre)
+                {
+                    counterChiffre++;
+                }
+            }
+            return counterChiffre;
+        }
         public bool CheckCaseValide(int[] coord, int chiffre)
         {
+
             int[] row = CopyRow(new int[] { coord[0], coord[1] });
             int[] col = CopyColumn(new int[] { coord[2], coord[3] });
             int[] block = CopyBlock(new int[] { coord[0], coord[2] });
-
+            if (grid[coord[0], coord[1], coord[2], coord[3]]== chiffre)
+            {
+                if (CountOccurence(row, chiffre)>1 || 
+                    CountOccurence(col, chiffre)>1 || 
+                    CountOccurence(block, chiffre)>1)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
             if (row.Contains(chiffre) || col.Contains(chiffre) || block.Contains(chiffre))
             {
                 return false;
@@ -654,7 +679,6 @@ namespace sudokuFonction
         }
         public bool AddOneRow(int numRow, List<List<int>> rowClues)
         {
-
             List<List<int>> rowCluesStart;
             int[] coord = setCursor(numRow);
             int[] row = new int[9];
@@ -668,9 +692,11 @@ namespace sudokuFonction
                 if (row==null)
                 {
                     rowCluesStart = CopyClues(rowClues);
-                    row = new RowSolver(rowCluesStart).Resolve();
+                    row = new RowSolver(rowCluesStart).Resolve(true);
                 }
                 tryCount++;
+                rowCluesStart = CopyClues(rowClues);
+                row = new RowSolver(rowCluesStart).Resolve(true);
                 loopContinue = !checkDisposingOneRow(numRow, row);
             }
             while (loopContinue && tryCount < 5);

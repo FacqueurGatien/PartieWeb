@@ -169,7 +169,7 @@ namespace sudokuFonction
                 index = temp;
             }
         }
-        public void RandomizeChoice()
+        public void RandomizeChoice(bool random)
         {
             if (index.Count > 0)
             {
@@ -186,11 +186,18 @@ namespace sudokuFonction
                                         numToPurge = array[rand][0];*/
 
                     rand = index[new Random().Next(0, index.Count)];
-
-                    indice = SelectIndice(rand);
-                    array[index[0]] = new List<int>() { indice };
-                    numToPurge = indice;
-
+                    if (random)
+                    {
+                        indice = array[rand][new Random().Next(0, array[rand].Count)];
+                        array[rand] = new List<int>() { indice };
+                        numToPurge = indice;
+                    }
+                    else
+                    {
+                        indice = SelectIndice(rand);
+                        array[index[0]] = new List<int>() { indice };
+                        numToPurge = indice;
+                    }
                 }
                 else
                 {
@@ -216,11 +223,16 @@ namespace sudokuFonction
                 temp = itteration[array[num][0]];
                 foreach (int i in array[num])
                 {
-                    if (itteration[i] < itteration[temp] && itteration[i] > 1)
+                    if (itteration[i] < temp && itteration[i] > 1)
                     {
                         tempToreturn = i;
                         trigger = true;
                     }
+                }
+                if (tempToreturn > 9)
+                {
+                    tempToreturn = array[num][new Random().Next(0, array[num].Count)];
+                    trigger= true;
                 }
                 if (trigger)
                 {
@@ -301,7 +313,7 @@ namespace sudokuFonction
 
             return temp == 9;
         }
-        public int[] Resolve()
+        public int[] Resolve(bool random = false)
         {
             int compteur = 0;
             while (!ItterationBool() && compteur < 9)
@@ -311,7 +323,7 @@ namespace sudokuFonction
                 ItterationMinIndex();
                 ReduceIndex();
                 CiblerIndex();
-                RandomizeChoice();
+                RandomizeChoice(random);
                 PurgeCheck();
                 Reset();
                 //                Console.WriteLine(ToString());
