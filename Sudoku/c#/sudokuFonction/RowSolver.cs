@@ -15,13 +15,9 @@ namespace sudokuFonction
         public int min;
         public int max;
         public List<int> index;
-        public RowSolver()
+        public RowSolver(List<List<int>> _array)
         {
-            array = new List<List<int>>() {
-                    new List<int>() {1,2,3,4,5,6,7,8,9}, new List<int>() {1,2,3,4,5,6,7,8,9}, new List<int>() {1,2,3,4,5,6,7,8,9},
-                    new List<int>() {1,2,3,4,5,6,7,8,9}, new List<int>() {1,2,3,4,5,6,7,8,9}, new List<int>() {1,2,3,4,5,6,7,8,9},
-                    new List<int>() {1,2,3,4,5,6,7,8,9}, new List<int>() {1,2,3,4,5,6,7,8,9}, new List<int>() {1,2,3,4,5,6,7,8,9}
-             };
+            array = _array;
 
             itteration = new Dictionary<int, int>();
             itteration.Add(1, 0);
@@ -190,9 +186,11 @@ namespace sudokuFonction
                                         numToPurge = array[rand][0];*/
 
                     rand = index[new Random().Next(0, index.Count)];
+
                     indice = SelectIndice(rand);
                     array[index[0]] = new List<int>() { indice };
                     numToPurge = indice;
+
                 }
                 else
                 {
@@ -243,7 +241,7 @@ namespace sudokuFonction
         {
             bool checkPurge = true;
             int compteur = 10;
-            while (checkPurge && compteur >0)
+            while (checkPurge && compteur > 0)
             {
                 checkPurge = false;
                 Reset();
@@ -256,7 +254,7 @@ namespace sudokuFonction
                         checkPurge = true;
                     }
                 }
-                Console.WriteLine(ToString() + "-Purge");
+                //                Console.WriteLine(ToString() + "-Purge");
                 compteur--;
             }
 
@@ -294,12 +292,16 @@ namespace sudokuFonction
             int temp = 0;
             for (int i = 0; i < itteration.Count; i++)
             {
+                if (itteration[i + 1] == 0)
+                {
+                    return false;
+                }
                 temp += itteration[i + 1];
             }
 
             return temp == 9;
         }
-        public void main()
+        public int[] Resolve()
         {
             int compteur = 0;
             while (!ItterationBool() && compteur < 9)
@@ -312,9 +314,21 @@ namespace sudokuFonction
                 RandomizeChoice();
                 PurgeCheck();
                 Reset();
-                Console.WriteLine(ToString());
+                //                Console.WriteLine(ToString());
+                compteur++;
             }
-            compteur++;
+            int[] rowToReturn = new int[9];
+            for (int i = 0; i < rowToReturn.Length; i++)
+            {
+                rowToReturn[i] = array[i][0];
+            }
+            Reset();
+            if (!ItterationBool())
+            {
+                return null;
+            }
+            return rowToReturn;
         }
     }
+
 }
