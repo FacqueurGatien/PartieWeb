@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace sudokuFonction
         public List<List<List<List<List<int>>>>> grid;
         public List<List<int>> array;
         public Dictionary<int, int> itteration;
+        public int essaieMinResolve;
 
 
         public int resolveAction;
@@ -27,6 +29,8 @@ namespace sudokuFonction
 
             resolveAction = 0;
             purgeAction = true;
+
+            essaieMinResolve = 0;
         }
 
 
@@ -350,7 +354,7 @@ namespace sudokuFonction
             else
             {
                 List<List<List<int>>> list = new List<List<List<int>>>();
-                for (int rb = coordCase[0]; rb < coordCase[0]+1; rb++)
+                for (int rb = coordCase[0]; rb < coordCase[0] + 1; rb++)
                 {
                     for (int r = 0; r < 3; r++)
                     {
@@ -386,7 +390,7 @@ namespace sudokuFonction
         }
         public void ReplaceCluesBlock(int[] coordCase, int num)
         {
-            for (int rb = coordCase[0]; rb < coordCase[0]+1; rb++)
+            for (int rb = coordCase[0]; rb < coordCase[0] + 1; rb++)
             {
                 for (int r = 0; r < 3; r++)
                 {
@@ -491,7 +495,26 @@ namespace sudokuFonction
                 }
             }
         }
-        public int ItterationCountAll()
+        public void ItterationCount()
+        {
+            for (int rb = 0; rb < 3; rb++)
+            {
+                for (int r = 0; r < 3; r++)
+                {
+                    for (int cb = 0; cb < 3; cb++)
+                    {
+                        for (int c = 0; c < 3; c++)
+                        {
+                            foreach (int i in grid[rb][r][cb][c])
+                            {
+                                itteration[i]++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        public int CheckGridComplete()
         {
             int count = 0;
             for (int rb = 0; rb < 3; rb++)
@@ -502,7 +525,7 @@ namespace sudokuFonction
                     {
                         for (int c = 0; c < 3; c++)
                         {
-                            if (grid[rb][r][cb][c].Count==1)
+                            if (grid[rb][r][cb][c].Count == 1)
                             {
                                 count++;
                             }
@@ -515,7 +538,7 @@ namespace sudokuFonction
         }
         public bool CheckAllItteration()
         {
-            return ItterationCountAll() == 81;
+            return CheckGridComplete() == 81;
         }//a travailler
 
         public int[] setLine(int cursor)
@@ -673,9 +696,80 @@ namespace sudokuFonction
             }
         }//OK
 
-        public bool ResolveGrid()//a travailler
+        public void ItterationMinResolve(int essaie)
         {
-            while (!CheckAllItteration() && resolveAction<10)
+            ItterationInit();
+            ItterationCount();//Sans paramettre toute la grille sera compté
+
+            List<int> array = new List<int>();
+            foreach (KeyValuePair<int, int> i in itteration.OrderBy(key => key.Value))
+            {
+                if (i.Value != 9)
+                {
+                    array.Add(i.Key);
+                }
+
+            }
+
+            List<int[]> index = new List<int[]>();
+            for (int rb = 0; rb < 3; rb++)
+            {
+                for (int r = 0; r < 3; r++)
+                {
+                    for (int cb = 0; cb < 3; cb++)
+                    {
+                        for (int c = 0; c < 3; c++)
+                        {
+                            if (grid[rb][r][cb][c].Count > 1)
+                            {
+                                if (grid[rb][r][cb][c].Contains(array[essaie]))
+                                {
+                                    index.Add(new int[] { rb, r, cb, c });
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            int counter = 0;
+            while (counter < index.Count)
+            {              
+                grid = new List<List<List<List<List<int>>>>>();                
+                GridCluesDisposeAuto();
+
+                grid[index[counter][0]][index[counter][1]][index[counter][2]][index[counter][3]].Clear();
+                grid[index[counter][0]][index[counter][1]][index[counter][2]][index[counter][3]].Add(array[essaie]);
+
+                resolveAction = 0;
+                if (ResolveGrid(false))
+                {
+                    counter=index.Count+1;
+                    resolveAction = 20;
+                }
+                else
+                {
+                    resolveAction= 0;
+                }
+            }
+
+            Console.WriteLine();
+            counter++;
+
+            if (ResolveGrid(false))
+            {
+                resolveAction = 20;
+            }
+            else
+            {
+                grid = new List<List<List<List<List<int>>>>>();
+                GridCluesDisposeAuto();
+                ResolveGrid(false);
+            }
+        }
+
+        public bool ResolveGrid(bool minResolveMode = true)//a travailler
+        {
+            while (!CheckAllItteration() && resolveAction < 11 && essaieMinResolve < 5)
             {
                 purgeAction = true;
                 while (purgeAction)
@@ -684,6 +778,12 @@ namespace sudokuFonction
                 }
                 PurgeArray(itterationMode: true);
                 resolveAction++;
+                if (resolveAction >= 10 && minResolveMode)
+                {
+                    essaieMinResolve++;
+                    ItterationMinResolve(essaieMinResolve);
+
+                }
             }
             if (CheckAllItteration())
             {
@@ -693,6 +793,7 @@ namespace sudokuFonction
             {
                 return false;
             }
+
         }
     }
 

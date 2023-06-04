@@ -20,6 +20,7 @@ namespace sudokuFonction
             if (resolve.ResolveGrid())
             {
                 Console.WriteLine(resolve.ToString());
+                Console.WriteLine("Solution trouvé");
             }
             else
             {
