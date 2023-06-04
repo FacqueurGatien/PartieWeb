@@ -98,16 +98,6 @@ namespace sudokuFonction
                 index = temp;
             }
         }
-        public void ItterationInit()
-        {
-            foreach (List<int> it in array)
-            {
-                foreach (int i in it)
-                {
-                    itteration[i]++;
-                }
-            }
-        }
         public void ItterationMinIndex()
         {
             int temp = 0;
@@ -270,6 +260,16 @@ namespace sudokuFonction
                 compteur--;
             }
 
+        }
+        public void ItterationInit()
+        {
+            foreach (List<int> it in array)
+            {
+                foreach (int i in it)
+                {
+                    itteration[i]++;
+                }
+            }
         }
         public void PurgeArray(int nb)
         {
