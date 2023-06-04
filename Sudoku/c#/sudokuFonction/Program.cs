@@ -7,7 +7,17 @@ namespace sudokuFonction
         static void Main(string[] args)
         {
             AutoGenerateGrid grid= new AutoGenerateGrid();
-            int valide = 0;
+
+            RowClueDispose clues = new RowClueDispose(grid.grid);
+
+            List<List<List<int>>> tab =clues.SearchCluesRow9();
+            Console.WriteLine(clues.ToString9());
+
+            PurgeClues resolve = new PurgeClues(tab);
+            Console.WriteLine(resolve.ToString());
+
+
+/*            int valide = 0;
             int essaie = 0;
             while (true)
             {
@@ -20,7 +30,7 @@ namespace sudokuFonction
                 }
             }
             Console.WriteLine(grid.grid.ToString());
-            Console.WriteLine(valide + " nb essaie:" +essaie);
+            Console.WriteLine(valide + " nb essaie:" +essaie);*/
         }
     }
 }
