@@ -24,6 +24,8 @@ namespace sudokuFonction
             }
             else
             {
+                resolve = new PurgeClues(tab);
+                resolve.ResolveGrid(false);
                 Console.WriteLine(resolve.ToString());
                 Console.WriteLine("Pas de solution trouvé");
             }
@@ -39,10 +41,11 @@ namespace sudokuFonction
 
 
 
+            //Faire une fonction qui traduit la resolution de la cluesMachines en grid de la classe grid
+            // pour pouvoir la resoudre aleatoirement
 
 
-
-            /*            int valide = 0;
+                        int valide = 0;
                         int essaie = 0;
                         while (true)
                         {
@@ -55,7 +58,7 @@ namespace sudokuFonction
                             }
                         }
                         Console.WriteLine(grid.grid.ToString());
-                        Console.WriteLine(valide + " nb essaie:" +essaie);*/
+                        Console.WriteLine(valide + " nb essaie:" +essaie);
         }
     }
 }

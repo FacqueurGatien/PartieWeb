@@ -698,6 +698,7 @@ namespace sudokuFonction
 
         public void ItterationMinResolve(int essaie)
         {
+
             ItterationInit();
             ItterationCount();//Sans paramettre toute la grille sera compté
 
@@ -732,34 +733,32 @@ namespace sudokuFonction
                 }
             }
             int counter = 0;
-            while (counter < index.Count)
-            {              
-                grid = new List<List<List<List<List<int>>>>>();                
+            while (counter < index.Count && essaie<8)
+            {
+                grid = new List<List<List<List<List<int>>>>>();
                 GridCluesDisposeAuto();
 
                 grid[index[counter][0]][index[counter][1]][index[counter][2]][index[counter][3]].Clear();
                 grid[index[counter][0]][index[counter][1]][index[counter][2]][index[counter][3]].Add(array[essaie]);
 
                 resolveAction = 0;
+                Console.WriteLine(ToString);
+                resolveAction = 10;
                 if (ResolveGrid(false))
                 {
-                    counter=index.Count+1;
-                    resolveAction = 20;
+                    counter = index.Count + 1;
+
                 }
                 else
                 {
-                    resolveAction= 0;
+                    resolveAction = 0;
+                    essaie++;
                 }
             }
 
-            Console.WriteLine();
             counter++;
-
-            if (ResolveGrid(false))
-            {
-                resolveAction = 20;
-            }
-            else
+            resolveAction = 10;
+            if (!ResolveGrid(false))
             {
                 grid = new List<List<List<List<List<int>>>>>();
                 GridCluesDisposeAuto();
@@ -782,8 +781,8 @@ namespace sudokuFonction
                 {
                     essaieMinResolve++;
                     ItterationMinResolve(essaieMinResolve);
-
                 }
+                Console.WriteLine(ToString());
             }
             if (CheckAllItteration())
             {

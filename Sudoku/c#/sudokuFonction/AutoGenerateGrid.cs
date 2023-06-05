@@ -18,9 +18,7 @@ namespace sudokuFonction
         public AutoGenerateGrid()
         {
             grid = new GridInit();
-            pattern = new int[] { 8,9,5,7,3,6,2,1,4};
-            pattern2 = new int[] { 4, 7 };
-            pattern3 = new int[] { 6,7,8,9 };
+            pattern = new int[] { 1,2,3,4,5,6,7,8,9};
             valide = 0;
         }
         public bool GetRowClues(int numRow)
@@ -92,7 +90,7 @@ namespace sudokuFonction
                 }
             }*/
 
-            if (valide==pattern.Length+pattern3.Length)
+            if (valide==9)
             {
                 return true;
             }

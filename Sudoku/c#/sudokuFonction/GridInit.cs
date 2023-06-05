@@ -397,7 +397,7 @@ namespace sudokuFonction
         {  //    rb r cb  c
 
             //Rangé 1
-            grid[0, 0, 0, 0] = 0;
+            grid[0, 0, 0, 0] = 3;
             grid[0, 0, 0, 1] = 8;
             grid[0, 0, 0, 2] = 0;
 
@@ -416,7 +416,7 @@ namespace sudokuFonction
 
             grid[0, 1, 1, 0] = 0;
             grid[0, 1, 1, 1] = 0;
-            grid[0, 1, 1, 2] = 0;
+            grid[0, 1, 1, 2] = 8;
 
             grid[0, 1, 2, 0] = 0;
             grid[0, 1, 2, 1] = 7;
@@ -432,13 +432,13 @@ namespace sudokuFonction
             grid[0, 2, 1, 2] = 0;
 
             grid[0, 2, 2, 0] = 3;
-            grid[0, 2, 2, 1] = 0;
+            grid[0, 2, 2, 1] = 8;
             grid[0, 2, 2, 2] = 4;
 
             //Rangé 4
             grid[1, 0, 0, 0] = 1;
             grid[1, 0, 0, 1] = 0;
-            grid[1, 0, 0, 2] = 8;
+            grid[1, 0, 0, 2] = 0;
 
             grid[1, 0, 1, 0] = 0;
             grid[1, 0, 1, 1] = 0;
@@ -457,7 +457,7 @@ namespace sudokuFonction
             grid[1, 1, 1, 1] = 8;
             grid[1, 1, 1, 2] = 0;
 
-            grid[1, 1, 2, 0] = 9;
+            grid[1, 1, 2, 0] = 0;
             grid[1, 1, 2, 1] = 0;
             grid[1, 1, 2, 2] = 0;
 
