@@ -7,6 +7,7 @@ namespace sudokuFonction
         static void Main(string[] args)
         {
             bool test = true;
+            bool algoRandom = false;
             AutoGenerateGrid grid = new AutoGenerateGrid();
 
             RowClueDispose clues = new RowClueDispose(grid.grid);
@@ -18,19 +19,25 @@ namespace sudokuFonction
             Console.WriteLine(resolve.ToString());
             Console.WriteLine("\n\n\n___________________________________________________________\n");
 
-            if (resolve.ResolveGrid())
+            if (resolve.ItterationTotal()<300)
             {
-                Console.WriteLine(resolve.ToString());
-                Console.WriteLine("Solution trouvé");
-                test = false;
+                if (resolve.ResolveGrid())
+                {
+                    Console.WriteLine(resolve.ToString());
+                    Console.WriteLine("Solution trouvé");
+                    test = false;
+                }
+                else
+                {
+                    resolve = new PurgeClues(tab);
+                    resolve.ResolveGrid(false);
+                    Console.WriteLine(resolve.ToString());
+                    Console.WriteLine("Pas de solution trouvé");
+                    resolve.ItterationCount();
+                    Console.WriteLine(resolve.itteration);
+                }
             }
-            else
-            {
-                resolve = new PurgeClues(tab);
-                resolve.ResolveGrid(false);
-                Console.WriteLine(resolve.ToString());
-                Console.WriteLine("Pas de solution trouvé");
-            }
+
 
             //Verification de la copy des Ligne
             /*            resolve.CopyRowClues(new int[] {0,2});

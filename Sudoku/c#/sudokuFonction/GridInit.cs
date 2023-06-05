@@ -23,7 +23,7 @@ namespace sudokuFonction
         public GridInit()
         {
             grid = new int[3, 3, 3, 3];
-            DisposingArray4();
+            DisposingArray9();
             essaie = 0;
         }
 
@@ -31,6 +31,126 @@ namespace sudokuFonction
         /// Dispose un tableau a personalisé
         /// </summary>
         public void DisposingArray()
+        {  //    rb r cb  c
+
+            //Rangé 1
+            grid[0, 0, 0, 0] = 0;
+            grid[0, 0, 0, 1] = 0;
+            grid[0, 0, 0, 2] = 0;
+
+            grid[0, 0, 1, 0] = 0;
+            grid[0, 0, 1, 1] = 0;
+            grid[0, 0, 1, 2] = 0;
+
+            grid[0, 0, 2, 0] = 0;
+            grid[0, 0, 2, 1] = 0;
+            grid[0, 0, 2, 2] = 0;
+
+            //Rangé2
+            grid[0, 1, 0, 0] = 0;
+            grid[0, 1, 0, 1] = 0;
+            grid[0, 1, 0, 2] = 0;
+
+            grid[0, 1, 1, 0] = 0;
+            grid[0, 1, 1, 1] = 0;
+            grid[0, 1, 1, 2] = 0;
+
+            grid[0, 1, 2, 0] = 0;
+            grid[0, 1, 2, 1] = 0;
+            grid[0, 1, 2, 2] = 0;
+
+            //Rangé3
+            grid[0, 2, 0, 0] = 0;
+            grid[0, 2, 0, 1] = 0;
+            grid[0, 2, 0, 2] = 0;
+
+            grid[0, 2, 1, 0] = 0;
+            grid[0, 2, 1, 1] = 0;
+            grid[0, 2, 1, 2] = 0;
+
+            grid[0, 2, 2, 0] = 0;
+            grid[0, 2, 2, 1] = 0;
+            grid[0, 2, 2, 2] = 0;
+
+            //Rangé 4
+            grid[1, 0, 0, 0] = 0;
+            grid[1, 0, 0, 1] = 0;
+            grid[1, 0, 0, 2] = 0;
+
+            grid[1, 0, 1, 0] = 0;
+            grid[1, 0, 1, 1] = 0;
+            grid[1, 0, 1, 2] = 0;
+
+            grid[1, 0, 2, 0] = 0;
+            grid[1, 0, 2, 1] = 0;
+            grid[1, 0, 2, 2] = 0;
+
+            //Rangé5
+            grid[1, 1, 0, 0] = 0;
+            grid[1, 1, 0, 1] = 0;
+            grid[1, 1, 0, 2] = 0;
+
+            grid[1, 1, 1, 0] = 0;
+            grid[1, 1, 1, 1] = 0;
+            grid[1, 1, 1, 2] = 0;
+
+            grid[1, 1, 2, 0] = 0;
+            grid[1, 1, 2, 1] = 0;
+            grid[1, 1, 2, 2] = 0;
+
+            //Rangé6
+            grid[1, 2, 0, 0] = 0;
+            grid[1, 2, 0, 1] = 0;
+            grid[1, 2, 0, 2] = 0;
+
+            grid[1, 2, 1, 0] = 0;
+            grid[1, 2, 1, 1] = 0;
+            grid[1, 2, 1, 2] = 0;
+
+            grid[1, 2, 2, 0] = 0;
+            grid[1, 2, 2, 1] = 0;
+            grid[1, 2, 2, 2] = 0;
+
+            //Rangé 7
+            grid[2, 0, 0, 0] = 0;
+            grid[2, 0, 0, 1] = 0;
+            grid[2, 0, 0, 2] = 0;
+
+            grid[2, 0, 1, 0] = 0;
+            grid[2, 0, 1, 1] = 0;
+            grid[2, 0, 1, 2] = 0;
+
+            grid[2, 0, 2, 0] = 0;
+            grid[2, 0, 2, 1] = 0;
+            grid[2, 0, 2, 2] = 0;
+
+            //Rangé8
+            grid[2, 1, 0, 0] = 0;
+            grid[2, 1, 0, 1] = 0;
+            grid[2, 1, 0, 2] = 0;
+
+            grid[2, 1, 1, 0] = 0;
+            grid[2, 1, 1, 1] = 0;
+            grid[2, 1, 1, 2] = 0;
+
+            grid[2, 1, 2, 0] = 0;
+            grid[2, 1, 2, 1] = 0;
+            grid[2, 1, 2, 2] = 0;
+
+            //Rangé9
+            grid[2, 2, 0, 0] = 0;
+            grid[2, 2, 0, 1] = 0;
+            grid[2, 2, 0, 2] = 0;
+
+            grid[2, 2, 1, 0] = 0;
+            grid[2, 2, 1, 1] = 0;
+            grid[2, 2, 1, 2] = 0;
+
+            grid[2, 2, 2, 0] = 0;
+            grid[2, 2, 2, 1] = 0;
+            grid[2, 2, 2, 2] = 0;
+        } //OK
+        public void DisposingArray1()
         {  //    rb r cb  c
 
             //Rangé 1
@@ -462,7 +582,7 @@ namespace sudokuFonction
             grid[1, 1, 2, 2] = 0;
 
             //Rangé6
-            grid[1, 2, 0, 0] = 0;
+            grid[1, 2, 0, 0] = 8;
             grid[1, 2, 0, 1] = 0;
             grid[1, 2, 0, 2] = 0;
 
@@ -996,6 +1116,127 @@ namespace sudokuFonction
             grid[2, 2, 2, 1] = 8;
             grid[2, 2, 2, 2] = 7;
         } //OK
+
+        public void DisposingArray9()
+        {  //    rb r cb  c
+
+            //Rangé 1
+            grid[0, 0, 0, 0] = 0;
+            grid[0, 0, 0, 1] = 8;
+            grid[0, 0, 0, 2] = 0;
+
+            grid[0, 0, 1, 0] = 7;
+            grid[0, 0, 1, 1] = 0;
+            grid[0, 0, 1, 2] = 0;
+
+            grid[0, 0, 2, 0] = 2;
+            grid[0, 0, 2, 1] = 6;
+            grid[0, 0, 2, 2] = 0;
+
+            //Rangé2
+            grid[0, 1, 0, 0] = 0;
+            grid[0, 1, 0, 1] = 0;
+            grid[0, 1, 0, 2] = 0;
+
+            grid[0, 1, 1, 0] = 0;
+            grid[0, 1, 1, 1] = 0;
+            grid[0, 1, 1, 2] = 8;
+
+            grid[0, 1, 2, 0] = 0;
+            grid[0, 1, 2, 1] = 0;
+            grid[0, 1, 2, 2] = 1;
+
+            //Rangé3
+            grid[0, 2, 0, 0] = 0;
+            grid[0, 2, 0, 1] = 9;
+            grid[0, 2, 0, 2] = 0;
+
+            grid[0, 2, 1, 0] = 0;
+            grid[0, 2, 1, 1] = 0;
+            grid[0, 2, 1, 2] = 0;
+
+            grid[0, 2, 2, 0] = 0;
+            grid[0, 2, 2, 1] = 8;
+            grid[0, 2, 2, 2] = 0;
+
+            //Rangé 4
+            grid[1, 0, 0, 0] = 1;
+            grid[1, 0, 0, 1] = 0;
+            grid[1, 0, 0, 2] = 0;
+
+            grid[1, 0, 1, 0] = 0;
+            grid[1, 0, 1, 1] = 0;
+            grid[1, 0, 1, 2] = 0;
+
+            grid[1, 0, 2, 0] = 0;
+            grid[1, 0, 2, 1] = 5;
+            grid[1, 0, 2, 2] = 0;
+
+            //Rangé5
+            grid[1, 1, 0, 0] = 0;
+            grid[1, 1, 0, 1] = 7;
+            grid[1, 1, 0, 2] = 0;
+
+            grid[1, 1, 1, 0] = 0;
+            grid[1, 1, 1, 1] = 8;
+            grid[1, 1, 1, 2] = 0;
+
+            grid[1, 1, 2, 0] = 0;
+            grid[1, 1, 2, 1] = 0;
+            grid[1, 1, 2, 2] = 0;
+
+            //Rangé6
+            grid[1, 2, 0, 0] = 8;
+            grid[1, 2, 0, 1] = 0;
+            grid[1, 2, 0, 2] = 0;
+
+            grid[1, 2, 1, 0] = 0;
+            grid[1, 2, 1, 1] = 0;
+            grid[1, 2, 1, 2] = 6;
+
+            grid[1, 2, 2, 0] = 0;
+            grid[1, 2, 2, 1] = 0;
+            grid[1, 2, 2, 2] = 3;
+
+            //Rangé 7
+            grid[2, 0, 0, 0] = 0;
+            grid[2, 0, 0, 1] = 0;
+            grid[2, 0, 0, 2] = 0;
+
+            grid[2, 0, 1, 0] = 0;
+            grid[2, 0, 1, 1] = 4;
+            grid[2, 0, 1, 2] = 0;
+
+            grid[2, 0, 2, 0] = 0;
+            grid[2, 0, 2, 1] = 0;
+            grid[2, 0, 2, 2] = 0;
+
+            //Rangé8
+            grid[2, 1, 0, 0] = 5;
+            grid[2, 1, 0, 1] = 0;
+            grid[2, 1, 0, 2] = 0;
+
+            grid[2, 1, 1, 0] = 0;
+            grid[2, 1, 1, 1] = 6;
+            grid[2, 1, 1, 2] = 0;
+
+            grid[2, 1, 2, 0] = 0;
+            grid[2, 1, 2, 1] = 0;
+            grid[2, 1, 2, 2] = 0;
+
+            //Rangé9
+            grid[2, 2, 0, 0] = 0;
+            grid[2, 2, 0, 1] = 0;
+            grid[2, 2, 0, 2] = 0;
+
+            grid[2, 2, 1, 0] = 0;
+            grid[2, 2, 1, 1] = 5;
+            grid[2, 2, 1, 2] = 0;
+
+            grid[2, 2, 2, 0] = 0;
+            grid[2, 2, 2, 1] = 0;
+            grid[2, 2, 2, 2] = 0;
+        } //OK Algo2
 
         public override string ToString()
         {

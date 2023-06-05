@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#\\sudokuFonction\\sudokuFonction.csproj": {}
+    "D:\\PartieWeb\\Sudoku\\c#\\sudokuFonction\\sudokuFonction.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#\\sudokuFonction\\sudokuFonction.csproj": {
+    "D:\\PartieWeb\\Sudoku\\c#\\sudokuFonction\\sudokuFonction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#\\sudokuFonction\\sudokuFonction.csproj",
+        "projectUniqueName": "D:\\PartieWeb\\Sudoku\\c#\\sudokuFonction\\sudokuFonction.csproj",
         "projectName": "sudokuFonction",
-        "projectPath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#\\sudokuFonction\\sudokuFonction.csproj",
-        "packagesPath": "C:\\Users\\gafacqueur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#\\sudokuFonction\\obj\\",
+        "projectPath": "D:\\PartieWeb\\Sudoku\\c#\\sudokuFonction\\sudokuFonction.csproj",
+        "packagesPath": "C:\\Users\\Sora\\.nuget\\packages\\",
+        "outputPath": "D:\\PartieWeb\\Sudoku\\c#\\sudokuFonction\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\gafacqueur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sora\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -147,7 +150,7 @@ namespace sudokuFonction
             if (!itterationMode)//En mode Non itteration on parcour la rangé a la recherche d du chiffre a purger si la case de depart contient un 6, a chaque case de la rangé il est verifié si un 6 est contenu et effacé si c'est le cas
             {
                 int num = grid[coordCase[0]][coordCase[1]][coordCase[2]][coordCase[3]][0];
-                
+
 
 
                 for (int rb = coordCase[0]; rb < coordCase[0] + 1; rb++)
@@ -735,10 +738,432 @@ namespace sudokuFonction
         /// <br/>Puis si la resolution echoue on tente de remplacer ce chiffre sur la case d'apres
         /// </summary>
         /// <param name="essaie"></param>
-        public void ItterationMinResolve(int essaie) ////////////////A travailler <----- verifier son fonctionnement (possibilité d'optimiser)
+        public bool ItterationMinResolve(int essaie) ////////////////A travailler <----- verifier son fonctionnement (possibilité d'optimiser)
         {
+            List<List<int[]>> indexList = getIndexList();
+            return ResolveAlgo2(indexList);
+        }
+        public bool ResolveAlgo2(List<List<int[]>> index)
+        {
+            int compteur = 0;
+            if (index.Count == 2)
+            {
+                int counterA = 0;
+                int counterB = 0;
+                for (int a = 0; a < 1; a++)
+                {
+                    for (int b = 1; b < 2; b++)
+                    {
+                        if (a != b)
+                        {
+                            if (counterB < index[b].Count)
+                            {
+                                /////////////////////////////////
+                                ItterationCount();
+                                resolveAction = 0;
+                                grid = new List<List<List<List<List<int>>>>>();
+                                GridCluesDisposeAuto();
+                                grid[index[a][counterA][0]]
+                                    [index[a][counterA][1]]
+                                    [index[a][counterA][2]]
+                                    [index[a][counterA][3]] = new List<int>() { index[a][counterA][4] };
+                                grid[index[b][counterB][0]]
+                                    [index[b][counterB][1]]
+                                    [index[b][counterB][2]]
+                                    [index[b][counterB][3]] = new List<int>() { index[b][counterB][4] };
+                                if (ResolveGrid(false))
+                                {
+                                    return true;
+                                }
+                                //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " " + b + " " + counterB);
+
+                                /////////////////////////////////
+
+                                counterB++;
+                                b--;
+                            }
+                            else
+                            {
+                                counterB = 0;
+                            }
+                        }
+                    }
+                    if (counterA + 1 != index[a].Count)
+                    {
+                        counterA++;
+                        a--;
+                    }
+                    else
+                    {
+                        counterA = 0;
+                    }
+                }
+                return false;
+            }
+            else if (index.Count == 3)
+            {
+                int counterA = 0;
+                int counterB = 0;
+                int counterC = 0;
+                for (int a = 0; a < 1; a++)
+                {
+                    for (int b = 1; b < 2; b++)
+                    {
+
+                        for (int c = 2; c < 3; c++)
+                        {
+
+                            if (b != c && a != c && b != a)
+                            {
+                                if (counterC < index[c].Count)
+                                {
+                                    /////////////////////////////////
+                                    ItterationCount();
+                                    resolveAction = 0;
+                                    grid = new List<List<List<List<List<int>>>>>();
+                                    GridCluesDisposeAuto();
+                                    grid[index[a][counterA][0]]
+                                        [index[a][counterA][1]]
+                                        [index[a][counterA][2]]
+                                        [index[a][counterA][3]] = new List<int>() { index[a][counterA][4] };
+                                    grid[index[b][counterB][0]]
+                                        [index[b][counterB][1]]
+                                        [index[b][counterB][2]]
+                                        [index[b][counterB][3]] = new List<int>() { index[b][counterB][4] };
+                                    grid[index[c][counterC][0]]
+                                        [index[c][counterC][1]]
+                                        [index[c][counterC][2]]
+                                        [index[c][counterC][3]] = new List<int>() { index[c][counterC][4] };
+                                    if (ResolveGrid(false))
+                                    {
+                                        return true;
+                                    }
+                                    ResolveGrid(false);
+                                    compteur++;
+                                    //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " " + b + " " + counterB + " " + c + " " + counterC);
+                                    /////////////////////////////////
+
+                                    counterC++;
+                                    c--;
+                                }
+                                else
+                                {
+                                    counterC = 0;
+                                }
+                            }
+                        }
+                        if (counterB + 1 != index[b].Count)
+                        {
+
+                            counterB++;
+                            b--;
+                        }
+                    }
+                    if (counterA + 1 != index[a].Count)
+                    {
+                        counterA++;
+                        a--;
+                    }
+                }
+                return false;
+            }
+            else if (index.Count == 4)
+            {
+                int counterA = 0;
+                int counterB = 0;
+                int counterC = 0;
+                int counterD = 0;
+                for (int a = 0; a < 1; a++)
+                {
+                    for (int b = 1; b < 2; b++)
+                    {
+                        for (int c = 2; c < 3; c++)
+                        {
+
+                            for (int d = 3; d < 4; d++)
+                            {
+
+                                if (b != c && a != c && b != a && d != a && d != b && d != c)
+                                {
+                                    if (counterD < index[d].Count)
+                                    {
+                                        /////////////////////////////////
+                                        ItterationCount();
+                                        resolveAction = 0;
+                                        grid = new List<List<List<List<List<int>>>>>();
+                                        GridCluesDisposeAuto();
+                                        grid[index[a][counterA][0]]
+                                            [index[a][counterA][1]]
+                                            [index[a][counterA][2]]
+                                            [index[a][counterA][3]] = new List<int>() { index[a][counterA][4] };
+                                        grid[index[b][counterB][0]]
+                                            [index[b][counterB][1]]
+                                            [index[b][counterB][2]]
+                                            [index[b][counterB][3]] = new List<int>() { index[b][counterB][4] };
+                                        grid[index[c][counterC][0]]
+                                            [index[c][counterC][1]]
+                                            [index[c][counterC][2]]
+                                            [index[c][counterC][3]] = new List<int>() { index[c][counterC][4] };
+                                        grid[index[d][counterD][0]]
+                                            [index[d][counterD][1]]
+                                            [index[d][counterD][2]]
+                                            [index[d][counterD][3]] = new List<int>() { index[d][counterD][4] };
+                                        if (ResolveGrid(false))
+                                        {
+                                            return true;
+                                        }
+                                        //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD);
+                                        /////////////////////////////////
+
+                                        counterD++;
+                                        d--;
+                                    }
+                                    else
+                                    {
+                                        counterD = 0;
+                                    }
+                                }
+                            }
+                            if (counterC + 1 != index[c].Count)
+                            {
+
+                                counterC++;
+                                c--;
+                            }
+                        }
+                        if (counterB + 1 != index[b].Count)
+                        {
+                            counterB++;
+                            b--;
+                        }
+                    }
+                    if (counterA + 1 != index[a].Count)
+                    {
+                        counterA++;
+                        a--;
+                    }
+                }
+                return false;
+            }
+            else if (index.Count == 5)
+            {
+                int counterA = 0;
+                int counterB = 0;
+                int counterC = 0;
+                int counterD = 0;
+                int counterE = 0;
+                for (int a = 0; a < 1; a++)
+                {
+                    for (int b = 1; b < 2; b++)
+                    {
+                        for (int c = 2; c < 3; c++)
+                        {
+
+                            for (int d = 3; d < 4; d++)
+                            {
+                                for (int e = 4; e < 5; e++)
+                                {
+
+                                    if (b != c &&
+                                        a != c && b != a &&
+                                        d != a && d != b && d != c &&
+                                        e != a && e != b && e != c && e != d)
+                                    {
+                                        if (counterE < index[e].Count)
+                                        {
+                                            /////////////////////////////////
+                                            ItterationCount();
+                                            resolveAction = 0;
+                                            grid = new List<List<List<List<List<int>>>>>();
+                                            GridCluesDisposeAuto();
+                                            grid[index[a][counterA][0]]
+                                                [index[a][counterA][1]]
+                                                [index[a][counterA][2]]
+                                                [index[a][counterA][3]] = new List<int>() { index[a][counterA][4] };
+                                            grid[index[b][counterB][0]]
+                                                [index[b][counterB][1]]
+                                                [index[b][counterB][2]]
+                                                [index[b][counterB][3]] = new List<int>() { index[b][counterB][4] };
+                                            grid[index[c][counterC][0]]
+                                                [index[c][counterC][1]]
+                                                [index[c][counterC][2]]
+                                                [index[c][counterC][3]] = new List<int>() { index[c][counterC][4] };
+                                            grid[index[d][counterD][0]]
+                                                [index[d][counterD][1]]
+                                                [index[d][counterD][2]]
+                                                [index[d][counterD][3]] = new List<int>() { index[d][counterD][4] };
+                                            grid[index[e][counterE][0]]
+                                                [index[e][counterE][1]]
+                                                [index[e][counterE][2]]
+                                                [index[e][counterE][3]] = new List<int>() { index[e][counterE][4] };
+                                            if (ResolveGrid(false))
+                                            {
+                                                return true;
+                                            }
+                                            //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD + " |" + e + " " + counterE);
+                                            /////////////////////////////////
+
+                                            counterE++;
+                                            e--;
+                                        }
+                                        else
+                                        {
+                                            counterE = 0;
+                                        }
+                                    }
+
+                                }
+                                if (counterD + 1 != index[d].Count)
+                                {
+
+                                    counterD++;
+                                    d--;
+                                }
+
+                            }
+                            if (counterC + 1 != index[c].Count)
+                            {
+
+                                counterC++;
+                                c--;
+                            }
+                        }
+                        if (counterB + 1 != index[b].Count)
+                        {
+                            counterB++;
+                            b--;
+                        }
+                    }
+                    if (counterA + 1 != index[a].Count)
+                    {
+                        counterA++;
+                        a--;
+                    }
+                }
+                return false;
+            }
+            else if (index.Count == 6)
+            {
+                int counterA = 0;
+                int counterB = 0;
+                int counterC = 0;
+                int counterD = 0;
+                int counterE = 0;
+                int counterF = 0;
+                for (int a = 0; a < 1; a++)
+                {
+                    for (int b = 1; b < 2; b++)
+                    {
+                        for (int c = 2; c < 3; c++)
+                        {
+
+                            for (int d = 3; d < 4; d++)
+                            {
+                                for (int e = 4; e < 5; e++)
+                                {
+                                    for (int f = 5; f < 6; f++)
+                                    {
+                                        if (b != c &&
+                                            a != c && b != a &&
+                                            d != a && d != b && d != c &&
+                                            e != a && e != b && e != c && e != d &&
+                                            f != a && f != b && f != c && f != d && f != e)
+                                        {
+                                            if (counterF < index[f].Count)
+                                            {
+                                                /////////////////////////////////
+                                                ItterationCount();
+                                                resolveAction = 0;
+                                                grid = new List<List<List<List<List<int>>>>>();
+                                                GridCluesDisposeAuto();
+                                                grid[index[a][counterA][0]]
+                                                    [index[a][counterA][1]]
+                                                    [index[a][counterA][2]]
+                                                    [index[a][counterA][3]] = new List<int>() { index[a][counterA][4] };
+                                                grid[index[b][counterB][0]]
+                                                    [index[b][counterB][1]]
+                                                    [index[b][counterB][2]]
+                                                    [index[b][counterB][3]] = new List<int>() { index[b][counterB][4] };
+                                                grid[index[c][counterC][0]]
+                                                    [index[c][counterC][1]]
+                                                    [index[c][counterC][2]]
+                                                    [index[c][counterC][3]] = new List<int>() { index[c][counterC][4] };
+                                                grid[index[d][counterD][0]]
+                                                    [index[d][counterD][1]]
+                                                    [index[d][counterD][2]]
+                                                    [index[d][counterD][3]] = new List<int>() { index[d][counterD][4] };
+                                                grid[index[e][counterE][0]]
+                                                    [index[e][counterE][1]]
+                                                    [index[e][counterE][2]]
+                                                    [index[e][counterE][3]] = new List<int>() { index[e][counterE][4] };
+                                                grid[index[f][counterF][0]]
+                                                    [index[f][counterF][1]]
+                                                    [index[f][counterF][2]]
+                                                    [index[f][counterF][3]] = new List<int>() { index[f][counterF][4] };
+                                                if (ResolveGrid(false))
+                                                {
+                                                    return true;
+                                                }
+                                                //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD + " |" + e + " " + counterE + " |" + f + " " + counterF);
+                                                /////////////////////////////////
+
+                                                counterF++;
+                                                f--;
+                                            }
+                                            else
+                                            {
+                                                counterF = 0;
+                                            }
+                                        }
+                                    }
+                                    if (counterE + 1 != index[e].Count)
+                                    {
+
+                                        counterE++;
+                                        e--;
+                                    }
+
+                                }
+                                if (counterD + 1 != index[d].Count)
+                                {
+
+                                    counterD++;
+                                    d--;
+                                }
+
+                            }
+                            if (counterC + 1 != index[c].Count)
+                            {
+
+                                counterC++;
+                                c--;
+                            }
+                        }
+                        if (counterB + 1 != index[b].Count)
+                        {
+                            counterB++;
+                            b--;
+                        }
+                    }
+                    if (counterA + 1 != index[a].Count)
+                    {
+                        counterA++;
+                        a--;
+                    }
+                }
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public List<List<int[]>> getIndexList()
+        {
+            int num = 0;
             ItterationCount();//Sans paramettre toute la grille sera compté
 
+            //Création d'un tableau avec les chiffre trié par nombre d'aparition dans la grille
             List<int> array = new List<int>();
             foreach (KeyValuePair<int, int> i in itteration.OrderBy(key => key.Value))
             {
@@ -746,65 +1171,87 @@ namespace sudokuFonction
                 {
                     array.Add(i.Key);
                 }
-
             }
+            int sortie = 0;
+            List<List<int[]>> indexRetenu = new List<List<int[]>>();
 
-            List<int[]> index = new List<int[]>();
-            for (int rb = 0; rb < 3; rb++)
+            while (sortie < array.Count - 1)
             {
-                for (int r = 0; r < 3; r++)
+                //Liste des index a parcourrir
+                List<int[]> index = new List<int[]>();
+                for (int rb = 0; rb < 3; rb++)
                 {
-                    for (int cb = 0; cb < 3; cb++)
+                    for (int r = 0; r < 3; r++)
                     {
-                        for (int c = 0; c < 3; c++)
+                        for (int cb = 0; cb < 3; cb++)
                         {
-                            if (grid[rb][r][cb][c].Count > 1)
+                            for (int c = 0; c < 3; c++)
                             {
-                                if (grid[rb][r][cb][c].Contains(array[essaie]))
+                                if (grid[rb][r][cb][c].Count > 1)
                                 {
-                                    index.Add(new int[] { rb, r, cb, c });
+                                    if (grid[rb][r][cb][c].Contains(array[num]))
+                                    {
+                                        index.Add(new int[] { rb, r, cb, c, array[num] });
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
-            int counter = 0;
-            while (counter < index.Count && essaie<8)
-            {
-                grid = new List<List<List<List<List<int>>>>>();
-                GridCluesDisposeAuto();
-
-                grid[index[counter][0]][index[counter][1]][index[counter][2]][index[counter][3]].Clear();
-                grid[index[counter][0]][index[counter][1]][index[counter][2]][index[counter][3]].Add(array[essaie]);
-
-                resolveAction = 0;
-                resolveAction = 10;
-                if (ResolveGrid(false))
+                if (index.Count != 0)
                 {
-                    counter = index.Count + 1;
+                    indexRetenu.Add(index);
                 }
-                else
-                {
-                    resolveAction = 0;
-                    essaie++;
-                }
+                num++;
+                sortie++;
             }
 
-            counter++;
-            resolveAction = 10;
-            if (!ResolveGrid(false))
+            indexRetenu = IndexSort(indexRetenu);
+            while (indexRetenu.Count > 6)
             {
-                grid = new List<List<List<List<List<int>>>>>();
-                GridCluesDisposeAuto();
-                ResolveGrid(false);
+                //indexRetenu.Reverse();
+                indexRetenu.Remove(indexRetenu[indexRetenu.Count - 1]);
             }
+            return indexRetenu;
         }
-
+        public List<List<int[]>> IndexSort(List<List<int[]>> indexRetenu)
+        {
+            int test = 0;
+            int count = int.MaxValue;
+            List<List<int[]>> listTemp = new List<List<int[]>>();
+            listTemp.Add(indexRetenu[0]);
+            for (int i = 1; i < indexRetenu.Count; i++)
+            {
+                for (int y = 0; y < listTemp.Count; y++)
+                {
+                    if (indexRetenu[i].Count <= listTemp[y].Count)
+                    {
+                        listTemp.Insert(y, indexRetenu[i]);
+                        y = int.MaxValue - 1;
+                    }
+                }
+                if (i == listTemp.Count)
+                {
+                    listTemp.Add(indexRetenu[i]);
+                }
+            }
+            return listTemp;
+        }
+        public int ItterationTotal()
+        {
+            ItterationCount();
+            int temp = 0;
+            foreach (KeyValuePair<int,int> i in itteration)
+            {
+                temp += i.Value;
+            }
+            return temp;
+        }
         public bool ResolveGrid(bool minResolveMode = true)
         {
             while (!CheckAllItteration() && resolveAction < 11 && essaieMinResolve < 5)
             {
+                int compte=ItterationTotal();
                 purgeAction = true;
                 while (purgeAction)
                 {
@@ -821,6 +1268,7 @@ namespace sudokuFonction
             }
             if (CheckAllItteration())
             {
+                resolveAction = int.MaxValue;
                 return true;
             }
             else
