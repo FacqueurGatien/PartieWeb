@@ -71,7 +71,7 @@ namespace sudokuFonction
                     }
                 }
             }
-        }//OK
+        }
         public override string ToString()
         {
             string temp = "";
@@ -100,7 +100,7 @@ namespace sudokuFonction
                 }
             }
             return res;
-        }//OK
+        }
         public string ToStringArray()
         {
             string res = "";
@@ -117,8 +117,11 @@ namespace sudokuFonction
             }
             res.Trim(' ');
             return res;
-        }//OK
+        }
 
+        /// <summary>
+        /// Permet de remettre a 0 le dictionnaire d'iteration
+        /// </summary>
         public void ItterationInit()
         {
             itteration = new Dictionary<int, int>
@@ -134,20 +137,18 @@ namespace sudokuFonction
                 { 9, 0 }
             };
         }
-
-        public void PurgeCluesRow(int[] coordCase, bool itterationMode, int _num = 0)//a travailler
+        /// <summary>
+        /// Permet de purger Une rangé
+        /// </summary>
+        /// <param name="coordCase">Coordonnée de la case a purger</param>
+        /// <param name="itterationMode">Permet d'enclencher le mode itteration pour modifier la facon de purger la rangé</param>
+        public void PurgeCluesRow(int[] coordCase, bool itterationMode)
         {
-            if (!itterationMode)
+            if (!itterationMode)//En mode Non itteration on parcour la rangé a la recherche d du chiffre a purger si la case de depart contient un 6, a chaque case de la rangé il est verifié si un 6 est contenu et effacé si c'est le cas
             {
-                int num = 0;
-                if (_num == 0)
-                {
-                    num = grid[coordCase[0]][coordCase[1]][coordCase[2]][coordCase[3]][0];
-                }
-                else
-                {
-                    num = _num;
-                }
+                int num = grid[coordCase[0]][coordCase[1]][coordCase[2]][coordCase[3]][0];
+                
+
 
                 for (int rb = coordCase[0]; rb < coordCase[0] + 1; rb++)
                 {
@@ -169,7 +170,7 @@ namespace sudokuFonction
                     }
                 }
             }
-            else
+            else //En mode itteration On verifie pour chaque case et chaque chiffre si le chiffre est contenue qu'une fois dans la rangé et le place sur la case si c'est le cas
             {
                 List<List<List<int>>> list = new List<List<List<int>>>();
                 for (int rb = coordCase[0]; rb < coordCase[0] + 1; rb++)
@@ -206,6 +207,11 @@ namespace sudokuFonction
                 }
             }
         }
+        /// <summary>
+        /// Permet le placement d'un chiffre sur une case
+        /// </summary>
+        /// <param name="coordCase">Coordonnée de la case</param>
+        /// <param name="num">chiffre à placé</param>
         public void ReplaceCluesRow(int[] coordCase, int num)
         {
             for (int rb = coordCase[0]; rb < coordCase[0] + 1; rb++)
@@ -226,7 +232,12 @@ namespace sudokuFonction
                 }
             }
         }
-        public void purgeCluesCol(int[] coordCase, bool itterationMode, int _num = 0)//a travailler
+        /// <summary>
+        /// Permet de purger Une Colonne
+        /// </summary>
+        /// <param name="coordCase">Coordonnée de la case a purger</param>
+        /// <param name="itterationMode">Permet d'enclencher le mode itteration pour modifier la facon de purger la colonne</param>
+        public void purgeCluesCol(int[] coordCase, bool itterationMode, int _num = 0)
         {
             if (!itterationMode)
             {
@@ -298,6 +309,11 @@ namespace sudokuFonction
                 }
             }
         }
+        /// <summary>
+        /// Permet de purger Une colonne
+        /// </summary>
+        /// <param name="coordCase">Coordonnée de la case a purger</param>
+        /// <param name="itterationMode">Permet d'enclencher le mode itteration pour modifier la facon de purger la colonne</param>
         public void ReplaceCluesCol(int[] coordCase, int num)
         {
             for (int rb = 0; rb < 3; rb++)
@@ -318,7 +334,12 @@ namespace sudokuFonction
                 }
             }
         }
-        public void purgeCluesBlock(int[] coordCase, bool itterationMode, int _num = 0)//a travailler
+        /// <summary>
+        /// Permet de purger Un Block
+        /// </summary>
+        /// <param name="coordCase">Coordonnée de la case a purger</param>
+        /// <param name="itterationMode">Permet d'enclencher le mode itteration pour modifier la facon de purger le block</param>
+        public void purgeCluesBlock(int[] coordCase, bool itterationMode, int _num = 0)
         {
             if (!itterationMode)
             {
@@ -388,6 +409,11 @@ namespace sudokuFonction
                 }
             }
         }
+        /// <summary>
+        /// Permet de purger Un Block
+        /// </summary>
+        /// <param name="coordCase">Coordonnée de la case a purger</param>
+        /// <param name="itterationMode">Permet d'enclencher le mode itteration pour modifier la facon de purger le block</param>
         public void ReplaceCluesBlock(int[] coordCase, int num)
         {
             for (int rb = coordCase[0]; rb < coordCase[0] + 1; rb++)
@@ -409,6 +435,11 @@ namespace sudokuFonction
             }
         }
 
+        /// <summary>
+        /// Permet d'effacer le chiffre d'une Rangé/Colonne/Block Sauf sur la case Specifié
+        /// </summary>
+        /// <param name="coord">Coordonnée de la case du chiffre a purger</param>
+        /// <param name="num">Chiffre a purger</param>
         public void EraseClues(int[] coord, int num)
         {
             int before = grid[coord[0]][coord[1]][coord[2]][coord[3]].Count;
@@ -420,7 +451,9 @@ namespace sudokuFonction
 
         }
 
-
+        /// <summary>
+        /// Permet de remettre a 0 le dictionnaire d'iteration
+        /// </summary>
         public void Reset()
         {
             itteration[1] = 0;
@@ -434,14 +467,12 @@ namespace sudokuFonction
             itteration[9] = 0;
 
             array = new List<List<int>>();
-        }//a travailler
+        }
 
-        public void PurgeCheck()
-        {
-
-
-
-        }//a travailler
+        /// <summary>
+        /// Permet de parcourrir toute la grille a la recherche de case a Purger
+        /// </summary>
+        /// <param name="itterationMode">Active ou desactive le mode itteration</param>
         public void PurgeArray(bool itterationMode)//a travailler
         {
             purgeAction = false;
@@ -473,11 +504,11 @@ namespace sudokuFonction
             }
 
         }
-        public void PurgeCaseOneDigit(int[] coord, bool itterationMode, int num = 0)
+        public void PurgeCaseOneDigit(int[] coord, bool itterationMode)
         {
-            PurgeCluesRow(coord, itterationMode, num);
-            purgeCluesCol(coord, itterationMode, num);
-            purgeCluesBlock(coord, itterationMode, num);
+            PurgeCluesRow(coord, itterationMode);
+            purgeCluesCol(coord, itterationMode);
+            purgeCluesBlock(coord, itterationMode);
         }
 
         public void ItterationCount(List<List<List<int>>> array)
@@ -495,8 +526,10 @@ namespace sudokuFonction
                 }
             }
         }
+
         public void ItterationCount()
         {
+            ItterationInit();
             for (int rb = 0; rb < 3; rb++)
             {
                 for (int r = 0; r < 3; r++)
@@ -539,7 +572,7 @@ namespace sudokuFonction
         public bool CheckAllItteration()
         {
             return CheckGridComplete() == 81;
-        }//a travailler
+        }
 
         public int[] setLine(int cursor)
         {
@@ -566,7 +599,7 @@ namespace sudokuFonction
                 default:
                     return null;
             }
-        }//a travailler
+        }
         /// <summary>
         /// permet de recuperer le numero d'une ligne colonne ou block a partir de Coordonné
         /// </summary>
@@ -614,7 +647,7 @@ namespace sudokuFonction
             {
                 return 0;
             }
-        }//a travailler
+        }
 
 
 
@@ -668,7 +701,7 @@ namespace sudokuFonction
                     }
                 }
             }
-        }//OK
+        }
 
         /// <summary>
         /// Permet de copier un block a partir de ses coordonnées 
@@ -694,12 +727,16 @@ namespace sudokuFonction
                     }
                 }
             }
-        }//OK
-
-        public void ItterationMinResolve(int essaie)
+        }
+        /// <summary>
+        /// Permet de changer l'algorythme de Purge Quand la resolution classique n'est pas suffisante
+        /// <br/>On cherche les case avec les chiffre ayant le moins d'occurence, puis on cible les case ou ils sont avec d'autre chiffre
+        /// <br/>Puis a tour de role on remplace la case par ce chiffre et on retente la resolution
+        /// <br/>Puis si la resolution echoue on tente de remplacer ce chiffre sur la case d'apres
+        /// </summary>
+        /// <param name="essaie"></param>
+        public void ItterationMinResolve(int essaie) ////////////////A travailler <----- verifier son fonctionnement (possibilité d'optimiser)
         {
-
-            ItterationInit();
             ItterationCount();//Sans paramettre toute la grille sera compté
 
             List<int> array = new List<int>();
@@ -742,12 +779,10 @@ namespace sudokuFonction
                 grid[index[counter][0]][index[counter][1]][index[counter][2]][index[counter][3]].Add(array[essaie]);
 
                 resolveAction = 0;
-                Console.WriteLine(ToString);
                 resolveAction = 10;
                 if (ResolveGrid(false))
                 {
                     counter = index.Count + 1;
-
                 }
                 else
                 {
@@ -766,7 +801,7 @@ namespace sudokuFonction
             }
         }
 
-        public bool ResolveGrid(bool minResolveMode = true)//a travailler
+        public bool ResolveGrid(bool minResolveMode = true)
         {
             while (!CheckAllItteration() && resolveAction < 11 && essaieMinResolve < 5)
             {
@@ -782,7 +817,7 @@ namespace sudokuFonction
                     essaieMinResolve++;
                     ItterationMinResolve(essaieMinResolve);
                 }
-                Console.WriteLine(ToString());
+                //Console.WriteLine(ToString());
             }
             if (CheckAllItteration())
             {

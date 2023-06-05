@@ -68,7 +68,7 @@ namespace sudokuFonction
                 {
                     return false;
                 }
-                Console.WriteLine(grid.ToString());
+                //Console.WriteLine(grid.ToString());
             }
 
 /*            for (int i = 0; i < pattern2.Length; i++)
