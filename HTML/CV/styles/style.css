@@ -1,0 +1,135 @@
+*
+{
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html
+{
+    font-size: 62.5%;
+}
+
+body
+{
+    font-size: 1.6rem;
+    margin: 0;
+    background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+p
+{
+    margin: 0 1rem 0 1rem;
+}
+#header
+{
+    width: 100%;
+    background-image: url("/img/photo.jpeg");
+    background-size: cover;
+    height: 32vw;
+}
+#main
+{
+}
+#nav
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 5rem;
+    justify-content: space-around;
+    overflow: auto;
+    color:cornflowerblue ;
+    background-color: rgba(0,0,0,0.2);
+}
+#nav > a
+{
+    text-decoration: none;
+    color:cornflowerblue ;
+}
+#section
+{
+    display: flex;
+    flex-wrap:wrap;
+    overflow: auto;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.5);
+}
+#section > article 
+{
+    width: 50%;
+    text-align: center;
+    margin-bottom: 1rem;
+    border: 1rem ridge whitesmoke;
+}
+#section > article > p
+{
+    margin-bottom: 1rem;
+}
+#section > h1
+{
+    margin: 0;
+    margin: 5rem;
+    width: 100%;
+    text-align: center;
+}
+#section > div
+{
+    width: 100%;
+    margin: 5rem;      
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#section > div > article
+{
+    width: 30%;
+    border: 1rem ridge whitesmoke;
+    margin: 1rem;
+    overflow: auto;
+}
+#section > div > article > h2, #section > div > article > h3 
+{
+    text-align: center;
+}
+#section > div > article > ul
+{
+    list-style-position: inside;
+}
+#section > div > article > ul > li
+{
+    padding: 0 3rem 1rem 0;
+}
+
+#section > div > ul
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+#section > div > ul > li
+{
+    margin: 1.5rem;
+}
+#section > div > div
+{
+    width: 30%;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1rem ridge whitesmoke;
+}
+#section > div > div > h2
+{
+    text-align: center;
+}
+#section > div > div > ul
+{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-position: inside;
+    margin-left: 3rem;
+}
+#section > div > div > ul >li
+{
+    width: 50%;
+}

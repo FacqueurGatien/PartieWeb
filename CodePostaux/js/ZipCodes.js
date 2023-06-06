@@ -19,6 +19,14 @@ class ZipCodes{
         }
         return this.zipCodesCollection;
     }
+
+    GetFirst(){
+        try{
+            return this.zipCodesCollection[0];
+        }catch{
+            console.log("Collection Vide");
+        };
+    }
 }
 
 export {ZipCodes}

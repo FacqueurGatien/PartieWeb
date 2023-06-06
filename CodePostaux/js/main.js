@@ -1,29 +1,60 @@
 import { ZipCodes } from "./ZipCodes.js";
 import { SearchZipCodes } from "./SearchZipCodes.js";
 import { SearchCities } from "./SearchCities.js";
+import { ZipCode } from "./ZipCode.js";
 
-const a = new ZipCodes("https://arfp.github.io/tp/web/frontend/zipcodes/zipcodes.json");
+const lien="https://arfp.github.io/tp/web/frontend/zipcodes/zipcodes.json";
+const zipCodes = new ZipCodes(lien);
+const tab = await zipCodes.CreateArray();
+const keys = await new ZipCode(zipCodes.GetFirst()).GetKeys();
 
-const tab = await a.CreateArray();
+const saisie =document.getElementById("saisie");
+const table = document.getElementById("tableResult");
 
-let ZipCodeList=new SearchZipCodes(tab,"Uckange").GetZipCodes();
-let CityList=new SearchCities(tab,ZipCodeList).getCities();
-var saisie =document.getElementById("saisie");
 
-console.log(saisie);
-function GetSaisie(){
-    let pattern = new RegExp("[\d]{5}");
-    if(pattern.test(saisie)){
+if(saisie!=null){
 
-    }
+    saisie.addEventListener('input',async (event)=>{              
+        let test = await GetSaisie();
+        if(saisie.value=="" || saisie.value.length<3 || test.length==0){
+            while (table.firstChild) {
+                table.removeChild(table.firstChild);
+              }
+
+        }
+        else{
+            while (table.firstChild) {
+                table.removeChild(table.firstChild);
+            }
+            let array = await GetSaisie(); 
+            if(array!=null){
+                let row = document.createElement('tr');
+                for(let key of keys){
+                    let colTitre = document.createElement("th");
+                    colTitre.textContent=key;
+                    row.appendChild(colTitre);
+                }
+                table.appendChild(row);
+                for(let city of array){
+
+                    let row = document.createElement('tr');
+                    for(let data of await new ZipCode(city).GetValues()){
+  
+                        let colData = document.createElement("td");
+                        colData.textContent=data;
+                        row.appendChild(colData);
+                    }
+                    table.appendChild(row);
+                }
+            }
+        } 
+    })
 }
 
-for(let z of ZipCodeList){
-    console.log(z)
+async function GetSaisie(){
+    let cityList= await new SearchCities(tab).GetCities(saisie.value);
+    return cityList;
 }
-console.log("______")
-for(let c of CityList){
-    console.log(c)
-}
+
 
 

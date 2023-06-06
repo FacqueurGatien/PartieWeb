@@ -1,14 +1,13 @@
 class ZipCode{
     constructor(_zipCode){
-        this.zipCode=_zipCode;
-        this.zipDetail=[];
+        Object.assign(this,_zipCode)
     }
 
-    ZipDetail(){
-        for(let d of this.zipCode){
-            this.zipDetail.push(d);
-        }
-        return this.zipDetail;
+    async GetKeys(){
+        return Object.keys(this);
+    }
+    async GetValues(){
+        return Object.values(this);
     }
 }
 export {ZipCode}

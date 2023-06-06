@@ -10,3 +10,12 @@ body
 {
     font-size: 1.6rem;
 }
+table
+{
+    border: 5px double black;
+    border-collapse: collapse;
+}
+th,td
+{
+    border: 2px solid black;
+}
