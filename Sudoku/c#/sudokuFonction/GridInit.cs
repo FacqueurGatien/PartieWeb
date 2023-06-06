@@ -23,7 +23,7 @@ namespace sudokuFonction
         public GridInit()
         {
             grid = new int[3, 3, 3, 3];
-            DisposingArray9();
+            DisposingArray();
             essaie = 0;
         }
 

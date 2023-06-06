@@ -13,7 +13,6 @@ const t_foot=document.getElementById("tableau_f");
 function createTitre(){
     let row = document.createElement("tr");
 
-
     for(let content of cartesList.getFirst().getKeys()){
             let cell = document.createElement("th");
             cell.textContent=content;
@@ -39,45 +38,32 @@ function createTable(){
 }
 
 function createTable2(stat){
-    let maximum=0;
-    let idCarte=0;
-
-    let test = cartesList.getFirst()
-
-    if(test[stat]-test[stat]==0){
+    let array = cartesList.getCarteMaxStatArray(stat);
+    let count=0;
+    for(let carte of array){
         let row = document.createElement("tr");
         let rowTitre = document.createElement("tr");
-    
-        for(let carte of cartesList.cartes){
-            if(carte[stat]>maximum){
-                maximum=carte[stat]
-                idCarte=carte["id"];
-            }  
-        }
         t_foot.appendChild(rowTitre);
         let cellTitre = document.createElement("th");
-        cellTitre.colSpan=cartesList.getFirst().getKeys().length;
-    
-
-        cellTitre.textContent="Carte avec la plus grande stat "+"\""+stat+"\"";
+        cellTitre.colSpan=carte.getKeys().length-1;
+        cellTitre.textContent="Carte avec la plus grande stat "+"\""+stat[count]+"\"";
         rowTitre.appendChild(cellTitre);
-        for(let c of cartesList.getCarteId(idCarte).getValues()){
-    
+        for(let c of cartesList.getCarteId(carte['id']).getValues()){
             let cell = document.createElement("td");
             cell.textContent=c;
             row.appendChild(cell);
         }
-    
         t_foot.appendChild(row);
+        count++;
     }
-
 }
 
 function createFooter(){
-    for(let i of cartesList.getFirst().getKeys()){
-    createTable2(i);
-    }
-
+//     for(let i of cartesList.getFirst().getKeys()){
+//     createTable2(i);
+//     }
+    let cartes = ['attack','armor','played','victory'];
+    createTable2(cartes);
 
 }
 

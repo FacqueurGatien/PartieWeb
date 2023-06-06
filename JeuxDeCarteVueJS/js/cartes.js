@@ -42,11 +42,14 @@ class cartes{
         }
         return this.getCarteId(idCarte);
     }
+
     getCarteMaxStatArray(stat){
+        let count=0;
         let array = stat;
         let arrayToReturn=[];
-        for(let a of array){
-            arrayToReturn.push(this.getCarteMaxStat(a));
+        for(let stat of array){
+            arrayToReturn.push(this.getCarteMaxStat(stat));
+            count++;
         }
         return arrayToReturn;
     }

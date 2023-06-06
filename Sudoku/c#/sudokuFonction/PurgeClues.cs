@@ -1104,7 +1104,7 @@ namespace sudokuFonction
                                                 {
                                                     return true;
                                                 }
-                                                Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD + " |" + e + " " + counterE + " |" + f + " " + counterF);
+                                                //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD + " |" + e + " " + counterE + " |" + f + " " + counterF);
                                                 /////////////////////////////////
 
                                                 counterF++;

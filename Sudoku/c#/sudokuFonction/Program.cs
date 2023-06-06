@@ -9,7 +9,7 @@ namespace sudokuFonction
             bool test = true;
             bool algoRandom = false;
             AutoGenerateGrid grid = new AutoGenerateGrid();
-
+            Console.WriteLine(grid.grid.ToString());
             RowClueDispose clues = new RowClueDispose(grid.grid);
 
             List<List<List<int>>> tab = clues.SearchCluesRow9();
@@ -19,7 +19,7 @@ namespace sudokuFonction
             Console.WriteLine(resolve.ToString());
             Console.WriteLine("\n\n\n___________________________________________________________\n");
 
-            if (resolve.ItterationTotal()<330)
+            if (resolve.ItterationTotal()<300)
             {
                 if (resolve.ResolveGrid())
                 {
