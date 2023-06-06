@@ -840,7 +840,7 @@ namespace sudokuFonction
                                     }
                                     ResolveGrid(false);
                                     compteur++;
-                                    //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " " + b + " " + counterB + " " + c + " " + counterC);
+                                    Console.WriteLine(ToString() + "\n" + compteur + "\n" + a + " " + counterA + " " + b + " " + counterB + " " + c + " " + counterC);
                                     /////////////////////////////////
 
                                     counterC++;
@@ -912,7 +912,7 @@ namespace sudokuFonction
                                         {
                                             return true;
                                         }
-                                        //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD);
+                                        Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD);
                                         /////////////////////////////////
 
                                         counterD++;
@@ -1000,7 +1000,7 @@ namespace sudokuFonction
                                             {
                                                 return true;
                                             }
-                                            //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD + " |" + e + " " + counterE);
+                                            Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD + " |" + e + " " + counterE);
                                             /////////////////////////////////
 
                                             counterE++;
@@ -1104,7 +1104,7 @@ namespace sudokuFonction
                                                 {
                                                     return true;
                                                 }
-                                                //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD + " |" + e + " " + counterE + " |" + f + " " + counterF);
+                                                Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD + " |" + e + " " + counterE + " |" + f + " " + counterF);
                                                 /////////////////////////////////
 
                                                 counterF++;
@@ -1206,8 +1206,19 @@ namespace sudokuFonction
                 sortie++;
             }
 
-            indexRetenu = IndexSort(indexRetenu);
-            while (indexRetenu.Count > 6)
+            indexRetenu = IndexSort(indexRetenu);//A paufinner (tester les diferente plage ou il est plus interessant d'utiliser moins d'index)
+            int indexNum = 0;
+            if (ItterationTotal()>300)
+                indexNum = 6;
+            else if(ItterationTotal()>270)
+                indexNum = 5;
+            else if (ItterationTotal()>240)
+                indexNum = 4;
+            else if (ItterationTotal() > 210)
+                indexNum = 3;
+            else
+                indexNum = 2;
+            while (indexRetenu.Count > indexNum)
             {
                 //indexRetenu.Reverse();
                 indexRetenu.Remove(indexRetenu[indexRetenu.Count - 1]);

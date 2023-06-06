@@ -19,7 +19,7 @@ namespace sudokuFonction
             Console.WriteLine(resolve.ToString());
             Console.WriteLine("\n\n\n___________________________________________________________\n");
 
-            if (resolve.ItterationTotal()<300)
+            if (resolve.ItterationTotal()<330)
             {
                 if (resolve.ResolveGrid())
                 {
