@@ -5,18 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
-    <script src="js/main.js" type="module"></script>
+    <script src="js/mainTable.js" type="module"></script>
     <title>Code Postaux</title>
 </head>
 <body id="body">
     <form action="GET">
-        <input id="saisie" list="datalistResult" type="search" name="datalistResult" placeholder="00000" />
+        <input id="saisie" type="text" placeholder="00000" />
         <button type="submit">Valider</button>
         <button type="reset">Reset</button>
-        <br/>
-        <datalist id="datalistResult">
-
-        </datalist>
     </form>
+    <table id="tableResult">
+
+    </table>
 </body>
 </html>

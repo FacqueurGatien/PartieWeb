@@ -9,46 +9,47 @@ const tab = await zipCodes.CreateArray();
 const keys = await new ZipCode(zipCodes.GetFirst()).GetKeys();
 
 const saisie =document.getElementById("saisie");
-const datalist = document.getElementById("datalistResult");
+const table = document.getElementById("tableResult");
 
-let array = await GetSaisie(); 
 
-if(array!=null){
-
-    for(let city of array){
-        let row = document.createElement('option');
-        row.value=city.nomCommune;
-        row.textContent=city.codePostal;
-        datalist.appendChild(row);                     
-    }
-}
-
-/**if(saisie!=null){
+if(saisie!=null){
 
     saisie.addEventListener('input',async (event)=>{              
         let test = await GetSaisie();
         if(saisie.value=="" || saisie.value.length<3 || test.length==0){
-            while (datalist.firstChild) {
-                datalist.removeChild(datalist.firstChild);
+            while (table.firstChild) {
+                table.removeChild(table.firstChild);
               }
 
         }
         else{
-            while (datalist.firstChild) {
-                datalist.removeChild(datalist.firstChild);
+            while (table.firstChild) {
+                table.removeChild(table.firstChild);
             }
             let array = await GetSaisie(); 
             if(array!=null){
+                let row = document.createElement('tr');
+                for(let key of keys){
+                    let colTitre = document.createElement("th");
+                    colTitre.textContent=key;
+                    row.appendChild(colTitre);
+                }
+                table.appendChild(row);
                 for(let city of array){
-                        let row = document.createElement('option');
-                        row.value=city.nomCommune;
-                        row.textContent=city.nomCommune;
-                        datalist.appendChild(row);                     
+
+                    let row = document.createElement('tr');
+                    for(let data of await new ZipCode(city).GetValues()){
+  
+                        let colData = document.createElement("td");
+                        colData.textContent=data;
+                        row.appendChild(colData);
+                    }
+                    table.appendChild(row);
                 }
             }
         } 
     })
-}*/
+}
 
 async function GetSaisie(){
     let cityList= await new SearchCities(tab).GetCities(saisie.value);

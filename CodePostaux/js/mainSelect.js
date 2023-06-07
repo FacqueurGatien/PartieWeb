@@ -13,17 +13,8 @@ const datalist = document.getElementById("datalistResult");
 
 let array = await GetSaisie(); 
 
-if(array!=null){
 
-    for(let city of array){
-        let row = document.createElement('option');
-        row.value=city.nomCommune;
-        row.textContent=city.codePostal;
-        datalist.appendChild(row);                     
-    }
-}
-
-/**if(saisie!=null){
+if(saisie!=null){
 
     saisie.addEventListener('input',async (event)=>{              
         let test = await GetSaisie();
@@ -48,7 +39,7 @@ if(array!=null){
             }
         } 
     })
-}*/
+}
 
 async function GetSaisie(){
     let cityList= await new SearchCities(tab).GetCities(saisie.value);
