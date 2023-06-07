@@ -11,6 +11,7 @@ class carte{
     }
 
     getKeys(){
+
         return Object.keys(this);
     }
 }

@@ -14,6 +14,15 @@ const app = {
       /**@var {Cartes} cartes**/ 
       this.cartes = new cartes(lien);
       await this.cartes.fetchJson();
+    },
+    computed: {
+      clesCarte(){
+        return this.cartes.getFirst().getKeys();
+      },
+      forColspan(){
+        return this.cartes.getFirst().getKeys().length;
+      }
     }
   }
   Vue.createApp(app).mount('#app')
+

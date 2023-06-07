@@ -13,11 +13,11 @@
 <body>
     <div id="app">
         <h1>{{ titre }}</h1>
-        <table v-if="cartes != null && cartes.cartes.length>0">
+        <table v-if="cartes != null && cartes.cartes.length > 0">
 
             <thead>
                 <tr>
-                    <th v-for="attribut in cartes.getFirst().getKeys()">
+                    <th v-for="attribut in clesCarte">
                         {{ attribut }}
                     </th>
                 </tr>
@@ -30,8 +30,30 @@
                     </td>
                 </tr>
             </tbody>
+            <tfoot>
+                <template v-for="stat in ['attack','armor','played','victory']">
+                    <tr>
+                        <th :colspan="forColspan">
+                            Joueur avec la stat "{{ stat }}" la plus élevée
+                        </th>
+                    </tr>
+                    <tr>
+                        <th v-for="attribut in cartes.getFirst().getKeys()">
+                            {{ attribut }}
+
+                        </th>
+                    </tr>
+                    <tr>
+                        <td v-for="joueur in cartes.getCarteMaxStat(stat)">
+                            {{ joueur }}
+                        </td>
+                    </tr>
+                </template>
+            </tfoot>
         </table>
-        <div v-if="cartes != null && cartes.cartes.length>0">
+
+
+        <!--<div v-if="cartes != null && cartes.cartes.length>0">
             <table v-for="stat in ['attack','armor','played','victory']">
                 <tbody>
                     <tr>
@@ -52,7 +74,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div>-->
     </div>
 </body>
 </html> 
