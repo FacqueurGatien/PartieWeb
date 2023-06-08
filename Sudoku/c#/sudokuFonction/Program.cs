@@ -7,11 +7,10 @@ namespace sudokuFonction
         static void Main(string[] args)
         {
             bool test = true;
-            bool algoRandom = false;
 
             //1 Creation d'une instance de grid ()
             AutoGenerateGrid grid = new AutoGenerateGrid();
-            grid.grid.DisposingArray();
+            grid.grid.DisposingArray4();
             Console.WriteLine(grid.grid.ToString());
             RowClueDispose clues = new RowClueDispose(grid.grid);
 
@@ -22,7 +21,7 @@ namespace sudokuFonction
             Console.WriteLine(resolve.ToString());
             Console.WriteLine("\n\n\n___________________________________________________________\n");
 
-            if (resolve.ItterationTotal()<100)
+            if (resolve.ItterationTotal()<300)
             {
                 if (resolve.ResolveGrid())
                 {

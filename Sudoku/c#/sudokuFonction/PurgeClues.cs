@@ -12,15 +12,14 @@ namespace sudokuFonction
 {
     public class PurgeClues
     {
-        public List<List<List<int>>> cluesMachines;
+        public List<List<List<int>>> cluesMachines;//Tableau d'indice
         public List<List<List<List<List<int>>>>> grid;
         public List<List<int>> array;
         public Dictionary<int, int> itteration;
         public int essaieMinResolve;
-
-
         public int resolveAction;
         public bool purgeAction;
+
         public PurgeClues(List<List<List<int>>> _cluesMachines)
         {
             cluesMachines = _cluesMachines;
@@ -1056,7 +1055,6 @@ namespace sudokuFonction
                     {
                         for (int c = 2; c < 3; c++)
                         {
-
                             for (int d = 3; d < 4; d++)
                             {
                                 for (int e = 4; e < 5; e++)
