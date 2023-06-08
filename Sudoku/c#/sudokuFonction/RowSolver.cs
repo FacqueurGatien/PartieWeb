@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace sudokuFonction
 {
@@ -13,50 +14,35 @@ namespace sudokuFonction
         public Dictionary<int, int> itteration;
         public int itterationMin;
         public int min;
-        public int max;
         public List<int> index;
+        /// <summary>
+        /// Constructeur qui prend une rangée d'indice en parametre
+        /// </summary>
+        /// <param name="_array"></param>
         public RowSolver(List<List<int>> _array)
         {
             array = _array;
-
-            itteration = new Dictionary<int, int>();
-            itteration.Add(1, 0);
-            itteration.Add(2, 0);
-            itteration.Add(3, 0);
-            itteration.Add(4, 0);
-            itteration.Add(5, 0);
-            itteration.Add(6, 0);
-            itteration.Add(7, 0);
-            itteration.Add(8, 0);
-            itteration.Add(9, 0);
+            itteration = new Dictionary<int, int>
+            {
+                { 1, 0 },
+                { 2, 0 },
+                { 3, 0 },
+                { 4, 0 },
+                { 5, 0 },
+                { 6, 0 },
+                { 7, 0 },
+                { 8, 0 },
+                { 9, 0 }
+            };
 
             min = int.MaxValue;
-            max = 0;
             itterationMin = int.MaxValue;
             index = new List<int>();
         }
-        public void EditArray(List<List<int>> _array)
-        {
-            array = _array;
-            Reset();
-        }
-        public override string ToString()
-        {
-            string result = "";
-            result = $"{ShowIn(array[0])} - {ShowIn(array[1])} - {ShowIn(array[2])} | {ShowIn(array[3])} - {ShowIn(array[4])} - {ShowIn(array[5])} | {ShowIn(array[6])} - {ShowIn(array[7])} - {ShowIn(array[8])}";
-            return result;
-        }
-        public string ShowIn(List<int> _array)
-        {
-            string result = "";
-            foreach (int i in _array)
-            {
-                result += " " + i;
-            }
-            return result;
-        }
-
-        public void MinMax()
+        /// <summary>
+        /// Permet de chercher quel est le nombre d'indice minimum present dans une case (a l'exception de 1)
+        /// </summary>
+        public void Min()
         {
             foreach (List<int> i in array)
             {
@@ -66,13 +52,12 @@ namespace sudokuFonction
                     {
                         min = i.Count;
                     }
-                    if (max < i.Count)
-                    {
-                        max = i.Count;
-                    }
                 }
             }
         }
+        /// <summary>
+        /// Initialise la liste d'index en y enregistrant toute les case ou le nombre d'indice est egale au minimum
+        /// </summary>
         public void IndexInit()
         {
             for (int i = 0; i < array.Count; i++)
@@ -83,6 +68,9 @@ namespace sudokuFonction
                 }
             }
         }
+        /// <summary>
+        /// Tente de cibler l'(les) index qui cible la(les) case(s) avec  contenant le chiffre avec l'itteration minimal
+        /// </summary>
         public void CiblerIndex()
         {
             List<int> temp = new List<int>();
@@ -98,6 +86,9 @@ namespace sudokuFonction
                 index = temp;
             }
         }
+        /// <summary>
+        /// Permet de chercher le chiffre  qui aparait le moin dans la rangée d'indice et qui est dans la case parcouru.
+        /// </summary>
         public void ItterationMinIndex()
         {
             int temp = 0;
@@ -114,9 +105,13 @@ namespace sudokuFonction
             }
             itterationMin = temp;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numToTest"></param>
+        /// <returns></returns>
         public bool ContainMin(int numToTest)
         {
-            bool test = false;
             foreach (int i in index)
             {
                 if (array[i].Contains(numToTest))
@@ -126,6 +121,10 @@ namespace sudokuFonction
             }
             return false;
         }
+        /// <summary>
+        /// Tente de reduire la liste d'index si celle ci est superieur a 1
+        /// en faisant la somme des itteration des chiffres present dans chaque case de la liste d'index et les compare entre elles
+        /// </summary>
         public void ReduceIndex()
         {
             if (index.Count > 1)
@@ -159,7 +158,14 @@ namespace sudokuFonction
                 index = temp;
             }
         }
-        public void RandomizeChoice(bool random)
+        /// <summary>
+        /// Si la liste d'index est egale a 0 return false Sinon return true<br/>
+        /// Si la liste d'index est egale a 1 : Selection d'un nombre aleatoire dans la case de l'index et apelle de la fonction de purge<br/>
+        /// Si la liste d'index est supperieure a 1 : Selection d'un index aleatoire, puis d'un chiffre aleatoire dans l'index puis apelle de la fonction de purge 
+        /// </summary>
+        /// <param name="random">Permet d'activer la selection totalement aleatoire sur true, et semi aleatoire sur false</param>
+        /// <returns></returns>
+        public bool RandomizeChoice(bool random)
         {
             if (index.Count > 0)
             {
@@ -169,12 +175,6 @@ namespace sudokuFonction
                 int indice = 0;
                 if (index.Count > 1)
                 {
-                    /*                    rand = index[new Random().Next(0, index.Count)];
-                                        int randIn = new Random().Next(0, min);
-                                        temp = new List<int>() { array[rand][randIn] };
-                                        array[rand] = temp;
-                                        numToPurge = array[rand][0];*/
-
                     rand = index[new Random().Next(0, index.Count)];
                     if (random)
                     {
@@ -191,18 +191,23 @@ namespace sudokuFonction
                 }
                 else
                 {
-                    /*                    rand = index[0];
-                                        temp = new List<int>() { itterationMin };
-                                        array[rand] = temp;
-                                        numToPurge = itterationMin;*/
-                    rand = index[0];
-                    indice = SelectIndice(rand);
+                    indice = SelectIndice(index[0]);
                     array[index[0]] = new List<int>() { indice };
                     numToPurge = indice;
                 }
                 PurgeArray(numToPurge);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
+        /// <summary>
+        /// Permet de selectionner plus ou moins aleatoirement un chiffre dans la case cibler
+        /// </summary>
+        /// <param name="num">index d'une case du tableau d'inddices</param>
+        /// <returns>le chiffre choisit par la fonction</returns>
         public int SelectIndice(int num)
         {
             int temp = 0;
@@ -239,13 +244,17 @@ namespace sudokuFonction
             }
             return tempToreturn;
         }
-        public void PurgeCheck()
+        /// <summary>
+        /// Permet de verifier si la purge est possible sur toute la rangee d'indices
+        /// </summary>
+        /// <returns>True si la purge c'est bien passé</returns>
+        public bool PurgeCheck()
         {
-            bool checkPurge = true;
+            bool checkPurgeOK = true;
             int compteur = 10;
-            while (checkPurge && compteur > 0)
+            while (checkPurgeOK && compteur > 0)
             {
-                checkPurge = false;
+                checkPurgeOK = false;
                 Reset();
                 ItterationInit();
                 foreach (List<int> i in array)
@@ -253,14 +262,16 @@ namespace sudokuFonction
                     if (i.Count == 1 && itteration[i[0]] > 1)
                     {
                         PurgeArray(i[0]);
-                        checkPurge = true;
+                        checkPurgeOK = true;
                     }
                 }
-                //                Console.WriteLine(ToString() + "-Purge");
                 compteur--;
             }
-
+            return !checkPurgeOK;
         }
+        /// <summary>
+        /// Permet d'initialiser (mettre a jours) la liste d'itteration des chiffre de la liste d'indices
+        /// </summary>
         public void ItterationInit()
         {
             foreach (List<int> it in array)
@@ -271,6 +282,10 @@ namespace sudokuFonction
                 }
             }
         }
+        /// <summary>
+        /// Permet de Purger un chiffre de la liste d'indice
+        /// </summary>
+        /// <param name="nb">chiffre a purger de la case</param>
         public void PurgeArray(int nb)
         {
             foreach (List<int> i in array)
@@ -281,6 +296,9 @@ namespace sudokuFonction
                 }
             }
         }
+        /// <summary>
+        /// Permet la remise a plat de l'instance avant un nouveau tour de boucle
+        /// </summary>
         public void Reset()
         {
             itteration[1] = 0;
@@ -294,10 +312,14 @@ namespace sudokuFonction
             itteration[9] = 0;
 
             min = int.MaxValue;
-            max = 0;
             itterationMin = int.MaxValue;
             index = new List<int>();
         }
+        /// <summary>
+        /// Verifie la presence de chaque chiffre de 1 a 9 dans la rangee
+        /// Si chaque chiffre est present 1 fois, alors la rangee est resolu
+        /// </summary>
+        /// <returns>Renvoir true si la somme des itteration est egale a 9</returns>
         public bool ItterationBool()
         {
             ItterationInit();
@@ -313,21 +335,37 @@ namespace sudokuFonction
 
             return temp == 9;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="random"></param>
+        /// <returns></returns>
         public int[] Resolve(bool random = false)
         {
             int compteur = 0;
             while (!ItterationBool() && compteur < 9)
             {
-                MinMax();
+                Min();
                 IndexInit();
                 ItterationMinIndex();
                 ReduceIndex();
                 CiblerIndex();
-                RandomizeChoice(random);
-                PurgeCheck();
-                Reset();
-                //                Console.WriteLine(ToString());
-                compteur++;
+                if (RandomizeChoice(random))
+                {
+                    if (PurgeCheck())
+                    {
+                        Reset();
+                        compteur++;
+                    }
+                    else
+                    {
+                        compteur=int.MaxValue;
+                    }
+                }
+                else
+                {
+                    compteur = int.MaxValue;
+                }
             }
             int[] rowToReturn = new int[9];
             for (int i = 0; i < rowToReturn.Length; i++)
@@ -340,6 +378,27 @@ namespace sudokuFonction
                 return null;
             }
             return rowToReturn;
+        }
+
+        public void EditArray(List<List<int>> _array)
+        {
+            array = _array;
+            Reset();
+        }
+        public string ShowIn(List<int> _array)
+        {
+            string result = "";
+            foreach (int i in _array)
+            {
+                result += " " + i;
+            }
+            return result;
+        }
+        public override string ToString()
+        {
+            string result = "";
+            result = $"{ShowIn(array[0])} - {ShowIn(array[1])} - {ShowIn(array[2])} | {ShowIn(array[3])} - {ShowIn(array[4])} - {ShowIn(array[5])} | {ShowIn(array[6])} - {ShowIn(array[7])} - {ShowIn(array[8])}";
+            return result;
         }
     }
 

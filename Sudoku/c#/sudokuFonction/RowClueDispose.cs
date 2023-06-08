@@ -12,15 +12,11 @@ namespace sudokuFonction
         public List<List<int>> rowClues;
         public List<List<List<int>>> rowCluesMultiple;
         public GridInit grid;
-        public int[] chiffre;
-        public RowClueDispose()
+        public RowClueDispose() : this(new GridInit())
         {
-            chiffre = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            grid = new GridInit();
         }
         public RowClueDispose(GridInit _grid)
         {
-            chiffre = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             grid = _grid;
         }
 
@@ -38,7 +34,7 @@ namespace sudokuFonction
             }
             return res;
         }
-        public string ToString9()
+        public string ToStringMultiple()
         {
             string res = "";
             foreach (List<List<int>> itt in rowCluesMultiple)
@@ -72,6 +68,32 @@ namespace sudokuFonction
             }
         }
         /// <summary>
+        /// Permet d'initialiséentre 3 et 9 listes de 9 listes vide
+        /// </summary>
+        /// <param name="partial"></param>
+        public void RowCluesInit(bool partial)
+        {
+            int count = 0;
+            if (partial)
+            {
+                count = 3;
+            }
+            else
+            {
+                count = 9;
+            }
+            rowCluesMultiple = new List<List<List<int>>>();
+            for (int i = 0; i < count; i++)
+            {
+                rowCluesMultiple.Add(new List<List<int>>());
+                for (int j = 0; j < 9; j++)
+                {
+                    rowCluesMultiple[i].Add(new List<int>());
+                }
+            }
+        }
+
+        /// <summary>
         /// Permet de chercher les indice de chaque case d'une rangé
         /// </summary>
         /// <param name="numRow">numero de la rangé a parcourir a la recherche d'indice</param>
@@ -93,7 +115,7 @@ namespace sudokuFonction
                             if (grid.grid[rb, r, cb, c] == 0)
                             {
                                 int counter = 0;
-                                foreach (int i in chiffre)
+                                for (int i = 1; i < 10; i++)
                                 {
                                     if (grid.CheckCaseValide(coord, i))
                                     {
@@ -120,23 +142,6 @@ namespace sudokuFonction
             return rowClues;
         }
 
-
-
-        /// <summary>
-        /// Permet d'initialisé une 3 listes de 9 listes vide
-        /// </summary>
-        public void RowCluesInit3()
-        {
-            rowCluesMultiple = new List<List<List<int>>>();
-            for (int i = 0; i < 3; i++)
-            {
-                rowCluesMultiple.Add(new List<List<int>>());
-                for (int j = 0; j < 9; j++)
-                {
-                    rowCluesMultiple[i].Add(new List<int>());
-                }
-            }
-        }
         /// <summary>
         /// Permet de chercher les indice de chaque case d'une rangé
         /// </summary>
@@ -157,120 +162,31 @@ namespace sudokuFonction
             {
                 numRow = 7;
             }
-            RowCluesInit3();
+            RowCluesInit(true);
             for (int i = 0; i < 3; i++)
             {
-                RowCluesInit();
-                int[] row = grid.setLine(numRow++);
-                int cursor = 0;
-                for (int rb = row[0]; rb < row[0] + 1; rb++)
-                {
-                    for (int r = row[1]; r < row[1] + 1; r++)
-                    {
-                        for (int cb = 0; cb < 3; cb++)
-                        {
-                            for (int c = 0; c < 3; c++)
-                            {
-                                int[] coord = new int[] { rb, r, cb, c };
-                                if (grid.grid[rb, r, cb, c] == 0)
-                                {
-                                    int counter = 0;
-                                    foreach (int j in chiffre)
-                                    {
-                                        if (grid.CheckCaseValide(coord, j))
-                                        {
-                                            rowClues[cursor].Add(j);
-                                            counter++;
-                                        }
-                                    }
-                                    if (counter == 0)
-                                    {
-                                        return null;
-                                    }
-                                }
-                                else
-                                {
-                                    rowClues[cursor].Add(grid.grid[rb, r, cb, c]);
-                                }
-                                cursor++;
-                            }
-                        }
-                    }
-                }
+                SearchCluesRow(numRow);
                 rowCluesMultiple[i] = rowClues;
+                numRow++;
             }
             RowSolver solver = new RowSolver(rowClues);
             solver.PurgeCheck();
             return rowCluesMultiple;
-        }
-
-
-
-        /// <summary>
-        /// Permet d'initialisé une 9 listes de 9 listes vide
-        /// </summary>
-        public void RowCluesInit9()
-        {
-            rowCluesMultiple = new List<List<List<int>>>();
-            for (int i = 0; i < 9; i++)
-            {
-                rowCluesMultiple.Add(new List<List<int>>());
-                for (int j = 0; j < 9; j++)
-                {
-                    rowCluesMultiple[i].Add(new List<int>());
-                }
-            }
         }
         /// <summary>
         /// Permet de chercher les indice de chaque case d'une rangé
         /// </summary>
         /// <param name="numRow">numero de la rangé a parcourir a la recherche d'indice</param>
         /// <returns>Une liste de 9 listes d'indice</returns>
-        public List<List<List<int>>> SearchCluesRow9()
+        public List<List<List<int>>> SearchCluesRow()
         {
-            RowCluesInit9();
+            RowCluesInit(false);
             int numRow = 1;
             for (int i = 0; i < 9; i++)
             {
-                RowCluesInit();
-                int[] row = grid.setLine(numRow++);
-                int cursor = 0;
-                RowCluesInit();
-                for (int rb = row[0]; rb < row[0] + 1; rb++)
-                {
-                    for (int r = row[1]; r < row[1] + 1; r++)
-                    {
-                        for (int cb = 0; cb < 3; cb++)
-                        {
-                            for (int c = 0; c < 3; c++)
-                            {
-                                int[] coord = new int[] { rb, r, cb, c };
-                                if (grid.grid[rb, r, cb, c] == 0)
-                                {
-                                    int counter = 0;
-                                    foreach (int j in chiffre)
-                                    {
-                                        if (grid.CheckCaseValide(coord, j))
-                                        {
-                                            rowClues[cursor].Add(j);
-                                            counter++;
-                                        }
-                                    }
-                                    if (counter == 0)
-                                    {
-                                        return null;
-                                    }
-                                }
-                                else
-                                {
-                                    rowClues[cursor].Add(grid.grid[rb, r, cb, c]);
-                                }
-                                cursor++;
-                            }
-                        }
-                    }
-                    rowCluesMultiple[i] = rowClues;
-                }
+                SearchCluesRow(numRow);
+                rowCluesMultiple[i] = rowClues;
+                numRow++;
             }
             RowSolver solver = new RowSolver(rowClues);
             solver.PurgeCheck();

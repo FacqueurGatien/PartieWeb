@@ -8,18 +8,21 @@ namespace sudokuFonction
         {
             bool test = true;
             bool algoRandom = false;
+
+            //1 Creation d'une instance de grid ()
             AutoGenerateGrid grid = new AutoGenerateGrid();
+            grid.grid.DisposingArray();
             Console.WriteLine(grid.grid.ToString());
             RowClueDispose clues = new RowClueDispose(grid.grid);
 
-            List<List<List<int>>> tab = clues.SearchCluesRow9();
-            /*Console.WriteLine(clues.ToString9());*/
+            List<List<List<int>>> tab = clues.SearchCluesRow();
+            Console.WriteLine(clues.ToStringMultiple());
 
             PurgeClues resolve = new PurgeClues(tab);
             Console.WriteLine(resolve.ToString());
             Console.WriteLine("\n\n\n___________________________________________________________\n");
 
-            if (resolve.ItterationTotal()<300)
+            if (resolve.ItterationTotal()<100)
             {
                 if (resolve.ResolveGrid())
                 {
@@ -53,6 +56,7 @@ namespace sudokuFonction
             //Faire une fonction qui traduit la resolution de la cluesMachines en grid de la classe grid
             // pour pouvoir la resoudre aleatoirement
 
+
             if (test)
             {
                 int valide = 0;
@@ -71,6 +75,8 @@ namespace sudokuFonction
                 Console.WriteLine(grid.grid.ToString());
                 Console.WriteLine(valide + " nb essaie:" + essaie);
             }
+
+
 
         }
     }

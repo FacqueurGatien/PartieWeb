@@ -28,5 +28,4 @@ class ZipCodes{
         };
     }
 }
-
 export {ZipCodes}

@@ -9,57 +9,34 @@ namespace sudokuFonction
     public class AutoGenerateGrid
     {
         public GridInit grid;
-        public List<List<int>> rowClues;
-        public int[] pattern;
-        public int[] pattern2;
-        public int[] pattern3;
-        public int valide;
-
-        public AutoGenerateGrid()
+        public AutoGenerateGrid():this(new GridInit())
         {
-            grid = new GridInit();
-            pattern = new int[] { 1,2,3,4,5,6,7,8,9};
-            valide = 0;
         }
-        public bool GetRowClues(int numRow)
+        public AutoGenerateGrid(GridInit _grid)
         {
-            rowClues = new RowClueDispose(grid).SearchCluesRow(numRow);
-            if (rowClues == null)
-            {
-                return false;
-            }
-            return true;
+            grid = _grid;
         }
-        public string GetRowCluesString()
+        /// <summary>
+        /// Permet de recuperer une rangée d'indice
+        /// </summary>
+        /// <param name="numRow">Numero de la rangée ou l'on cherche les indices</param>
+        /// <returns>Renvoie une rangée d'indice ou un null si la rangée d'indice comporte une case vide</returns>
+        public List<List<int>>? GetRowClues(int numRow)
         {
-            if (rowClues != null)
-            {
-                string res = "";
-                foreach (List<int> it in rowClues)
-                {
-                    res += "(";
-                    foreach (int e in it)
-                    {
-                        res += e;
-                    }
-                    res += ")";
-                }
-                return res;
-            }
-            return "null";
+            return new RowClueDispose(grid).SearchCluesRow(numRow);
         }
-
+        /// <summary>
+        /// Tente a chaque rangée de la remplir
+        /// </summary>
+        /// <returns>Si les 9 rangé on été remplie avec succes, true est renvoyé</returns>
         public bool Generate()
         {
-            for (int i = 0; i < pattern.Length; i++)
+            for (int i = 1; i < 10; i++)
             {
-                if (GetRowClues(pattern[i]))
+                List<List<int>> rowClues = GetRowClues(i);
+                if (rowClues!=null)
                 {
-                    if (grid.AddOneRow(pattern[i], rowClues))
-                    {
-                        valide++;
-                    }
-                    else
+                    if (!grid.AddOneRow(i, rowClues))
                     {
                         return false;
                     }
@@ -68,56 +45,8 @@ namespace sudokuFonction
                 {
                     return false;
                 }
-                //Console.WriteLine(grid.ToString());
             }
-
-/*            for (int i = 0; i < pattern2.Length; i++)
-            {
-                grid.EraseRange(pattern2[i]);
-            }*/
-/*            for (int i = 0; i < pattern3.Length; i++)
-            {
-                if (GetRowClues(pattern3[i]))
-                {
-                    if (grid.AddOneRow(pattern3[i], rowClues))
-                    {
-                        valide++;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }*/
-
-            if (valide==9)
-            {
-                return true;
-            }
-            return false;
-        }
-        public bool Resolveur()
-        {
-            for (int i = 1; i < 9; i++)
-            {
-                if (GetRowClues(i))
-                {
-                    if (grid.AddOneRow(i, rowClues))
-                    {
-                        valide++;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-            if (valide == pattern.Length + pattern3.Length)
-            {
-                return true;
-            }
-            return false;
+            return true;
         }
     }
 }
