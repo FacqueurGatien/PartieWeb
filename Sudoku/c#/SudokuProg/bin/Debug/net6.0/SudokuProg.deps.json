@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "SudokuProg/1.0.0": {
+        "dependencies": {
+          "SudokuGrille": "1.0.0"
+        },
+        "runtime": {
+          "SudokuProg.dll": {}
+        }
+      },
+      "SudokuGrille/1.0.0": {
+        "runtime": {
+          "SudokuGrille.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SudokuProg/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SudokuGrille/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
