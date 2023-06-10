@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v6.0": {
       "SudokuProg/1.0.0": {
         "dependencies": {
+          "SudokuAlgo": "1.0.0",
           "SudokuGrille": "1.0.0"
         },
         "runtime": {
           "SudokuProg.dll": {}
+        }
+      },
+      "SudokuAlgo/1.0.0": {
+        "dependencies": {
+          "SudokuGrille": "1.0.0"
+        },
+        "runtime": {
+          "SudokuAlgo.dll": {}
         }
       },
       "SudokuGrille/1.0.0": {
@@ -23,6 +32,11 @@
   },
   "libraries": {
     "SudokuProg/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SudokuAlgo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

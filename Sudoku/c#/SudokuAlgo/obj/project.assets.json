@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "SudokuGrille/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SudokuGrille.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SudokuGrille.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SudokuGrille/1.0.0": {
+      "type": "project",
+      "path": "../SudokuGrille/SudokuGrille.csproj",
+      "msbuildProject": "../SudokuGrille/SudokuGrille.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "SudokuGrille >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Sora\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#\\SudokuGrille\\SudokuGrille.csproj": {
+              "projectPath": "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#\\SudokuGrille\\SudokuGrille.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

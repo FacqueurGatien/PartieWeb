@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace SudokuGrille
 {
-    public class Rangee
+    public class Rangee : Ligne
     {
-        public Case[] Cases { get; set; }
-        public Rangee(Case[] _cases)
+        public Rangee(Case[] _cases):base(_cases)
         {
-            Cases = _cases;
         }
     }
 }

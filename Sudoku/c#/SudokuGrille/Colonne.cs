@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace SudokuGrille
 {
-    public class Colonne
+    public class Colonne : Ligne
     {
-        public Case[] Cases { get; set; }
-        public Colonne(Case[] _cases)
+        public Colonne(Case[] _cases) : base(_cases)
         {
-            Cases= _cases;
         }
     }
 }

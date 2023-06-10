@@ -16,3 +16,5 @@ C:\Users\Sora\Documents\PartieWeb\Sudoku\c#\SudokuProg\obj\Debug\net6.0\refint\S
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#\SudokuProg\obj\Debug\net6.0\SudokuProg.pdb
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#\SudokuProg\obj\Debug\net6.0\SudokuProg.genruntimeconfig.cache
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#\SudokuProg\obj\Debug\net6.0\ref\SudokuProg.dll
+C:\Users\Sora\Documents\PartieWeb\Sudoku\c#\SudokuProg\bin\Debug\net6.0\SudokuAlgo.dll
+C:\Users\Sora\Documents\PartieWeb\Sudoku\c#\SudokuProg\bin\Debug\net6.0\SudokuAlgo.pdb

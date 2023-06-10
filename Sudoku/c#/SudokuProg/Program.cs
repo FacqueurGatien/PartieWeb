@@ -1,4 +1,5 @@
-﻿using SudokuGrille;
+﻿using SudokuAlgo.AlgoTraqueur;
+using SudokuGrille;
 
 namespace SudokuProg
 {
@@ -8,17 +9,21 @@ namespace SudokuProg
         {
 
             Grille grille = new Grille(GrilleEssaie());
+            Traqueur traqueur=new Traqueur(grille);
+
             Console.WriteLine(grille.ToString());
-
-            Console.WriteLine(grille.Rangees[0].Cases[1].Contenu[0]);
-            Console.WriteLine(grille.Colonnes[1].Cases[0].Contenu[0]);
-            Console.WriteLine(grille.Blocks[0].Cases[1].Contenu[0]);
-
+/*            Console.WriteLine(grille.Rangees[0].Cases[1].Contenu[0] + " " + grille.Rangees[0].Cases[1].NumRangee + " " + grille.Rangees[0].Cases[1].NumColonne + " " + grille.Rangees[0].Cases[1].NumBlock);
+            Console.WriteLine(grille.Colonnes[1].Cases[0].Contenu[0] + " " + grille.Colonnes[1].Cases[0].NumRangee + " " + grille.Colonnes[1].Cases[0].NumColonne + " " + grille.Colonnes[1].Cases[0].NumBlock);
+            Console.WriteLine(grille.Blocks[0].Cases[1].Contenu[0] + " " + grille.Blocks[0].Cases[1].NumRangee + " " + grille.Blocks[0].Cases[1].NumColonne + " " + grille.Blocks[0].Cases[1].NumBlock);
             grille.Rangees[0].Cases[1].Contenu[0] = 3;
+            Console.WriteLine(grille.Rangees[0].Cases[1].Contenu[0] + " " + grille.Rangees[0].Cases[1].NumRangee + " " + grille.Rangees[0].Cases[1].NumColonne + " " + grille.Rangees[0].Cases[1].NumBlock);
+            Console.WriteLine(grille.Colonnes[1].Cases[0].Contenu[0] + " " + grille.Colonnes[1].Cases[0].NumRangee + " " + grille.Colonnes[1].Cases[0].NumColonne + " " + grille.Colonnes[1].Cases[0].NumBlock);
+            Console.WriteLine(grille.Blocks[0].Cases[1].Contenu[0] + " " + grille.Blocks[0].Cases[1].NumRangee + " " + grille.Blocks[0].Cases[1].NumColonne + " " + grille.Blocks[0].Cases[1].NumBlock);
+            Console.WriteLine(traqueur.GrilleAResoudre.Rangees[0].Cases[1].Contenu[0] + " " + traqueur.GrilleAResoudre.Rangees[0].Cases[1].NumRangee + " " + traqueur.GrilleAResoudre.Rangees[0].Cases[1].NumColonne + " " + traqueur.GrilleAResoudre.Rangees[0].Cases[1].NumBlock);
+            Console.WriteLine(traqueur.GrilleAResoudre.Colonnes[1].Cases[0].Contenu[0] + " " + traqueur.GrilleAResoudre.Colonnes[1].Cases[0].NumRangee + " " + traqueur.GrilleAResoudre.Colonnes[1].Cases[0].NumColonne + " " + traqueur.GrilleAResoudre.Colonnes[1].Cases[0].NumBlock);
+            Console.WriteLine(traqueur.GrilleAResoudre.Blocks[0].Cases[1].Contenu[0] + " " + traqueur.GrilleAResoudre.Blocks[0].Cases[1].NumRangee + " " + traqueur.GrilleAResoudre.Blocks[0].Cases[1].NumColonne + " " + traqueur.GrilleAResoudre.Blocks[0].Cases[1].NumBlock);*/
 
-            Console.WriteLine(grille.Rangees[0].Cases[1].Contenu[0]);
-            Console.WriteLine(grille.Colonnes[1].Cases[0].Contenu[0]);
-            Console.WriteLine(grille.Blocks[0].Cases[1].Contenu[0]);
+            traqueur.Resolution();
 
         }
 

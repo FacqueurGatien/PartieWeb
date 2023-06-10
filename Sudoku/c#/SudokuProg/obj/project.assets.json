@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "SudokuAlgo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "SudokuGrille": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SudokuAlgo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SudokuAlgo.dll": {}
+        }
+      },
       "SudokuGrille/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -15,6 +28,11 @@
     }
   },
   "libraries": {
+    "SudokuAlgo/1.0.0": {
+      "type": "project",
+      "path": "../SudokuAlgo/SudokuAlgo.csproj",
+      "msbuildProject": "../SudokuAlgo/SudokuAlgo.csproj"
+    },
     "SudokuGrille/1.0.0": {
       "type": "project",
       "path": "../SudokuGrille/SudokuGrille.csproj",
@@ -23,6 +41,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "SudokuAlgo >= 1.0.0",
       "SudokuGrille >= 1.0.0"
     ]
   },
@@ -58,6 +77,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#\\SudokuAlgo\\SudokuAlgo.csproj": {
+              "projectPath": "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#\\SudokuAlgo\\SudokuAlgo.csproj"
+            },
             "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#\\SudokuGrille\\SudokuGrille.csproj": {
               "projectPath": "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#\\SudokuGrille\\SudokuGrille.csproj"
             }
