@@ -11,18 +11,40 @@ namespace SudokuAlgo.AlgoTraqueur
     {
         public static EnumEtatGrille EtatGrille(Grille? _grille)
         {
-            if (_grille != null)
+            bool incomplette = false;
+            bool vierge = true;
+            foreach (List<Case> lca in _grille.GrilleDepart)
             {
-                foreach (Rangee rangee in _grille.Rangees)
+                foreach (Case ca in lca)
                 {
-                    if (!rangee.LigneComplette())
+                    if (ca.Contenu.Count > 1)
                     {
-                        return EnumEtatGrille.Incomplette;
+                        incomplette = true;
                     }
-                    return EnumEtatGrille.Complette;
-                };
+                    else if (ca.Contenu.Count < 9)
+                    {
+                        vierge = false;
+                    }
+                    else if (ca.Contenu.Count == 0)
+                    {
+                        return EnumEtatGrille.Invalide;
+                    }
+                }
             }
-            return EnumEtatGrille.Invalide;
+            if (incomplette)
+            {
+                return EnumEtatGrille.Incomplette;
+            }
+            else if (vierge)
+            {
+                return EnumEtatGrille.Vierge;
+            }
+            else
+            {
+                return EnumEtatGrille.Complette;
+            }
         }
+
     }
+
 }

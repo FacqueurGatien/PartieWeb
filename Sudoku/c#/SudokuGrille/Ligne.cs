@@ -9,7 +9,7 @@ namespace SudokuGrille
     public abstract class Ligne
     {
         public Case[] Cases { get; set; }
-        public Dictionary<int,int> Itteration;
+        public Dictionary<int, int> Itteration;
         public Ligne(Case[] _cases)
         {
             Cases = _cases;
@@ -37,17 +37,17 @@ namespace SudokuGrille
             {
                 foreach (int c in ca.Contenu)
                 {
-                    if (c!=0)
+                    if (c != 0)
                         Itteration[c]++;
                 }
             }
         }
-        public bool LigneComplette()
+        public bool VerifierLigneComplette()
         {
             CompterItteration();
-            foreach (KeyValuePair<int,int> i in Itteration)
+            foreach (Case ca in Cases)
             {
-                if (i.Value!=1)
+                if (ca.Contenu.Count==0)
                 {
                     return false;
                 }
@@ -56,13 +56,68 @@ namespace SudokuGrille
         }
         public bool VerifierDoublon(Case _case, int _chiffre)
         {
+            /*            CompterItteration();
+                        if (Itteration[_chiffre]>1)
+                        {
+                            return true;
+                        }
+                        return false;*/
+            foreach (Case ca in Cases)
+            {
+                if (ca != _case && ca.Contenu.Count == 1 && ca.Contenu.Contains(_chiffre))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void PurgerLigne(Case _case, int _chiffre, Grille _grille)
+        {
+            foreach (Case ca in Cases)
+            {
+                if (ca != _case && ca.Contenu.Contains(_chiffre))
+                {
+                    ca.Contenu.Remove(_chiffre);
+                    _grille.PurgeRecomencer = true;
+                }
+            }
+        }
+        public void PurgerLigne(Case _case, int _chiffre)
+        {
+            foreach (Case ca in Cases)
+            {
+                if (ca != _case && ca.Contenu.Contains(_chiffre))
+                {
+                    ca.PurgerCase(_chiffre);
+                }
+            }
+        } 
+        public bool VerifierPossibiliterPlacement(Case _case, int _chiffre)
+        {
             CompterItteration();
-            if (Itteration[_chiffre]<2)
+            if (Itteration[_chiffre] > 1)
             {
                 return true;
             }
             return false;
         }
-
+        public bool VerifierLigneValide()
+        {
+            foreach (Case ca1 in Cases)
+            {
+                foreach (Case ca2 in Cases)
+                {
+                    if (ca1 != ca2 && ca1.Contenu.Count == 1)
+                    {
+                        if (ca1.Contenu[0] == ca2.Contenu[0])
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
     }
 }

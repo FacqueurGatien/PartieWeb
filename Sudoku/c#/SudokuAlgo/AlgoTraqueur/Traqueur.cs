@@ -5,27 +5,30 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SudokuAlgo.RechercheIndice;
 
 namespace SudokuAlgo.AlgoTraqueur
 {
     public class Traqueur
     {
         public Grille GrilleAResoudre { get; set; }
+
         public Traqueur(Grille _grille)
         {
             //Etape 1
-            GrilleAResoudre = CopieGrille.Copie(_grille);
+             RechercerIndices.RechercherIndicesGrille(_grille);
+             GrilleAResoudre= _grille;
         }
         public EnumEtatGrille Resolution()
         {
             //Etape 2
-            Grille grilleReduite= AlgoReductionIndices.Reduction(GrilleAResoudre);
-            EnumEtatGrille solution = VerificationEtatGrille.EtatGrille(grilleReduite);
+            AlgoReductionIndices.Reduction(GrilleAResoudre);
+            EnumEtatGrille solution = VerificationEtatGrille.EtatGrille(GrilleAResoudre);
 
             //Etape 3
             if (solution==EnumEtatGrille.Incomplette)
             {
-                Grille grilleFinal = AlgoResolveur.Demarer(grilleReduite);
+                Grille grilleFinal = AlgoResolveur.Demarer(GrilleAResoudre);
                 solution = VerificationEtatGrille.EtatGrille(grilleFinal);
                 return solution;
             }
@@ -34,6 +37,7 @@ namespace SudokuAlgo.AlgoTraqueur
                 return solution;
             }
         }
+
         public override string ToString()
         {
             string result = "";

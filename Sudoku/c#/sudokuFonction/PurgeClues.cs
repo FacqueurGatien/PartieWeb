@@ -1287,6 +1287,4 @@ namespace sudokuFonction
 
         }
     }
-
-
 }

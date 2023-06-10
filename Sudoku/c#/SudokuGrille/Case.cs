@@ -31,16 +31,6 @@ namespace SudokuGrille
 
         }
 
-        public override string ToString()
-        {
-            string result = "";
-            foreach (int i in Contenu)
-            {
-                result += i.ToString()+",";
-            }
-            result.Trim(',');
-            return result;
-        }
         public void PlacerChiffre(int _chiffre)
         {
             Contenu.Clear();
@@ -59,6 +49,17 @@ namespace SudokuGrille
                 return true;
             }
             return false;
+        }
+
+        public override string ToString()
+        {
+            string result = "";
+            foreach (int i in Contenu)
+            {
+                result += i.ToString() + ",";
+            }
+            result.Trim(',');
+            return result;
         }
     }
 }
