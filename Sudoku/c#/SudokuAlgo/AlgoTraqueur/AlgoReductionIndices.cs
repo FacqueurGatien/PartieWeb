@@ -12,6 +12,7 @@ namespace SudokuAlgo.AlgoTraqueur
         public static void Reduction(Grille _grille)
         {
             PurgerGrille(_grille);
+            _grille.EtatGrille = VerificationEtatGrille.EtatGrille(_grille);
         }
         public static void PurgerGrille(Grille _grille)
         {

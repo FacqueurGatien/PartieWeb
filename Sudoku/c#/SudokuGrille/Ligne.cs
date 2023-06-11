@@ -42,12 +42,21 @@ namespace SudokuGrille
                 }
             }
         }
+        public int CompterItterationLigne()
+        {
+            int total = 0;
+            foreach (KeyValuePair<int, int> i in Itteration)
+            {
+                total += i.Value;
+            }
+            return total;
+        }
         public bool VerifierLigneComplette()
         {
             CompterItteration();
             foreach (Case ca in Cases)
             {
-                if (ca.Contenu.Count==0)
+                if (ca.Contenu.Count == 0)
                 {
                     return false;
                 }
@@ -92,7 +101,7 @@ namespace SudokuGrille
                     ca.PurgerCase(_chiffre);
                 }
             }
-        } 
+        }
         public bool VerifierPossibiliterPlacement(Case _case, int _chiffre)
         {
             CompterItteration();

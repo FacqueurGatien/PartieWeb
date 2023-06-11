@@ -52,12 +52,14 @@ namespace SudokuGrille
         {
             for (int r = 0; r < 9; r++)
             {
+                int numPosition = 0;
                 Case[] rangee = new Case[9];
                 for (int c = 0; c < 9; c++)
-
                 {
                     rangee[c] = GrilleDepart[r][c];
                     rangee[c].NumRangee = r;
+                    rangee[c].NumPositionRangee = numPosition;
+                    numPosition++;
                 }
 
                 Rangees.Add(new Rangee(rangee));
@@ -115,6 +117,39 @@ namespace SudokuGrille
                     compteurBlock++;
                 }
             }
+        }
+        public int CompterItterationTotal()
+        {
+            int total = 0;
+            foreach (Rangee r in Rangees)
+            {
+                total += r.CompterItterationLigne();
+            }
+            return total;
+        }
+        public Dictionary<int,int> RecupererItteration()
+        {
+            Dictionary<int,int> itteration=new Dictionary<int, int>()
+            {
+                { 1, 0 },
+                { 2, 0 },
+                { 3, 0 },
+                { 4, 0 },
+                { 5, 0 },
+                { 6, 0 },
+                { 7, 0 },
+                { 8, 0 },
+                { 9, 0 }
+            };
+            foreach (Rangee r in Rangees)
+            {
+                r.CompterItteration();
+                for(int i=1;i<10;i++)
+                {
+                    itteration[i]+=r.Itteration[i];
+                }
+            }
+            return itteration;
         }
         public override string ToString()
         {

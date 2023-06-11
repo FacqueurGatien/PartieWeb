@@ -12,6 +12,7 @@ namespace SudokuGrille
         public int NumRangee { get; set; }
         public int NumColonne { get; set; }
         public int NumBlock { get; set; }
+        public int NumPositionRangee { get; set; }
         public Case()
         {
             NumRangee=0; 

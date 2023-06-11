@@ -744,7 +744,6 @@ namespace sudokuFonction
         }
         public bool ResolveAlgo2(List<List<int[]>> index)
         {
-            int compteur = 0;
             if (index.Count == 2)
             {
                 int counterA = 0;
@@ -774,7 +773,6 @@ namespace sudokuFonction
                                 {
                                     return true;
                                 }
-                                //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " " + b + " " + counterB);
 
                                 /////////////////////////////////
 
@@ -838,8 +836,6 @@ namespace sudokuFonction
                                         return true;
                                     }
                                     ResolveGrid(false);
-                                    compteur++;
-                                    Console.WriteLine(ToString() + "\n" + compteur + "\n" + a + " " + counterA + " " + b + " " + counterB + " " + c + " " + counterC);
                                     /////////////////////////////////
 
                                     counterC++;
@@ -911,7 +907,6 @@ namespace sudokuFonction
                                         {
                                             return true;
                                         }
-                                        Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD);
                                         /////////////////////////////////
 
                                         counterD++;
@@ -999,8 +994,6 @@ namespace sudokuFonction
                                             {
                                                 return true;
                                             }
-                                            Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD + " |" + e + " " + counterE);
-                                            /////////////////////////////////
 
                                             counterE++;
                                             e--;
@@ -1102,8 +1095,6 @@ namespace sudokuFonction
                                                 {
                                                     return true;
                                                 }
-                                                //Console.WriteLine(ToString() + "\n" + ++compteur + "\n" + a + " " + counterA + " |" + b + " " + counterB + "  |" + c + " " + counterC + " |" + d + " " + counterD + " |" + e + " " + counterE + " |" + f + " " + counterF);
-                                                /////////////////////////////////
 
                                                 counterF++;
                                                 f--;

@@ -19,7 +19,7 @@ namespace SudokuAlgo.AlgoTraqueur
              RechercerIndices.RechercherIndicesGrille(_grille);
              GrilleAResoudre= _grille;
         }
-        public EnumEtatGrille Resolution()
+        public Grille? Resolution()
         {
             //Etape 2
             AlgoReductionIndices.Reduction(GrilleAResoudre);
@@ -28,13 +28,13 @@ namespace SudokuAlgo.AlgoTraqueur
             //Etape 3
             if (solution==EnumEtatGrille.Incomplette)
             {
-                Grille grilleFinal = AlgoResolveur.Demarer(GrilleAResoudre);
+                Grille? grilleFinal = AlgoResolveur.Demarer(GrilleAResoudre);
                 solution = VerificationEtatGrille.EtatGrille(grilleFinal);
-                return solution;
+                return grilleFinal;
             }
             else
             {
-                return solution;
+                return null;
             }
         }
 

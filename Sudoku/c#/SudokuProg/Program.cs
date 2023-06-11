@@ -9,9 +9,14 @@ namespace SudokuProg
         static void Main(string[] args)
         {
 
-            Grille grille = new Grille(GrilleEssaie2());
+            Grille grille = new Grille(GrilleEssaie4());
+
+            Console.WriteLine("Grille de Depart");
+            Console.WriteLine(grille.ToString());
+
             Traqueur traqueur = new Traqueur(grille);
-            EnumEtatGrille solution = traqueur.Resolution();
+            Grille? grilleFinal = traqueur.Resolution();
+            EnumEtatGrille solution = VerificationEtatGrille.EtatGrille(grilleFinal);
 
             switch (solution)
             {
@@ -30,23 +35,8 @@ namespace SudokuProg
                 default:
                     break;
             }
-            Console.WriteLine(grille.ToString());
-            /*            Console.WriteLine(grille.Rangees[0].Cases[1].Contenu[0] + " " + grille.Rangees[0].Cases[1].NumRangee + " " + grille.Rangees[0].Cases[1].NumColonne + " " + grille.Rangees[0].Cases[1].NumBlock);
-                        Console.WriteLine(grille.Colonnes[1].Cases[0].Contenu[0] + " " + grille.Colonnes[1].Cases[0].NumRangee + " " + grille.Colonnes[1].Cases[0].NumColonne + " " + grille.Colonnes[1].Cases[0].NumBlock);
-                        Console.WriteLine(grille.Blocks[0].Cases[1].Contenu[0] + " " + grille.Blocks[0].Cases[1].NumRangee + " " + grille.Blocks[0].Cases[1].NumColonne + " " + grille.Blocks[0].Cases[1].NumBlock);
-
-                        grille.Rangees[0].Cases[1].Contenu[0] = 3;
-
-                        Console.WriteLine(grille.Rangees[0].Cases[1].Contenu[0] + " " + grille.Rangees[0].Cases[1].NumRangee + " " + grille.Rangees[0].Cases[1].NumColonne + " " + grille.Rangees[0].Cases[1].NumBlock);
-                        Console.WriteLine(grille.Colonnes[1].Cases[0].Contenu[0] + " " + grille.Colonnes[1].Cases[0].NumRangee + " " + grille.Colonnes[1].Cases[0].NumColonne + " " + grille.Colonnes[1].Cases[0].NumBlock);
-                        Console.WriteLine(grille.Blocks[0].Cases[1].Contenu[0] + " " + grille.Blocks[0].Cases[1].NumRangee + " " + grille.Blocks[0].Cases[1].NumColonne + " " + grille.Blocks[0].Cases[1].NumBlock);
-
-                        Console.WriteLine(traqueur.GrilleAResoudre.Rangees[0].Cases[1].Contenu[0] + " " + traqueur.GrilleAResoudre.Rangees[0].Cases[1].NumRangee + " " + traqueur.GrilleAResoudre.Rangees[0].Cases[1].NumColonne + " " + traqueur.GrilleAResoudre.Rangees[0].Cases[1].NumBlock);
-                        Console.WriteLine(traqueur.GrilleAResoudre.Colonnes[1].Cases[0].Contenu[0] + " " + traqueur.GrilleAResoudre.Colonnes[1].Cases[0].NumRangee + " " + traqueur.GrilleAResoudre.Colonnes[1].Cases[0].NumColonne + " " + traqueur.GrilleAResoudre.Colonnes[1].Cases[0].NumBlock);
-                        Console.WriteLine(traqueur.GrilleAResoudre.Blocks[0].Cases[1].Contenu[0] + " " + traqueur.GrilleAResoudre.Blocks[0].Cases[1].NumRangee + " " + traqueur.GrilleAResoudre.Blocks[0].Cases[1].NumColonne + " " + traqueur.GrilleAResoudre.Blocks[0].Cases[1].NumBlock);
-                */
-
-
+            Console.WriteLine("\nGrille Final");
+            Console.WriteLine(grilleFinal.ToString());
         }
         public static List<List<Case>> GrilleVierge()
         {

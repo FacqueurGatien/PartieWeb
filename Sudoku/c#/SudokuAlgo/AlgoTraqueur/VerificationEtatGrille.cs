@@ -13,36 +13,44 @@ namespace SudokuAlgo.AlgoTraqueur
         {
             bool incomplette = false;
             bool vierge = true;
-            foreach (List<Case> lca in _grille.GrilleDepart)
+            if (_grille != null)
             {
-                foreach (Case ca in lca)
+                foreach (List<Case> lca in _grille.GrilleDepart)
                 {
-                    if (ca.Contenu.Count > 1)
+                    foreach (Case ca in lca)
                     {
-                        incomplette = true;
-                    }
-                    else if (ca.Contenu.Count < 9)
-                    {
-                        vierge = false;
-                    }
-                    else if (ca.Contenu.Count == 0)
-                    {
-                        return EnumEtatGrille.Invalide;
+                        if (ca.Contenu.Count > 1)
+                        {
+                            incomplette = true;
+                        }
+                        else if (ca.Contenu.Count == 0)
+                        {
+                            return EnumEtatGrille.Invalide;
+                        }
+                        else if (ca.Contenu.Count < 9)
+                        {
+                            vierge = false;
+                        }
                     }
                 }
-            }
-            if (incomplette)
-            {
-                return EnumEtatGrille.Incomplette;
-            }
-            else if (vierge)
-            {
-                return EnumEtatGrille.Vierge;
+                if (incomplette)
+                {
+                    return EnumEtatGrille.Incomplette;
+                }
+                else if (vierge)
+                {
+                    return EnumEtatGrille.Vierge;
+                }
+                else
+                {
+                    return EnumEtatGrille.Complette;
+                }
             }
             else
             {
-                return EnumEtatGrille.Complette;
+                return EnumEtatGrille.Invalide;
             }
+            
         }
 
     }
