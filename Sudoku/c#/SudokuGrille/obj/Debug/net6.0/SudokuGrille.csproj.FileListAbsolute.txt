@@ -10,3 +10,15 @@ C:\Users\Sora\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\Sudoku
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\refint\SudokuGrille.dll
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\SudokuGrille.pdb
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\ref\SudokuGrille.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\bin\Debug\net6.0\SudokuGrille.deps.json
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\bin\Debug\net6.0\SudokuGrille.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\bin\Debug\net6.0\SudokuGrille.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\SudokuGrille.csproj.AssemblyReference.cache
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\SudokuGrille.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\SudokuGrille.AssemblyInfoInputs.cache
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\SudokuGrille.AssemblyInfo.cs
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\SudokuGrille.csproj.CoreCompileInputs.cache
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\SudokuGrille.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\refint\SudokuGrille.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\SudokuGrille.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#\SudokuGrille\obj\Debug\net6.0\ref\SudokuGrille.dll
