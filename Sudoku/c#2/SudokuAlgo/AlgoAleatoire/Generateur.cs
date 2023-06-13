@@ -6,41 +6,155 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
+using SudokuAlgo.AlgoTraqueur;
+using System.Reflection;
 
 namespace SudokuAlgo.AlgoAleatoire
 {
     public class Generateur
     {
+        public Grille GrilleDepart { get; set; }
         public Grille GrilleAGenerer { get; set; }
         public Generateur(Grille _grille)
         {
-            GrilleAGenerer = _grille;
+            GrilleDepart = _grille;
         }
         public Grille Generer()
         {
-            foreach (Ligne l in GrilleAGenerer.Rangees)
+
+            //Etape 1 Rechercher les indices d'une ligne
+            do
             {
-                //Etape 1 Rechercher les indices d'une ligne
-                RechercerIndices.RechercherIndicesLigne(GrilleAGenerer,l);
-                ResolutionLigneAleatoire(l);
+                GrilleAGenerer = CopieGrille.Copie(GrilleDepart);
+                ResolutionGrilleAleatoire();
             }
+            while (GrilleAGenerer.CompterItterationTotal() != 81);
             return GrilleAGenerer;
         }
-        public void ResolutionLigneAleatoire(Ligne _ligne)
+        public void ResolutionGrilleAleatoire()
         {
-
+            foreach (Ligne rangee in GrilleAGenerer.Rangees)
+            {
+                RechercerIndices.RechercherIndicesLigne(GrilleAGenerer, rangee);
+                LigneAResoudre(rangee);
+            }
         }
-        public Ligne CopieLigneAResoudre(Ligne _ligne)
+        public Case SelectionCaseAChanger(Ligne _ligne)
+        {
+            Ligne index = new Ligne();
+            index.Cases.Clear();
+            int nombreCase = int.MaxValue;
+            foreach (Case ca in _ligne.Cases)
+            {
+                if (ca.Contenu.Count > 1 && ca.Contenu.Count < nombreCase)
+                {
+                    index.Cases.Clear();
+                    index.Cases.Add(ca);
+                    nombreCase = ca.Contenu.Count;
+                }
+                else if (ca.Contenu.Count == nombreCase)
+                {
+                    index.Cases.Add(ca);
+                }
+            }
+
+            _ligne.CompterItteration();
+            List<int> itterationTrie = new List<int>();
+            foreach (KeyValuePair<int, int> i in _ligne.Itteration.OrderBy(key => key.Value))
+            {
+                if (i.Value >= 1)
+                {
+                    itterationTrie.Add(i.Key);
+                }
+            }
+
+            if (index.Cases.Count > 1)
+            {
+                Ligne temp = new Ligne();
+                temp.Cases.Clear();
+                for (int i = 0; i < itterationTrie.Count; i++)
+                {
+                    foreach (Case ca in index.Cases)
+                    {
+                        if (ca.Contenu.Contains(itterationTrie[i]))
+                        {
+                            temp.Cases.Add(ca);
+                        }
+                    }
+                    if (temp.Cases.Count > 0)
+                    {
+                        i = int.MaxValue - 1;
+                    }
+                }
+                return temp.Cases[new Random().Next(0, temp.Cases.Count)];
+            }
+            else
+            {
+                return index.Cases[0];
+            }
+        }
+
+
+        public void PlacerChiffreCase(Case _case)
+        {
+            GrilleAGenerer.Rangees[_case.NumRangee].CompterItteration();
+            List<int> itterationTrie = new List<int>();
+            foreach (KeyValuePair<int, int> i in GrilleAGenerer.Rangees[_case.NumRangee].Itteration.OrderBy(key => key.Value))
+            {
+                if (i.Value >= 1)
+                {
+                    itterationTrie.Add(i.Key);
+                }
+            }
+            for (int i = 0; i < itterationTrie.Count; i++)
+            {
+                if (_case.Contenu.Contains(itterationTrie[i]))
+                {
+                    _case.PlacerChiffre(itterationTrie[i]);
+                    GrilleAGenerer.Rangees[_case.NumRangee].PurgerLigne(_case, itterationTrie[i]);
+                    i = int.MaxValue - 1;
+                }
+            }
+        }
+        public Ligne LigneAResoudre(Ligne _ligne)
         {
             //Etape2 Copier la ligne
-            Ligne ligneCopie = new Ligne(_ligne);
+            Ligne ligneReference = new Ligne();
+            ligneReference.Cases.Clear();
+            foreach (Case ca in _ligne.Cases)
+            {
+                ligneReference.Cases.Add(ca);
+            }
 
             //Etape3 Trier la ligne
-            foreach (Case i in ligneCopie.Cases.OrderBy(ca => ca.Contenu.Count)) ;
+            int boucle = 0;
+            foreach (Case i in ligneReference.Cases.OrderBy(ca => ca.Contenu.Count))
+            {
+                if (i.Contenu.Count > 1)
+                {
+                    boucle++;
+                }
+            }
 
-            //Etape4
+            //Etape5 placer un chiffre sur la case (Etape4 Selectionner la case à changer)
+            while (boucle - 1 > 0)
+            {
+                boucle = ligneReference.Cases.Count;
+                foreach (Case i in ligneReference.Cases)
+                {
+                    if (i.Contenu.Count == 1)
+                    {
+                        boucle--;
+                    }
+                }
+                if (boucle != 0)
+                {
+                    PlacerChiffreCase(SelectionCaseAChanger(ligneReference));
+                }
 
-            return ligneCopie;
+            }
+
+            return ligneReference;
         }
     }
 }
