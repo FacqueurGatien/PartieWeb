@@ -10,3 +10,11 @@ body
 {
     font-size: 1.6rem;
 }
+#employeesTable
+{
+    border-collapse: collapse;
+}
+.titleTable, .dataTable
+{
+    border:2px solid black;
+}

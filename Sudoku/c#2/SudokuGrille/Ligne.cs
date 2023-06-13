@@ -10,6 +10,21 @@ namespace SudokuGrille
     {
         public List<Case> Cases { get; set; }
         public Dictionary<int, int> Itteration;
+
+        //Etape2 Copier la ligne
+        public Ligne(Ligne _ligne):this(new List<Case>() {
+            new Case(_ligne.Cases[0].Contenu), 
+            new Case(_ligne.Cases[1].Contenu),
+            new Case(_ligne.Cases[2].Contenu),
+            new Case(_ligne.Cases[3].Contenu),
+            new Case(_ligne.Cases[4].Contenu),
+            new Case(_ligne.Cases[5].Contenu),
+            new Case(_ligne.Cases[6].Contenu),
+            new Case(_ligne.Cases[7].Contenu),
+            new Case(_ligne.Cases[8].Contenu) })
+        {
+
+        }
         public Ligne(List<Case> _cases)
         {
             Cases = _cases;
@@ -19,6 +34,7 @@ namespace SudokuGrille
         {
             
         }
+
         public void ItterationInitialisation()
         {
             Itteration = new Dictionary<int, int>()
@@ -71,12 +87,6 @@ namespace SudokuGrille
         }
         public bool VerifierDoublon(Case _case, int _chiffre)
         {
-            /*            CompterItteration();
-                        if (Itteration[_chiffre]>1)
-                        {
-                            return true;
-                        }
-                        return false;*/
             foreach (Case ca in Cases)
             {
                 if (ca != _case && ca.Contenu.Count == 1 && ca.Contenu.Contains(_chiffre))
@@ -108,6 +118,7 @@ namespace SudokuGrille
                 }
             }
         }
+
         public bool VerifierPossibiliterPlacement(Case _case, int _chiffre)
         {
             CompterItteration();

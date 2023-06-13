@@ -48,7 +48,6 @@ namespace SudokuAlgo.AlgoTraqueur
                 }
                 recommencerPurge = PurgerGrilleItteration(_grille);
             }
-            Console.WriteLine(_grille);
         }
         public static bool PurgerGrilleItteration(Grille _grille)
         {

@@ -15,5 +15,15 @@ class Employees{
     GetArray(){
         return this.employeesList;
     }
+    GetFirst(){
+        try{
+            if(this.employeesList.concat.length>0)
+            {
+                return this.employeesList[0];
+            }         
+        }catch{
+            console.log("La liste est vide.");
+        }
+    }
 }
 export {Employees};

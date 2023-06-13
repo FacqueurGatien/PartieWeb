@@ -5,6 +5,14 @@ class Employee{
         this.salary = _employee.employee_salary;
         this.year = _employee.employee_age;
     }
+    GetValues(){
+        return [this.id,this.fullName,this.GetEmail(),this.GetSalaryMonth(),this.GetYearBirth()];
+    }
+
+    GetKeys(){
+
+        return ["Id","FullName","Email","Salary Month","Year of Birth"];
+    }
 
     GetNameArray(){
         return [this.fullName.split(' ')[0],this.fullName.split(' ')[1]]

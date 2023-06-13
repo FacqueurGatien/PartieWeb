@@ -10,7 +10,7 @@ namespace sudokuFonction
 
             //1 Creation d'une instance de grid ()
             AutoGenerateGrid grid = new AutoGenerateGrid();
-            grid.grid.DisposingArray4();
+            grid.grid.DisposingArray();
             Console.WriteLine(grid.grid.ToString());
             RowClueDispose clues = new RowClueDispose(grid.grid);
 
@@ -21,7 +21,7 @@ namespace sudokuFonction
             Console.WriteLine(resolve.ToString());
             Console.WriteLine("\n\n\n___________________________________________________________\n");
 
-            if (resolve.ItterationTotal()<300)
+            if (resolve.ItterationTotal()<100)
             {
                 if (resolve.ResolveGrid())
                 {
@@ -63,13 +63,12 @@ namespace sudokuFonction
                 while (true)
                 {
                     essaie++;
-                    grid = new AutoGenerateGrid();
+                    grid = new AutoGenerateGrid(grid.grid);
                     if (grid.Generate())
                     {
                         valide++;
                         break;
                     }
-                    Console.WriteLine(grid.grid.ToString());
                 }
                 Console.WriteLine(grid.grid.ToString());
                 Console.WriteLine(valide + " nb essaie:" + essaie);

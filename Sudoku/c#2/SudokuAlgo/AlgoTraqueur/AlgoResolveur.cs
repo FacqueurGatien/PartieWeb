@@ -43,7 +43,7 @@ namespace SudokuAlgo.AlgoTraqueur
             {
                 List<int[]> listeIndex = new List<int[]>();
 
-                foreach (Rangee ra in _grille.Rangees)
+                foreach (Ligne ra in _grille.Rangees)
                 {
                     foreach (Case ca in ra.Cases)
                     {

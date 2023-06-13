@@ -10,7 +10,7 @@ namespace SudokuGrille
         public EnumEtatGrille EtatGrille { get; set; }
 
         public bool PurgeRecomencer { get; set; }
-        public bool ItterationRecomencer { get; set; }
+        public bool ItterationRecomencer { get; set; }//sureent a enlevé
 
         public Grille(List<Ligne> _grille, EnumEtatGrille etatGrille = EnumEtatGrille.Incomplette)
         {
@@ -59,7 +59,7 @@ namespace SudokuGrille
                     numPosition++;
                 }
 
-                Rangees.Add(new Rangee(rangee.Cases));
+                Rangees.Add(new Ligne(rangee.Cases));
             }
         }
         public void GenererColonne()
@@ -105,7 +105,7 @@ namespace SudokuGrille
         public int CompterItterationTotal()
         {
             int total = 0;
-            foreach (Rangee r in Rangees)
+            foreach (Ligne r in Rangees)
             {
                 total += r.CompterItterationLigne();
             }
@@ -125,7 +125,7 @@ namespace SudokuGrille
                 { 8, 0 },
                 { 9, 0 }
             };
-            foreach (Rangee r in Rangees)
+            foreach (Ligne r in Rangees)
             {
                 r.CompterItteration();
                 for (int i = 1; i < 10; i++)
@@ -138,7 +138,7 @@ namespace SudokuGrille
         public override string ToString()
         {
             string result = "";
-            foreach (Rangee r in Rangees)
+            foreach (Ligne r in Rangees)
             {
                 result += "\n________________________________________________________________________________________________________________\n";
                 foreach (Case c in r.Cases)

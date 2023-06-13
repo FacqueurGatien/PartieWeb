@@ -41,7 +41,7 @@ namespace SudokuAlgo.AlgoTraqueur
         public override string ToString()
         {
             string result = "";
-            foreach (Rangee r in GrilleAResoudre.Rangees)
+            foreach (Ligne r in GrilleAResoudre.Rangees)
             {
                 result += "\n________________________________________________________________________________________________________________\n";
                 foreach (Case c in r.Cases)
