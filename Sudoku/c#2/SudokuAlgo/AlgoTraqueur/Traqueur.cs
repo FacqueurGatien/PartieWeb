@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SudokuAlgo.RechercheIndice;
+using SudokuAlgo.AlgoReduction;
 
 namespace SudokuAlgo.AlgoTraqueur
 {
@@ -16,20 +17,20 @@ namespace SudokuAlgo.AlgoTraqueur
         public Traqueur(Grille _grille)
         {
             //Etape 1
-             RechercerIndices.RechercherIndicesGrille(_grille);
+             //RechercerIndices.RechercherIndicesGrille(_grille);
              GrilleAResoudre= _grille;
         }
         public Grille? Resolution()
         {
             //Etape 2
-            AlgoReductionIndices.Reduction(GrilleAResoudre);
-            EnumEtatGrille solution = VerificationEtatGrille.EtatGrille(GrilleAResoudre);
+            ReductionIndices.Reduction(GrilleAResoudre);
+            VerificationEtatGrille.EtatGrille(GrilleAResoudre);
 
             //Etape 3
-            if (solution==EnumEtatGrille.Incomplette)
+            if (GrilleAResoudre.EtatGrille==EnumEtatGrille.Incomplette)
             {
                 Grille? grilleFinal = AlgoResolveur.Demarer(GrilleAResoudre);
-                solution = VerificationEtatGrille.EtatGrille(grilleFinal);
+                VerificationEtatGrille.EtatGrille(grilleFinal);
                 return grilleFinal;
             }
             else

@@ -90,7 +90,7 @@ namespace SudokuAlgo.AlgoAleatoire
             }
             else
             {
-                return index.Cases[0];
+                return index.Cases[0]; //Gerer le cas ou la grille est invalid
             }
         }
 

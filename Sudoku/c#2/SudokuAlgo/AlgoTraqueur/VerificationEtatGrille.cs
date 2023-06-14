@@ -9,7 +9,7 @@ namespace SudokuAlgo.AlgoTraqueur
 {
     public static class VerificationEtatGrille
     {
-        public static EnumEtatGrille EtatGrille(Grille? _grille)
+        public static void EtatGrille(Grille? _grille)
         {
             bool incomplette = false;
             bool vierge = true;
@@ -25,7 +25,7 @@ namespace SudokuAlgo.AlgoTraqueur
                         }
                         else if (ca.Contenu.Count == 0)
                         {
-                            return EnumEtatGrille.Invalide;
+                             _grille.EtatGrille=EnumEtatGrille.Invalide;
                         }
                         else if (ca.Contenu.Count < 9)
                         {
@@ -35,20 +35,20 @@ namespace SudokuAlgo.AlgoTraqueur
                 }
                 if (incomplette)
                 {
-                    return EnumEtatGrille.Incomplette;
+                    _grille.EtatGrille = EnumEtatGrille.Incomplette;
                 }
                 else if (vierge)
                 {
-                    return EnumEtatGrille.Vierge;
+                    _grille.EtatGrille = EnumEtatGrille.Vierge;
                 }
                 else
                 {
-                    return EnumEtatGrille.Complette;
+                    _grille.EtatGrille = EnumEtatGrille.Complette;
                 }
             }
             else
             {
-                return EnumEtatGrille.Invalide;
+                _grille.EtatGrille = EnumEtatGrille.Invalide;
             }
             
         }

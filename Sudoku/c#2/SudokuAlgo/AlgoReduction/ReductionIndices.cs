@@ -1,18 +1,34 @@
-﻿using SudokuGrille;
+﻿using SudokuAlgo.AlgoTraqueur;
+using SudokuAlgo.RechercheIndice;
+using SudokuGrille;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SudokuAlgo.AlgoTraqueur
+namespace SudokuAlgo.AlgoReduction
 {
-    public static class AlgoReductionIndices
+    public static class ReductionIndices
     {
         public static void Reduction(Grille _grille)
         {
             PurgerGrille(_grille);
-            _grille.EtatGrille = VerificationEtatGrille.EtatGrille(_grille);
+            VerificationEtatGrille.EtatGrille(_grille);
+        }
+        public static void ReductionSeul(Grille _grille)
+        {
+            int avantReduction = _grille.CompterItterationTotal();
+            for (int i = 0; i < 5; i++)
+            {
+                PurgerGrille(_grille);
+
+                if (avantReduction == _grille.CompterItterationTotal())
+                {
+                    i = int.MaxValue - 1;
+                }
+                avantReduction = _grille.CompterItterationTotal();
+            }
         }
         public static void PurgerGrille(Grille _grille)
         {
@@ -51,7 +67,7 @@ namespace SudokuAlgo.AlgoTraqueur
         }
         public static bool PurgerGrilleItteration(Grille _grille)
         {
-            bool recomencerItteration=true;
+            bool recomencerItteration = true;
             bool recomencerPurge = false;
             while (recomencerItteration)
             {
@@ -62,18 +78,18 @@ namespace SudokuAlgo.AlgoTraqueur
                     {
                         if (cca.Contenu.Count > 1)
                         {
-                            if(cca.NumBlock==2 && cca.NumRangee==1 && cca.NumColonne==7)
+                            if (cca.NumBlock == 2 && cca.NumRangee == 1 && cca.NumColonne == 7)
                             {
 
                             }
-                            for(int i =0;i < cca.Contenu.Count;i++)
+                            for (int i = 0; i < cca.Contenu.Count; i++)
                             {
-                                if ((_grille.Rangees[cca.NumRangee].VerifierLigneComplette()&&
-                                    _grille.Rangees[cca.NumRangee].Itteration[cca.Contenu[i]]==1) ||
-                                    (_grille.Colonnes[cca.NumColonne].VerifierLigneComplette() &&
-                                    _grille.Colonnes[cca.NumColonne].Itteration[cca.Contenu[i]] == 1)||
-                                    (_grille.Blocks[cca.NumBlock].VerifierLigneComplette() &&
-                                    _grille.Blocks[cca.NumBlock].Itteration[cca.Contenu[i]] == 1))
+                                if (_grille.Rangees[cca.NumRangee].VerifierLigneComplette() &&
+                                    _grille.Rangees[cca.NumRangee].Itteration[cca.Contenu[i]] == 1 ||
+                                    _grille.Colonnes[cca.NumColonne].VerifierLigneComplette() &&
+                                    _grille.Colonnes[cca.NumColonne].Itteration[cca.Contenu[i]] == 1 ||
+                                    _grille.Blocks[cca.NumBlock].VerifierLigneComplette() &&
+                                    _grille.Blocks[cca.NumBlock].Itteration[cca.Contenu[i]] == 1)
                                 {
                                     cca.PlacerChiffre(cca.Contenu[i]);
                                     recomencerPurge = true;

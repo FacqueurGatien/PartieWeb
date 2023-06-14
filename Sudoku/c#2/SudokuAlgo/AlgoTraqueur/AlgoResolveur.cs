@@ -1,4 +1,5 @@
-﻿using SudokuGrille;
+﻿using SudokuAlgo.AlgoReduction;
+using SudokuGrille;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,13 +67,13 @@ namespace SudokuAlgo.AlgoTraqueur
             indexRetenu = IndexTrie(indexRetenu);
             int indexNum;
             int temp = _grille.CompterItterationTotal();
-            if (temp > 300)
+            if (temp > 350)
                 indexNum = 6;
-            else if (temp > 270)
+            else if (temp > 300)
                 indexNum = 5;
-            else if (temp > 240)
+            else if (temp > 250)
                 indexNum = 4;
-            else if (temp > 210)
+            else if (temp > 225)
                 indexNum = 3;
             else
                 indexNum = 2;
@@ -124,7 +125,7 @@ namespace SudokuAlgo.AlgoTraqueur
                                 grid.Rangees
                                     [indexListe[b][counterB][0]].Cases
                                     [indexListe[b][counterB][1]].Contenu = new List<int>() { indexListe[b][counterB][2] };
-                                AlgoReductionIndices.Reduction(grid);
+                                ReductionIndices.Reduction(grid);
                                 if (grid.EtatGrille == EnumEtatGrille.Complette)
                                 {
                                     return grid;
@@ -178,8 +179,9 @@ namespace SudokuAlgo.AlgoTraqueur
                                     grid.Rangees
                                         [indexListe[c][counterC][0]].Cases
                                         [indexListe[c][counterC][1]].Contenu = new List<int>() { indexListe[c][counterC][2] };
-                                    AlgoReductionIndices.Reduction(grid);
-                                    if (grid.EtatGrille == EnumEtatGrille.Complette)
+                                    ReductionIndices.Reduction(grid);
+                                    //if (grid.EtatGrille == EnumEtatGrille.Complette)//?????
+                                    if (grid.CompterItterationTotal()==81)
                                     {
                                         return grid;
                                     }
@@ -241,7 +243,7 @@ namespace SudokuAlgo.AlgoTraqueur
                                         grid.Rangees
                                             [indexListe[d][counterD][0]].Cases
                                             [indexListe[d][counterD][1]].Contenu = new List<int>() { indexListe[d][counterD][2] };
-                                        AlgoReductionIndices.Reduction(grid);
+                                        ReductionIndices.Reduction(grid);
                                         if (grid.EtatGrille == EnumEtatGrille.Complette)
                                         {
                                             return grid;
@@ -319,7 +321,7 @@ namespace SudokuAlgo.AlgoTraqueur
                                             grid.Rangees
                                                 [indexListe[e][counterE][0]].Cases
                                                 [indexListe[e][counterE][1]].Contenu = new List<int>() { indexListe[e][counterE][2] };
-                                            AlgoReductionIndices.Reduction(grid);
+                                            ReductionIndices.Reduction(grid);
                                             if (grid.EtatGrille == EnumEtatGrille.Complette)
                                             {
                                                 return grid;
@@ -411,7 +413,7 @@ namespace SudokuAlgo.AlgoTraqueur
                                                 grid.Rangees
                                                     [indexListe[f][counterF][0]].Cases
                                                     [indexListe[f][counterF][1]].Contenu = new List<int>() { indexListe[f][counterF][2] };
-                                                AlgoReductionIndices.Reduction(grid);
+                                                ReductionIndices.Reduction(grid);
                                                 if (grid.EtatGrille == EnumEtatGrille.Complette)
                                                 {
                                                     return grid;
