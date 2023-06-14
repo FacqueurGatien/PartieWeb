@@ -1,6 +1,7 @@
 ﻿using SudokuAlgo.AlgoAleatoire;
 using SudokuAlgo.AlgoReduction;
 using SudokuAlgo.AlgoTraqueur;
+using SudokuAlgo.ChoixDeLAlgorythme;
 using SudokuAlgo.RechercheIndice;
 using SudokuGrille;
 using System.Diagnostics;
@@ -56,68 +57,71 @@ namespace SudokuProg
 
             //_____________________________________________________
 
+            /* Grille grille = new Grille(GrilleVierge());
+             Console.WriteLine("Grille de depart");
+             Console.WriteLine(grille.ToString());
+
+
+             Grille reduction = CopieGrille.Copie(grille);
+             RechercerIndices.RechercherIndicesGrille(reduction);
+             ReductionIndices.ReductionSeul(reduction);
+             VerificationEtatGrille.EtatGrille(reduction);
+             int niveauDifficult = reduction.CompterItterationTotal();
+             if (reduction.EtatGrille==EnumEtatGrille.Complette)
+             {
+                 Console.WriteLine("Grille Resolu par l'algorythme de Reduction");
+                 Console.WriteLine(reduction.ToString());
+             }
+
+
+             else
+             {
+                 string result;
+                 Grille grilleFinal;
+                 if (niveauDifficult < 180 || niveauDifficult >400)
+                 {
+                     Grille aleatoire = CopieGrille.Copie(grille);
+                     Generateur generateur = new Generateur(grille);
+                     RechercerIndices.RechercherIndicesGrille(aleatoire);
+                     aleatoire = generateur.Generer();
+                     grilleFinal = CopieGrille.Copie(aleatoire);
+                     result = "Grille Resolu par l'algorythme pseudo aleatoire et l'algorythme de Reduction";
+                 }
+
+                 else
+                 {
+                     Grille traque = CopieGrille.Copie(grille);
+                     Traqueur traqueur = new Traqueur(traque);
+                     RechercerIndices.RechercherIndicesGrille(traque);
+                     traque = traqueur.Resolution();
+                     grilleFinal = CopieGrille.Copie(traque);
+                     result = "Grille Resolu par l'algorythme Traqueur et l'algorythme de Reduction";
+                 }
+
+                 VerificationEtatGrille.EtatGrille(grilleFinal);
+                 switch (grilleFinal.EtatGrille)
+                 {
+                     case EnumEtatGrille.Incomplette:
+                         Console.WriteLine("La grille n'est pas completé");
+                         break;
+                     case EnumEtatGrille.Complette:
+                         Console.WriteLine("Une solution a été trouvé");
+                         Console.WriteLine(result);
+                         break;
+                     case EnumEtatGrille.Invalide:
+                         Console.WriteLine("La grille n'a pas de solution");
+                         break;
+                     case EnumEtatGrille.Vierge:
+                         Console.WriteLine("La grille est vierge");
+                         break;
+                     default:
+                         break;
+                 }
+                 Console.WriteLine(grilleFinal.ToString());
+             }*/
             Grille grille = new Grille(GrilleVierge());
-            Console.WriteLine("Grille de depart");
-            Console.WriteLine(grille.ToString());
-
-
-            Grille reduction = CopieGrille.Copie(grille);
-            RechercerIndices.RechercherIndicesGrille(reduction);
-            ReductionIndices.ReductionSeul(reduction);
-            VerificationEtatGrille.EtatGrille(reduction);
-            int niveauDifficult = reduction.CompterItterationTotal();
-            if (reduction.EtatGrille==EnumEtatGrille.Complette)
-            {
-                Console.WriteLine("Grille Resolu par l'algorythme de Reduction");
-                Console.WriteLine(reduction.ToString());
-            }
-
-
-            else
-            {
-                string result;
-                Grille grilleFinal;
-                if (niveauDifficult < 180 || niveauDifficult >400)
-                {
-                    Grille aleatoire = CopieGrille.Copie(grille);
-                    Generateur generateur = new Generateur(grille);
-                    RechercerIndices.RechercherIndicesGrille(aleatoire);
-                    aleatoire = generateur.Generer();
-                    grilleFinal = CopieGrille.Copie(aleatoire);
-                    result = "Grille Resolu par l'algorythme pseudo aleatoire et l'algorythme de Reduction";
-                }
-
-                else
-                {
-                    Grille traque = CopieGrille.Copie(grille);
-                    Traqueur traqueur = new Traqueur(traque);
-                    RechercerIndices.RechercherIndicesGrille(traque);
-                    traque = traqueur.Resolution();
-                    grilleFinal = CopieGrille.Copie(traque);
-                    result = "Grille Resolu par l'algorythme Traqueur et l'algorythme de Reduction";
-                }
-
-                VerificationEtatGrille.EtatGrille(grilleFinal);
-                switch (grilleFinal.EtatGrille)
-                {
-                    case EnumEtatGrille.Incomplette:
-                        Console.WriteLine("La grille n'est pas completé");
-                        break;
-                    case EnumEtatGrille.Complette:
-                        Console.WriteLine("Une solution a été trouvé");
-                        Console.WriteLine(result);
-                        break;
-                    case EnumEtatGrille.Invalide:
-                        Console.WriteLine("La grille n'a pas de solution");
-                        break;
-                    case EnumEtatGrille.Vierge:
-                        Console.WriteLine("La grille est vierge");
-                        break;
-                    default:
-                        break;
-                }
-                Console.WriteLine(grilleFinal.ToString());
-            }
+            (string, Grille) result = ChoixAlgorythme.Redirection(grille);
+            Console.WriteLine($"{result.Item1}\n{result.Item2.ToString()}");
             
 
 
