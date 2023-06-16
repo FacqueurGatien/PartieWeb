@@ -1,6 +1,11 @@
 class Employee{
-    constructor(_employee){
-        this.id = _employee.id;
+    constructor(_employee,_id=0){
+        if(_id==0){
+            this.id = _employee.id;
+        }
+        else{
+            this.id = _id
+        }
         this.fullName = _employee.employee_name;
         this.salary = _employee.employee_salary;
         this.year = _employee.employee_age;
@@ -11,7 +16,7 @@ class Employee{
 
     GetKeys(){
 
-        return ["Id","FullName","Email","Salary Month","Year of Birth"];
+        return ["Id","FullName","Email","Salary Month","Year of Birth","Actions"];
     }
 
     GetNameArray(){

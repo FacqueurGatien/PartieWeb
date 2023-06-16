@@ -14,7 +14,7 @@ body
 {
     border-collapse: collapse;
 }
-.titleTable, .dataTable
+.titleTable, .dataTable, .dataFoot
 {
     border:2px solid black;
 }

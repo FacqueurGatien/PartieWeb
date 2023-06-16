@@ -9,11 +9,15 @@ class Employees{
         let jsonConverted = await response.json();
 
         for(let item of jsonConverted.data){
+            console.log(item)
             this.employeesList.push(new Employee(item));
         }
     }
-    GetArray(){
-        return this.employeesList;
+    GetArraySort(){
+        return this.employeesList.sort((a, b) => a.salary > b.salary ? 1:-1);
+    }
+    GetArraySortReverse(){
+        return this.employeesList.sort((a, b) => a.salary < b.salary ? 1:-1)
     }
     GetFirst(){
         try{
@@ -25,5 +29,18 @@ class Employees{
             console.log("La liste est vide.");
         }
     }
+    async GetById(id){
+        try{
+        for(let e of this.employeesList){
+            if(e.id == id){
+                return await e;
+            }
+        }}catch{}
+    }
+    async CopieEmp(id,newId=0){
+        let copie = await  this.GetById(id);
+        return new Employee(copie,newId)
+    }
+
 }
 export {Employees};
