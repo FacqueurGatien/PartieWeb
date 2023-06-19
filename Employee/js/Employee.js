@@ -1,14 +1,12 @@
 class Employee{
-    constructor(_employee,_id=0){
-        if(_id==0){
-            this.id = _employee.id;
-        }
-        else{
-            this.id = _id
-        }
+    constructor(_employee){
+        this.id = _employee.id;
         this.fullName = _employee.employee_name;
         this.salary = _employee.employee_salary;
         this.year = _employee.employee_age;
+    }
+    CopieEmp(_id){
+        return [_id,this.fullName,this.GetEmail(),this.GetSalaryMonth(),this.GetYearBirth()]
     }
     GetValues(){
         return [this.id,this.fullName,this.GetEmail(),this.GetSalaryMonth(),this.GetYearBirth()];

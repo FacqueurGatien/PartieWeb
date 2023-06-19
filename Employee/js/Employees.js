@@ -19,6 +19,12 @@ class Employees{
     GetArraySortReverse(){
         return this.employeesList.sort((a, b) => a.salary < b.salary ? 1:-1)
     }
+    GetArraySortP(array){
+        return array.sort((a, b) => a.salary > b.salary ? 1:-1);
+    }
+    GetArraySortReverseP(array){
+        return array.sort((a, b) => a.salary < b.salary ? 1:-1)
+    }
     GetFirst(){
         try{
             if(this.employeesList.concat.length>0)
@@ -38,8 +44,15 @@ class Employees{
         }}catch{}
     }
     async CopieEmp(id,newId=0){
-        let copie = await  this.GetById(id);
-        return new Employee(copie,newId)
+        let copie = await this.GetById(id);
+        let item = {
+            "id": newId,
+            "employee_name": copie.fullName,
+            "employee_salary": copie.salary,
+            "employee_age": copie.year,
+            "profile_image": ""
+        }
+        return new Employee(item,newId)
     }
 
 }

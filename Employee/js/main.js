@@ -31,28 +31,28 @@ function Show(array){
             dup.addEventListener("click", async (e)=>{
                 let newId=0;
                 for(let emp of arrayEmp){
-                    if(emp.id> newId){
+                    if(emp.id >= newId){
                         newId=parseInt(emp.id)+1;
                     }
                 }
                 let copie = await employees.CopieEmp(dup.name,newId);
                 arrayEmp.push(copie)
+                console.log(arrayEmp)
                 document.getElementById("label").innerHTML="";
                 document.getElementById("data").innerHTML="";
                 document.getElementById("foot").innerHTML="";
-                Show(arrayEmp);
+                let arrayEmpTrie = employees.GetArraySortReverseP(arrayEmp)
+                Show(arrayEmpTrie);
             })
 
             del.textContent="Delete";
             del.name=emp.id;
             del.addEventListener("click", (e)=>{
-                ////////////////////////////////////////
                 arrayEmp = arrayEmp.filter((p) => del.name != p.id )
                 document.getElementById("label").innerHTML="";
                 document.getElementById("data").innerHTML="";
                 document.getElementById("foot").innerHTML="";
                 Show(arrayEmp)
-                ///////////////////////////////////////
             })
 
             del.classList="buttonDel";    
@@ -66,7 +66,7 @@ function Show(array){
             }
             somme+=parseFloat(emp.GetSalaryMonth());
             let actions = document.createElement("td");
-            actions.classList="dataTable";
+            actions.classList="dataTableA";
             actions.appendChild(dup);
             actions.appendChild(del);
             rowData.appendChild(actions);
