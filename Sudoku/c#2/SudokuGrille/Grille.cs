@@ -10,7 +10,8 @@ namespace SudokuGrille
         public EnumEtatGrille EtatGrille { get; set; }
 
         public bool PurgeRecomencer { get; set; }
-        public bool ItterationRecomencer { get; set; }//sureent a enlevé
+        public bool ItterationRecomencer { get; set; }
+        public string resolutionMessage { get; set; }
 
         public Grille(List<Ligne> _grille, EnumEtatGrille etatGrille = EnumEtatGrille.Incomplette)
         {

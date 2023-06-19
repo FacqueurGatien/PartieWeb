@@ -16,17 +16,15 @@ namespace SudokuAlgo.AlgoTraqueur
 
         public Traqueur(Grille _grille)
         {
-            //Etape 1
-             //RechercerIndices.RechercherIndicesGrille(_grille);
              GrilleAResoudre= _grille;
         }
         public Grille? Resolution()
         {
-            //Etape 2
+            //Etape 1
             ReductionIndices.Reduction(GrilleAResoudre);
             VerificationEtatGrille.EtatGrille(GrilleAResoudre);
 
-            //Etape 3
+            //Etape 
             if (GrilleAResoudre.EtatGrille==EnumEtatGrille.Incomplette)
             {
                 Grille? grilleFinal = AlgoResolveur.Demarer(GrilleAResoudre);

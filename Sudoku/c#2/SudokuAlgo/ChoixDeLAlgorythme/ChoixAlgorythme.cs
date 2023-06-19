@@ -13,7 +13,7 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
 {
     public static class ChoixAlgorythme
     {
-        public static (string,Grille) Redirection(Grille _grille)
+        public static Grille Redirection(Grille _grille)
         {
             string result="";
             Grille reduction = AlgoReduction(_grille);
@@ -21,8 +21,8 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
             if (reduction.EtatGrille == EnumEtatGrille.Complette)
             {
                 result+="Grille Resolu par l'algorythme de Reduction";
-                result = EtatGrilleApresTraitement(reduction,result);
-                return (result,reduction);
+                reduction.resolutionMessage = EtatGrilleApresTraitement(reduction,result);
+                return reduction;
             }
             else
             {
@@ -39,8 +39,8 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
                     grilleFinal = AlgoTraqueur(_grille);
                     result += "Grille Resolu par l'algorythme Traqueur et l'algorythme de Reduction";
                 }
-                result = EtatGrilleApresTraitement(grilleFinal,result);
-                return (result, grilleFinal);
+                grilleFinal.resolutionMessage = EtatGrilleApresTraitement(grilleFinal,result);
+                return  grilleFinal;
             }
 
         }
@@ -48,7 +48,7 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
         {
             Grille reduction = CopieGrille.Copie(_grille);
             RechercerIndices.RechercherIndicesGrille(reduction);
-            ReductionIndices.ReductionSeul(reduction);
+            ReductionIndices.Reduction(reduction);
             VerificationEtatGrille.EtatGrille(reduction);
             return reduction;
         }
@@ -61,11 +61,18 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
         }
         public static Grille AlgoTraqueur(Grille _grille)
         {
-            Grille traque = CopieGrille.Copie(_grille);
+            Grille? traque = CopieGrille.Copie(_grille);
             Traqueur traqueur = new Traqueur(traque);
             RechercerIndices.RechercherIndicesGrille(traque);
             traque = traqueur.Resolution();
-            return traque;
+            if (traque!=null)
+            {
+                return traque;
+            }
+            else
+            {
+                throw new InvalidDataException();
+            }
         }
         public static string EtatGrilleApresTraitement(Grille _grille,string _result)
         {

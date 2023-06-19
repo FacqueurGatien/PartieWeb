@@ -16,7 +16,7 @@ namespace SudokuAlgo.AlgoReduction
             PurgerGrille(_grille);
             VerificationEtatGrille.EtatGrille(_grille);
         }
-        public static void ReductionSeul(Grille _grille)
+/*        public static void ReductionSeul(Grille _grille)
         {
             int avantReduction = _grille.CompterItterationTotal();
             for (int i = 0; i < 5; i++)
@@ -29,7 +29,7 @@ namespace SudokuAlgo.AlgoReduction
                 }
                 avantReduction = _grille.CompterItterationTotal();
             }
-        }
+        }*/
         public static void PurgerGrille(Grille _grille)
         {
             bool recommencerPurge = true;

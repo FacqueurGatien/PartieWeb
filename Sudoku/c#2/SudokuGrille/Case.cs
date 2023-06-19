@@ -38,6 +38,10 @@ namespace SudokuGrille
             Contenu.Clear();
             Contenu.Add(_chiffre);
         }
+        public void PlacerChiffre()
+        {
+            Contenu.Clear();
+        }
         public void PlacerIndices(List<int> _indices)
         {
             Contenu.Clear();
