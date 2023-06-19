@@ -1,0 +1,30 @@
+*
+{
+    box-sizing: border-box;
+}
+html
+{
+    font-size: 62.5%;
+}
+body
+{
+    font-size: 1.6rem;
+}
+#employeesTable
+{
+    border-collapse: collapse;
+}
+.titleTable, .dataTable, .dataFoot, .dataTableA
+{
+    border:2px solid black;
+}
+.dataTableA{
+    width: 25%;
+}
+button{
+    background-color: lightcyan;
+    border: 1px solid darkcyan;
+    margin: 2.5%;
+    border-radius: 5px;
+    width: 45%;
+}
