@@ -1,42 +1,29 @@
 class Employee{
-    constructor(_employee){
-        this.id = _employee.id;
-        this.fullName = _employee.employee_name;
-        this.salary = _employee.employee_salary;
-        this.year = _employee.employee_age;
-    }
-    CopieEmp(_id){
-        return [_id,this.fullName,this.GetEmail(),this.GetSalaryMonth(),this.GetYearBirth()]
-    }
-    GetValues(){
-        return [this.id,this.fullName,this.GetEmail(),this.GetSalaryMonth(),this.GetYearBirth()];
+    constructor(employee){
+        Object.assign(this,employee);
+        this.email = this.GetEmail();
+        this.year = this.GetYearOfBirth();
+        this.salary = this.GetSalary();
     }
 
     GetKeys(){
-
-        return ["Id","FullName","Email","Salary Month","Year of Birth","Actions"];
+        return Object.keys();
     }
 
-    GetNameArray(){
-        return [this.fullName.split(' ')[0],this.fullName.split(' ')[1]]
+    GetValues(){
+        return Object.values();
     }
 
     GetEmail(){
-        let name = this.GetNameArray();
-        return name[0][0].toLowerCase()+"."+name[1].toLowerCase()+"@email.com";
+        return this.employee_name[0].toLowerCase()+"."+this.employee_name.split(" ")[1].toLowerCase()+"@email.com"
     }
 
-    GetSalaryMonth(){
-        return (this.salary/12).toFixed(2);
+    GetSalary(){
+        return (this.employee_salary/12).toFixed(2);
     }
 
-    GetYearBirth(){
-        let date = new Date();
-        return date.getFullYear()-this.year;
-    }
-
-    GetEmployeeFormat(){
-        return [this.id,this.fullName,this.GetEmail(),this.GetSalaryMonth(),this.GetYearBirth()];
+    GetYearOfBirth(){
+        return new Date().getFullYear()-this.employee_age;
     }
 }
 export {Employee};

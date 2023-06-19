@@ -1,58 +1,50 @@
-import {Employee} from "./Employee.js";
-class Employees{
-    constructor(_link){
-        this.employeesList=[];
-        this.link=_link;
-    }
-    async CreateArray(){
-        let response = await fetch(this.link);
-        let jsonConverted = await response.json();
+import { Db } from "./db.js";
+import { Employee } from "./Employee.js";
 
-        for(let item of jsonConverted.data){
-            this.employeesList.push(new Employee(item));
-        }
-    }
-    GetArraySort(){
-        return this.employeesList.sort((a, b) => a.salary > b.salary ? 1:-1);
-    }
-    GetArraySortReverse(){
-        return this.employeesList.sort((a, b) => a.salary < b.salary ? 1:-1)
-    }
-    GetArraySortP(array){
-        return array.sort((a, b) => a.salary > b.salary ? 1:-1);
-    }
-    GetArraySortReverseP(array){
-        return array.sort((a, b) => a.salary < b.salary ? 1:-1)
-    }
-    GetFirst(){
-        try{
-            if(this.employeesList.concat.length>0)
-            {
-                return this.employeesList[0];
-            }         
-        }catch{
-            console.log("La liste est vide.");
-        }
-    }
-    async GetById(id){
-        try{
-        for(let e of this.employeesList){
-            if(e.id == id){
-                return await e;
-            }
-        }}catch{}
-    }
-    async CopieEmp(id,newId=0){
-        let copie = await this.GetById(id);
-        let item = {
-            "id": newId,
-            "employee_name": copie.fullName,
-            "employee_salary": copie.salary,
-            "employee_age": copie.year,
-            "profile_image": ""
-        }
-        return new Employee(item,newId)
+class Employees 
+{
+    constructor()
+    {
+        this.employeesCollection = [];
+        this.sortOrder=true;
     }
 
+    async GetEmployees()
+    {
+        let reponse = await Db.fetchData('https://arfp.github.io/tp/web/frontend/employees/employees.json');
+
+        for(let employee of reponse.data){
+            this.employeesCollection.push(new Employee(employee));
+        }
+
+        return this.employeesCollection;
+    }
+
+    deleteEmployee(id){
+        this.employeesCollection=this.employeesCollection.filter(emp=>emp.id!=id);
+    }
+
+    
+    duplicateEmployee(id){
+        let employee = this.employeesCollection.find(emp=>emp.id==id);
+        let maxId = Math.max.apply(Math, this.employeesCollection.map(function(emp){return emp.id}));
+        if(employee instanceof Employee){
+            let newEmployee = new Employee(employee);
+            newEmployee.id = ++maxId;
+            this.employeesCollection.push(newEmployee);
+        }
+    }
+
+    sortBySalary(){
+        console.log(this.employeesCollection);
+        this.employeesCollection.sort((a,b)=>a.employee_salary - b.employee_salary);
+        console.log("bbbb");
+        if(!this.sortOrder){
+            this.employeesCollection.reverse();
+        }
+        this.sortOrder=!this.sortOrder;
+    }
+
+    /* Ajouter les méthodes pour rechercher, supprimer et dupliquer un employé dans employeesCollection */
 }
-export {Employees};
+export { Employees }

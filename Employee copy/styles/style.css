@@ -14,12 +14,20 @@ body
 {
     border-collapse: collapse;
 }
-.titleTable, .dataTable, .dataFoot, .dataTableA
+.label, .dataTable, .dataFoot, .dataTableA
 {
     border:2px solid black;
 }
-.dataTableA{
-    width: 25%;
+th,td
+{
+    border:2px solid black;
+    padding: 5px;
+}
+.button{
+    width: 30%;
+}
+#sort,#month{
+    width: 20%;
 }
 button{
     background-color: lightcyan;
