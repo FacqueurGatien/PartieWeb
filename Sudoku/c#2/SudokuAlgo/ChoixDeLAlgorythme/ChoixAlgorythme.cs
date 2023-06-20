@@ -62,7 +62,6 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
         {
             Grille? traque = new Grille(_grille);
             Traqueur traqueur = new Traqueur(traque);
-            RechercerIndices.RechercherIndicesGrille(traque);
             traque = traqueur.Resolution();
             if (traque!=null)
             {

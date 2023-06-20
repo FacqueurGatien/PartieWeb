@@ -31,7 +31,6 @@ namespace SudokuAlgo.AlgoAleatoire
                 ReductionIndices.Reduction(GrilleAGenerer);
             }
             while (GrilleAGenerer.CompterItterationTotal() != 81);
-            Console.WriteLine(GrilleAGenerer.ToString());
             return GrilleAGenerer;
         }
         public void ResolutionGrilleAleatoire()
