@@ -13,16 +13,11 @@ namespace SudokuGrille
         public int NumColonne { get; set; }
         public int NumBlock { get; set; }
         public int NumPositionRangee { get; set; }
-        public Case()
+        public Case():this(new List<int>())
         {
-            Contenu = new List<int>();
-            NumRangee=0; 
-            NumColonne=0; 
-            NumBlock=0;
         }
         public Case(int _chiffre):this(new List<int>() {_chiffre})
         {
-
         }
         public Case(List<int> _Indices)
         {
@@ -30,7 +25,6 @@ namespace SudokuGrille
         }
         public Case(Case _case) : this(new List<int>(_case.Contenu))
         {
-
         }
 
         public void PlacerChiffre(int _chiffre)

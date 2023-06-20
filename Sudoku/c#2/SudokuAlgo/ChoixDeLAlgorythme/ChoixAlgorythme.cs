@@ -46,22 +46,21 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
         }
         public static Grille AlgoReduction(Grille _grille)
         {
-            Grille reduction = CopieGrille.Copie(_grille);
-            RechercerIndices.RechercherIndicesGrille(reduction);
+            Grille reduction = new Grille(_grille);
             ReductionIndices.Reduction(reduction);
             VerificationEtatGrille.EtatGrille(reduction);
             return reduction;
         }
         public static Grille AlgoPseudoAleatoire(Grille _grille)
         {
-            Grille aleatoire = CopieGrille.Copie(_grille);
+            Grille aleatoire = new Grille(_grille);
             Generateur generateur = new Generateur(aleatoire);
             aleatoire = generateur.Generer();
             return aleatoire;
         }
         public static Grille AlgoTraqueur(Grille _grille)
         {
-            Grille? traque = CopieGrille.Copie(_grille);
+            Grille? traque = new Grille(_grille);
             Traqueur traqueur = new Traqueur(traque);
             RechercerIndices.RechercherIndicesGrille(traque);
             traque = traqueur.Resolution();

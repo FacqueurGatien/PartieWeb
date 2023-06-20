@@ -12,7 +12,7 @@ namespace SudokuAlgo.AlgoTraqueur
     {
         public static Grille? Demarer(Grille _grille)
         {
-            Grille grille = CopieGrille.Copie(_grille);//Copier la grille de depart a chaque itteration
+            Grille grille = new Grille(_grille);//Copier la grille de depart a chaque itteration
             List<List<int[]>> listeIndex = RecupererListeIndex(_grille);
             Grille? grilleFinal = ResolveAlgo2(listeIndex, _grille);
             if (grilleFinal != null && grilleFinal.CompterItterationTotal() == 81)
@@ -118,7 +118,7 @@ namespace SudokuAlgo.AlgoTraqueur
                             if (counterB < indexListe[b].Count)
                             {
                                 /////////////////////////////////
-                                Grille grid = CopieGrille.Copie(_grille);
+                                Grille grid = new Grille(_grille);
                                 grid.Rangees
                                     [indexListe[a][counterA][0]].Cases
                                     [indexListe[a][counterA][1]].Contenu = new List<int>() { indexListe[a][counterA][2] };
@@ -169,7 +169,7 @@ namespace SudokuAlgo.AlgoTraqueur
                                 if (counterC < indexListe[c].Count)
                                 {
                                     /////////////////////////////////
-                                    Grille grid = CopieGrille.Copie(_grille);
+                                    Grille grid = new Grille(_grille);
                                     grid.Rangees
                                         [indexListe[a][counterA][0]].Cases//dddddddddddddddddddddd
                                         [indexListe[a][counterA][1]].Contenu = new List<int>() { indexListe[a][counterA][2] };
@@ -230,7 +230,7 @@ namespace SudokuAlgo.AlgoTraqueur
                                     if (counterD < indexListe[d].Count)
                                     {
                                         /////////////////////////////////
-                                        Grille grid = CopieGrille.Copie(_grille);
+                                        Grille grid = new Grille(_grille);
                                         grid.Rangees
                                             [indexListe[a][counterA][0]].Cases
                                             [indexListe[a][counterA][1]].Contenu = new List<int>() { indexListe[a][counterA][2] };
@@ -305,7 +305,7 @@ namespace SudokuAlgo.AlgoTraqueur
                                         if (counterE < indexListe[e].Count)
                                         {
                                             /////////////////////////////////
-                                            Grille grid = CopieGrille.Copie(_grille);
+                                            Grille grid = new Grille(_grille);
                                             grid.Rangees
                                                 [indexListe[a][counterA][0]].Cases
                                                 [indexListe[a][counterA][1]].Contenu = new List<int>() { indexListe[a][counterA][2] };
@@ -394,7 +394,7 @@ namespace SudokuAlgo.AlgoTraqueur
                                             if (counterF < indexListe[f].Count)
                                             {
                                                 /////////////////////////////////
-                                                Grille grid = CopieGrille.Copie(_grille);
+                                                Grille grid = new Grille(_grille);
                                                 grid.Rangees
                                                     [indexListe[a][counterA][0]].Cases
                                                     [indexListe[a][counterA][1]].Contenu = new List<int>() { indexListe[a][counterA][2] };

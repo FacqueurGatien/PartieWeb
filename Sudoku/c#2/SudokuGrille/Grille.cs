@@ -26,7 +26,7 @@ namespace SudokuGrille
             PurgeRecomencer = false;
             ItterationRecomencer = false;
         }
-        public Grille()
+        public Grille():this(new List<Ligne>() { new Ligne(), new Ligne(), new Ligne(), new Ligne(), new Ligne(), new Ligne(), new Ligne(), new Ligne(), new Ligne()},EnumEtatGrille.Vierge)
         {
             List<Ligne> grille = new List<Ligne>();
             for (int r = 0; r < 9; r++)
@@ -46,6 +46,9 @@ namespace SudokuGrille
             EtatGrille = EnumEtatGrille.Vierge;
         }
 
+        public Grille(Grille _grille):this(_grille.Rangees,_grille.EtatGrille)
+        {
+        }
         public void GenererRangees(List<Ligne> _grille)
         {
             for (int r = 0; r < 9; r++)

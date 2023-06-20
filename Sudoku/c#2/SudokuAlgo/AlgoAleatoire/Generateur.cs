@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using SudokuAlgo.AlgoTraqueur;
 using System.Reflection;
+using SudokuAlgo.AlgoReduction;
 
 namespace SudokuAlgo.AlgoAleatoire
 {
@@ -25,10 +26,12 @@ namespace SudokuAlgo.AlgoAleatoire
             //Etape 1 Rechercher les indices d'une ligne
             do
             {
-                GrilleAGenerer = CopieGrille.Copie(GrilleDepart);
+                GrilleAGenerer = new Grille(GrilleDepart);
                 ResolutionGrilleAleatoire();
+                ReductionIndices.Reduction(GrilleAGenerer);
             }
             while (GrilleAGenerer.CompterItterationTotal() != 81);
+            Console.WriteLine(GrilleAGenerer.ToString());
             return GrilleAGenerer;
         }
         public void ResolutionGrilleAleatoire()

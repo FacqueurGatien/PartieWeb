@@ -12,7 +12,7 @@ namespace SudokuProg
     {
         static void Main(string[] args)
         {
-            Grille grille = new Grille(GrilleEssaie4());
+            Grille grille = new Grille(GrilleEssaie3());
             Grille result = ChoixAlgorythme.Redirection(grille);
             Console.WriteLine($"{result.resolutionMessage}\n{result.ToString()}");
         }
