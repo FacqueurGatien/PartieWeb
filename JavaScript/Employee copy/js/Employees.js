@@ -38,7 +38,6 @@ class Employees
     sortBySalary(){
         console.log(this.employeesCollection);
         this.employeesCollection.sort((a,b)=>a.employee_salary - b.employee_salary);
-        console.log("bbbb");
         if(!this.sortOrder){
             this.employeesCollection.reverse();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,10 @@ namespace SudokuGrille
 {
     public class Ligne
     {
-        public List<Case> Cases { get; set; }
-        public Dictionary<int, int> Itteration;
+        public List<Case> Cases { get; }
+        public Dictionary<int, int> Itteration { get=> itteration; }
+        private Dictionary<int, int> itteration;
 
-        //Etape2 Copier la ligne
         public Ligne(Ligne _ligne):this(new List<Case>() {
             new Case(_ligne.Cases[0].Contenu), 
             new Case(_ligne.Cases[1].Contenu),
@@ -37,7 +38,7 @@ namespace SudokuGrille
 
         public void ItterationInitialisation()
         {
-            Itteration = new Dictionary<int, int>()
+            itteration = new Dictionary<int, int>()
             {
                 {1,0},
                 {2,0},
@@ -95,18 +96,6 @@ namespace SudokuGrille
                 }
             }
             return false;
-        }
-
-        public void PurgerLigne(Case _case, int _chiffre, Grille _grille)
-        {
-            foreach (Case ca in Cases)
-            {
-                if (ca != _case && ca.Contenu.Contains(_chiffre))
-                {
-                    ca.Contenu.Remove(_chiffre);
-                    _grille.PurgeRecomencer = true;
-                }
-            }
         }
         public void PurgerLigne(Case _case, int _chiffre)
         {

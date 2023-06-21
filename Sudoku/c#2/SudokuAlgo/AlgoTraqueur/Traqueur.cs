@@ -22,14 +22,22 @@ namespace SudokuAlgo.AlgoTraqueur
         {
             //Etape 1
             ReductionIndices.Reduction(GrilleAResoudre);
-            VerificationEtatGrille.EtatGrille(GrilleAResoudre);
+            GrilleAResoudre.VerifierEtatGrille();
 
             //Etape 
             if (GrilleAResoudre.EtatGrille==EnumEtatGrille.Incomplette)
             {
                 Grille? grilleFinal = AlgoResolveur.Demarer(GrilleAResoudre);
-                VerificationEtatGrille.EtatGrille(grilleFinal);
+                if (grilleFinal == null)
+                {
+                    return null; 
+                }
+                grilleFinal.VerifierEtatGrille();
                 return grilleFinal;
+            }
+            else if (GrilleAResoudre.EtatGrille == EnumEtatGrille.Complette)
+            {
+                return GrilleAResoudre;
             }
             else
             {

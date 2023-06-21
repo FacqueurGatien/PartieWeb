@@ -7,11 +7,11 @@ class Employee{
     }
 
     GetKeys(){
-        return Object.keys();
+        return Object.keys(this);
     }
 
     GetValues(){
-        return Object.values();
+        return Object.values(this);
     }
 
     GetEmail(){

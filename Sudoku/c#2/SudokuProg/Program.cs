@@ -12,9 +12,21 @@ namespace SudokuProg
     {
         static void Main(string[] args)
         {
-            Grille grille = new Grille(GrilleEssaie4());
+            Grille grille = new Grille(GrilleEssaie2());
             Grille result = ChoixAlgorythme.Redirection(grille);
-            Console.WriteLine($"{result.resolutionMessage}\n{result}");
+            Console.WriteLine($"{result.ResolutionMessage}\n{result}");
+
+            grille = new Grille(GrilleEssaie3());
+            result = ChoixAlgorythme.Redirection(grille);
+            Console.WriteLine($"{result.ResolutionMessage}\n{result}");
+
+            grille = new Grille(GrilleEssaie4());
+            result = ChoixAlgorythme.Redirection(grille);
+            Console.WriteLine($"{result.ResolutionMessage}\n{result}");
+
+            grille = new Grille(GrilleVierge());
+            result = ChoixAlgorythme.Redirection(grille);
+            Console.WriteLine($"{result.ResolutionMessage}\n{result}");
         }
         public static List<Ligne> GrilleVierge()
         {

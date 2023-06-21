@@ -21,7 +21,7 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
             if (reduction.EtatGrille == EnumEtatGrille.Complette)
             {
                 result+="Grille Resolu par l'algorythme de Reduction";
-                reduction.resolutionMessage = EtatGrilleApresTraitement(reduction,result);
+                reduction.ResolutionMessage = EtatGrilleApresTraitement(reduction,result);
                 return reduction;
             }
             else
@@ -39,7 +39,7 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
                     grilleFinal = AlgoTraqueur(_grille);
                     result += "Grille Resolu par l'algorythme Traqueur et l'algorythme de Reduction";
                 }
-                grilleFinal.resolutionMessage = EtatGrilleApresTraitement(grilleFinal,result);
+                grilleFinal.ResolutionMessage = EtatGrilleApresTraitement(grilleFinal,result);
                 return  grilleFinal;
             }
 
@@ -48,7 +48,7 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
         {
             Grille reduction = new Grille(_grille);
             ReductionIndices.Reduction(reduction);
-            VerificationEtatGrille.EtatGrille(reduction);
+            reduction.VerifierEtatGrille();
             return reduction;
         }
         public static Grille AlgoPseudoAleatoire(Grille _grille)
@@ -74,7 +74,7 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
         }
         public static string EtatGrilleApresTraitement(Grille _grille,string _result)
         {
-            VerificationEtatGrille.EtatGrille(_grille);
+            _grille.VerifierEtatGrille();
             string result="";
             switch (_grille.EtatGrille)
             {

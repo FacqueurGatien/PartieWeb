@@ -121,10 +121,10 @@ namespace SudokuAlgo.AlgoTraqueur
                                 Grille grid = new Grille(_grille);
                                 grid.Rangees
                                     [indexListe[a][counterA][0]].Cases
-                                    [indexListe[a][counterA][1]].Contenu = new List<int>() { indexListe[a][counterA][2] };
+                                    [indexListe[a][counterA][1]].PlacerIndices(new List<int>() { indexListe[a][counterA][2] });
                                 grid.Rangees
                                     [indexListe[b][counterB][0]].Cases
-                                    [indexListe[b][counterB][1]].Contenu = new List<int>() { indexListe[b][counterB][2] };
+                                    [indexListe[b][counterB][1]].PlacerIndices(new List<int>() { indexListe[b][counterB][2] });
                                 ReductionIndices.Reduction(grid);
                                 if (grid.EtatGrille == EnumEtatGrille.Complette)
                                 {
@@ -171,16 +171,15 @@ namespace SudokuAlgo.AlgoTraqueur
                                     /////////////////////////////////
                                     Grille grid = new Grille(_grille);
                                     grid.Rangees
-                                        [indexListe[a][counterA][0]].Cases//dddddddddddddddddddddd
-                                        [indexListe[a][counterA][1]].Contenu = new List<int>() { indexListe[a][counterA][2] };
+                                        [indexListe[a][counterA][0]].Cases
+                                        [indexListe[a][counterA][1]].PlacerIndices(new List<int>() { indexListe[a][counterA][2] });
                                     grid.Rangees
                                         [indexListe[b][counterB][0]].Cases
-                                        [indexListe[b][counterB][1]].Contenu = new List<int>() { indexListe[b][counterB][2] };
+                                        [indexListe[b][counterB][1]].PlacerIndices(new List<int>() { indexListe[b][counterB][2] });
                                     grid.Rangees
                                         [indexListe[c][counterC][0]].Cases
-                                        [indexListe[c][counterC][1]].Contenu = new List<int>() { indexListe[c][counterC][2] };
+                                        [indexListe[c][counterC][1]].PlacerIndices(new List<int>() { indexListe[c][counterC][2] });
                                     ReductionIndices.Reduction(grid);
-                                    //if (grid.EtatGrille == EnumEtatGrille.Complette)//?????
                                     if (grid.CompterItterationTotal()==81)
                                     {
                                         return grid;
@@ -233,16 +232,16 @@ namespace SudokuAlgo.AlgoTraqueur
                                         Grille grid = new Grille(_grille);
                                         grid.Rangees
                                             [indexListe[a][counterA][0]].Cases
-                                            [indexListe[a][counterA][1]].Contenu = new List<int>() { indexListe[a][counterA][2] };
+                                            [indexListe[a][counterA][1]].PlacerIndices(new List<int>() { indexListe[a][counterA][2] });
                                         grid.Rangees
                                             [indexListe[b][counterB][0]].Cases
-                                            [indexListe[b][counterB][1]].Contenu = new List<int>() { indexListe[b][counterB][2] };
+                                            [indexListe[b][counterB][1]].PlacerIndices(new List<int>() { indexListe[b][counterB][2] });
                                         grid.Rangees
                                             [indexListe[c][counterC][0]].Cases
-                                            [indexListe[c][counterC][1]].Contenu = new List<int>() { indexListe[c][counterC][2] };
+                                            [indexListe[c][counterC][1]].PlacerIndices(new List<int>() { indexListe[c][counterC][2] });
                                         grid.Rangees
                                             [indexListe[d][counterD][0]].Cases
-                                            [indexListe[d][counterD][1]].Contenu = new List<int>() { indexListe[d][counterD][2] };
+                                            [indexListe[d][counterD][1]].PlacerIndices(new List<int>() { indexListe[d][counterD][2] });
                                         ReductionIndices.Reduction(grid);
                                         if (grid.EtatGrille == EnumEtatGrille.Complette)
                                         {
@@ -308,19 +307,19 @@ namespace SudokuAlgo.AlgoTraqueur
                                             Grille grid = new Grille(_grille);
                                             grid.Rangees
                                                 [indexListe[a][counterA][0]].Cases
-                                                [indexListe[a][counterA][1]].Contenu = new List<int>() { indexListe[a][counterA][2] };
+                                                [indexListe[a][counterA][1]].PlacerIndices(new List<int>() { indexListe[a][counterA][2] });
                                             grid.Rangees
                                                 [indexListe[b][counterB][0]].Cases
-                                                [indexListe[b][counterB][1]].Contenu = new List<int>() { indexListe[b][counterB][2] };
+                                                [indexListe[b][counterB][1]].PlacerIndices(new List<int>() { indexListe[b][counterB][2] });
                                             grid.Rangees
                                                 [indexListe[c][counterC][0]].Cases
-                                                [indexListe[c][counterC][1]].Contenu = new List<int>() { indexListe[c][counterC][2] };
+                                                [indexListe[c][counterC][1]].PlacerIndices(new List<int>() { indexListe[c][counterC][2] });
                                             grid.Rangees
                                                 [indexListe[d][counterD][0]].Cases
-                                                [indexListe[d][counterD][1]].Contenu = new List<int>() { indexListe[d][counterD][2] };
+                                                [indexListe[d][counterD][1]].PlacerIndices(new List<int>() { indexListe[d][counterD][2] });
                                             grid.Rangees
                                                 [indexListe[e][counterE][0]].Cases
-                                                [indexListe[e][counterE][1]].Contenu = new List<int>() { indexListe[e][counterE][2] };
+                                                [indexListe[e][counterE][1]].PlacerIndices(new List<int>() { indexListe[e][counterE][2] });
                                             ReductionIndices.Reduction(grid);
                                             if (grid.EtatGrille == EnumEtatGrille.Complette)
                                             {
@@ -397,22 +396,22 @@ namespace SudokuAlgo.AlgoTraqueur
                                                 Grille grid = new Grille(_grille);
                                                 grid.Rangees
                                                     [indexListe[a][counterA][0]].Cases
-                                                    [indexListe[a][counterA][1]].Contenu = new List<int>() { indexListe[a][counterA][2] };
+                                                    [indexListe[a][counterA][1]].PlacerIndices(new List<int>() { indexListe[a][counterA][2] });
                                                 grid.Rangees
                                                     [indexListe[b][counterB][0]].Cases
-                                                    [indexListe[b][counterB][1]].Contenu = new List<int>() { indexListe[b][counterB][2] };
+                                                    [indexListe[b][counterB][1]].PlacerIndices(new List<int>() { indexListe[b][counterB][2] });
                                                 grid.Rangees
                                                     [indexListe[c][counterC][0]].Cases
-                                                    [indexListe[c][counterC][1]].Contenu = new List<int>() { indexListe[c][counterC][2] };
+                                                    [indexListe[c][counterC][1]].PlacerIndices(new List<int>() { indexListe[c][counterC][2] });
                                                 grid.Rangees
                                                     [indexListe[d][counterD][0]].Cases
-                                                    [indexListe[d][counterD][1]].Contenu = new List<int>() { indexListe[d][counterD][2] };
+                                                    [indexListe[d][counterD][1]].PlacerIndices(new List<int>() { indexListe[d][counterD][2] });
                                                 grid.Rangees
                                                     [indexListe[e][counterE][0]].Cases
-                                                    [indexListe[e][counterE][1]].Contenu = new List<int>() { indexListe[e][counterE][2] };
+                                                    [indexListe[e][counterE][1]].PlacerIndices(new List<int>() { indexListe[e][counterE][2] });
                                                 grid.Rangees
                                                     [indexListe[f][counterF][0]].Cases
-                                                    [indexListe[f][counterF][1]].Contenu = new List<int>() { indexListe[f][counterF][2] };
+                                                    [indexListe[f][counterF][1]].PlacerIndices(new List<int>() { indexListe[f][counterF][2] });
                                                 ReductionIndices.Reduction(grid);
                                                 if (grid.EtatGrille == EnumEtatGrille.Complette)
                                                 {

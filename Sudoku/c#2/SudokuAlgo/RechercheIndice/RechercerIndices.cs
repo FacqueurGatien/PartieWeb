@@ -9,7 +9,7 @@ namespace SudokuAlgo.RechercheIndice
 {
     public static class RechercerIndices
     {
-        public static int[] indices = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        private static int[] indices = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         public static void RechercherIndicesGrille(Grille _grille)
         {
             foreach (Ligne rca in _grille.Rangees)

@@ -14,8 +14,10 @@ namespace SudokuAlgo.AlgoAleatoire
 {
     public class Generateur
     {
-        public Grille GrilleDepart { get; set; }
-        public Grille GrilleAGenerer { get; set; }
+        public Grille GrilleDepart { get; }
+        private Grille? grilleAGenerer;
+        public Grille? GrilleAGenerer { get => grilleAGenerer; }
+
         public Generateur(Grille _grille)
         {
             GrilleDepart = _grille;
@@ -24,24 +26,39 @@ namespace SudokuAlgo.AlgoAleatoire
         {
 
             //Etape 1 Rechercher les indices d'une ligne
+            int grilleCompletion;
+            int limiteBoucle=100;
             do
             {
-                GrilleAGenerer = new Grille(GrilleDepart);
+                grilleAGenerer = new Grille(GrilleDepart);
                 ResolutionGrilleAleatoire();
-                ReductionIndices.Reduction(GrilleAGenerer);
+                if (grilleAGenerer!=null)
+                {
+                    ReductionIndices.Reduction(GrilleAGenerer);
+                    grilleCompletion = GrilleAGenerer.CompterItterationTotal();
+                }
+                else
+                {
+                    grilleCompletion = int.MaxValue;
+                }
+                limiteBoucle--;
             }
-            while (GrilleAGenerer.CompterItterationTotal() != 81);
+            while ( grilleCompletion != 81 && limiteBoucle > 0);
             return GrilleAGenerer;
         }
         public void ResolutionGrilleAleatoire()
         {
-            foreach (Ligne rangee in GrilleAGenerer.Rangees)
+            for(int i = 0; i<9;i++)
             {
-                RechercerIndices.RechercherIndicesLigne(GrilleAGenerer, rangee);
-                LigneAResoudre(rangee);
+                RechercerIndices.RechercherIndicesLigne(GrilleAGenerer, GrilleAGenerer.Rangees[i]);
+                if (!LigneAResoudre(GrilleAGenerer.Rangees[i]))
+                {
+                    grilleAGenerer = null;
+                    i = int.MaxValue-1;
+                }
             }
         }
-        public Case SelectionCaseAChanger(Ligne _ligne)
+        public Case? SelectionCaseAChanger(Ligne _ligne)
         {
             Ligne index = new Ligne();
             index.Cases.Clear();
@@ -92,10 +109,13 @@ namespace SudokuAlgo.AlgoAleatoire
             }
             else
             {
-                return index.Cases[0]; //Gerer le cas ou la grille est invalid
+                if (index.Cases.Count!=0)
+                {
+                    return index.Cases[0];
+                }
+                return null;
             }
         }
-
 
         public void PlacerChiffreCase(Case _case)
         {
@@ -118,7 +138,7 @@ namespace SudokuAlgo.AlgoAleatoire
                 }
             }
         }
-        public Ligne LigneAResoudre(Ligne _ligne)
+        public bool LigneAResoudre(Ligne _ligne)
         {
             //Etape2 Copier la ligne
             Ligne ligneReference = new Ligne();
@@ -151,12 +171,18 @@ namespace SudokuAlgo.AlgoAleatoire
                 }
                 if (boucle != 0)
                 {
-                    PlacerChiffreCase(SelectionCaseAChanger(ligneReference));
+                    Case? caseAChanger = SelectionCaseAChanger(ligneReference);
+                    if (caseAChanger != null) 
+                    {
+                        PlacerChiffreCase(caseAChanger);
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-
             }
-
-            return ligneReference;
+            return true;
         }
     }
 }

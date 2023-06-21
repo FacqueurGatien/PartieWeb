@@ -15,79 +15,30 @@ namespace SudokuAlgo.AlgoReduction
         {
             PurgerGrille(_grille);
             RechercerIndices.RechercherIndicesGrille(_grille);
-            VerificationEtatGrille.EtatGrille(_grille);
+            _grille.VerifierEtatGrille();
         }
         public static void PurgerGrille(Grille _grille)
         {
-            bool recommencerPurge = true;
-            while (recommencerPurge)
+            int depart;
+            int fin = int.MaxValue;
+            do
             {
-                recommencerPurge = false;
-                _grille.PurgeRecomencer = false;
+                depart = fin;
                 foreach (Ligne rca in _grille.Rangees)
                 {
                     foreach (Case cca in rca.Cases)
                     {
                         if (cca.Contenu.Count == 1)
                         {
-                            if (!recommencerPurge)
-                            {
-                                _grille.Rangees[cca.NumRangee].PurgerLigne(cca, cca.Contenu[0], _grille);
-                                _grille.Colonnes[cca.NumColonne].PurgerLigne(cca, cca.Contenu[0], _grille);
-                                _grille.Blocks[cca.NumBlock].PurgerLigne(cca, cca.Contenu[0], _grille);
-                            }
-                            else
-                            {
-                                _grille.Rangees[cca.NumRangee].PurgerLigne(cca, cca.Contenu[0]);
-                                _grille.Colonnes[cca.NumColonne].PurgerLigne(cca, cca.Contenu[0]);
-                                _grille.Blocks[cca.NumBlock].PurgerLigne(cca, cca.Contenu[0]);
-                            }
-                            if (_grille.PurgeRecomencer)
-                            {
-                                recommencerPurge = true;
-                            }
+                            _grille.Rangees[cca.NumRangee].PurgerLigne(cca, cca.Contenu[0]);
+                            _grille.Colonnes[cca.NumColonne].PurgerLigne(cca, cca.Contenu[0]);
+                            _grille.Blocks[cca.NumBlock].PurgerLigne(cca, cca.Contenu[0]);
                         }
                     }
                 }
-                recommencerPurge = PurgerGrilleItteration(_grille);
+                fin = _grille.CompterItterationTotal();
             }
-        }
-        public static bool PurgerGrilleItteration(Grille _grille)
-        {
-            bool recomencerItteration = true;
-            bool recomencerPurge = false;
-            while (recomencerItteration)
-            {
-                recomencerItteration = false;
-                foreach (Ligne rca in _grille.Rangees)
-                {
-                    foreach (Case cca in rca.Cases)
-                    {
-                        if (cca.Contenu.Count > 1)
-                        {
-                            if (cca.NumBlock == 2 && cca.NumRangee == 1 && cca.NumColonne == 7)
-                            {
-
-                            }
-                            for (int i = 0; i < cca.Contenu.Count; i++)
-                            {
-                                if (_grille.Rangees[cca.NumRangee].VerifierLigneComplette() &&
-                                    _grille.Rangees[cca.NumRangee].Itteration[cca.Contenu[i]] == 1 ||
-                                    _grille.Colonnes[cca.NumColonne].VerifierLigneComplette() &&
-                                    _grille.Colonnes[cca.NumColonne].Itteration[cca.Contenu[i]] == 1 ||
-                                    _grille.Blocks[cca.NumBlock].VerifierLigneComplette() &&
-                                    _grille.Blocks[cca.NumBlock].Itteration[cca.Contenu[i]] == 1)
-                                {
-                                    cca.PlacerChiffre(cca.Contenu[i]);
-                                    recomencerPurge = true;
-                                    recomencerItteration = true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return recomencerPurge;
+            while (depart != fin);
         }
     }
 

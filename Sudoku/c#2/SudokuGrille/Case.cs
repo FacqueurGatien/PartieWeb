@@ -8,11 +8,12 @@ namespace SudokuGrille
 {
     public class Case
     {
-        public List<int> Contenu { get; set; }
+        public List<int> Contenu { get; }
         public int NumRangee { get; set; }
         public int NumColonne { get; set; }
         public int NumBlock { get; set; }
         public int NumPositionRangee { get; set; }
+
         public Case():this(new List<int>())
         {
         }
@@ -51,15 +52,5 @@ namespace SudokuGrille
             return false;
         }
 
-        public override string ToString()
-        {
-            string result = "";
-            foreach (int i in Contenu)
-            {
-                result += i.ToString() + ",";
-            }
-            result.Trim(',');
-            return result;
-        }
     }
 }

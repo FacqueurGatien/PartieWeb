@@ -1,0 +1,53 @@
+fieldset{
+    background-color:rgba(255,255,255,0.3);
+    border-radius: 5px;
+}
+
+#header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+#headerTitre{
+    margin:auto ;
+    color: lightgreen;
+}
+
+#rechercher{
+    width: 30rem;
+    height: auto;
+    padding: auto;
+}
+#rechercherInput{
+    width: 100%;
+    height: 100%;
+    border:none;
+    padding: 10px;
+    background-color:transparent;
+}
+#rechercherInput::placeholder{
+    color: gray;
+}
+
+#filtrer{
+    width: 60rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#categorie{
+    background-color: transparent;
+    width: 50%;
+}
+#categorieSelect{
+    width: 100%;
+}
+
+#nutriscore{
+    background-color: transparent;
+    width: 50%;
+}
+.nutriscoreLabel{
+    margin-right: 10px;
+}

@@ -1,0 +1,68 @@
+#main{
+    overflow: auto;
+    border-radius: 5px 5px;
+    width:100%;
+    margin:auto;
+    margin-top: 2rem;
+}
+#mainTable{
+    width: 100%;
+    border-collapse: collapse;
+}
+.mainTableHeaderRow{
+    width: 100%;
+}
+.mainTableHeaderCell{
+    color: lightgreen;
+    background-color: rgba(255,255,255,0.3);
+    padding: 0.5rem;
+    padding-right: 1rem;
+    text-align: start;
+    width: auto;
+}
+.CellNOM{
+    width: 20rem;
+    text-align: start;
+}
+
+.cellData{
+    padding: 0.5rem;
+    text-align: center;
+}
+.cellData:nth-child(1){
+    background-color: rgba(255,255,255,0.2);
+}
+.cellData:nth-child(2){
+    text-align: start;
+}
+
+.NS{
+    text-align: center;
+}
+.NSA
+{
+    background-color: darkgreen;
+}
+.NSB{
+    background-color: #009900CC;
+}
+.NSC{
+    background-color: #CCCC00CC;
+}
+.NSD{
+    background-color: #CC6600CC;
+}
+.NSE{
+    background-color: #CC0000CC;
+}
+
+.DEL{
+    background-color: rgba(255,255,255,0.2);
+    text-align:center;
+}
+
+.DELButton{
+    margin: auto;
+    border-radius: 5px;
+    color: red;
+}

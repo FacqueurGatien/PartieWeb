@@ -4,16 +4,14 @@ namespace SudokuGrille
 {
     public class Grille
     {
-        public List<Ligne> Rangees { get; set; }
-        public List<Ligne> Colonnes { get; set; }
-        public List<Ligne> Blocks { get; set; }
-        public EnumEtatGrille EtatGrille { get; set; }
+        public List<Ligne> Rangees { get;  }
+        public List<Ligne> Colonnes { get; }
+        public List<Ligne> Blocks { get; }
+        public EnumEtatGrille EtatGrille { get=>etatGrille; }
+        private EnumEtatGrille etatGrille;
+        public string ResolutionMessage { get; set; }
 
-        public bool PurgeRecomencer { get; set; }
-        public bool ItterationRecomencer { get; set; }
-        public string resolutionMessage { get; set; }
-
-        public Grille(List<Ligne> _grille, EnumEtatGrille etatGrille = EnumEtatGrille.Incomplette)
+        public Grille(List<Ligne> _grille, EnumEtatGrille _etatGrille = EnumEtatGrille.Incomplette)
         {
             Rangees = new List<Ligne>();
             Colonnes = new List<Ligne>();
@@ -21,10 +19,8 @@ namespace SudokuGrille
             GenererRangees(_grille);
             GenererColonne();
             GenererBlocks();
-            EtatGrille = etatGrille;
+            etatGrille = _etatGrille;
 
-            PurgeRecomencer = false;
-            ItterationRecomencer = false;
         }
         public Grille():this(new List<Ligne>() { new Ligne(), new Ligne(), new Ligne(), new Ligne(), new Ligne(), new Ligne(), new Ligne(), new Ligne(), new Ligne()},EnumEtatGrille.Vierge)
         {
@@ -43,12 +39,12 @@ namespace SudokuGrille
             GenererRangees(grille);
             GenererColonne();
             GenererBlocks();
-            EtatGrille = EnumEtatGrille.Vierge;
+            etatGrille = EnumEtatGrille.Vierge;
         }
-
         public Grille(Grille _grille):this(_grille.Rangees,_grille.EtatGrille)
         {
         }
+
         public void GenererRangees(List<Ligne> _grille)
         {
             for (int r = 0; r < 9; r++)
@@ -62,7 +58,6 @@ namespace SudokuGrille
                     rangee.Cases[c].NumPositionRangee = numPosition;
                     numPosition++;
                 }
-
                 Rangees.Add(new Ligne(rangee.Cases));
             }
         }
@@ -114,6 +109,49 @@ namespace SudokuGrille
                 total += r.CompterItterationLigne();
             }
             return total;
+        }
+        public void VerifierEtatGrille()
+        {
+            bool incomplette = false;
+            bool vierge = true;
+            if (Rangees != null)
+            {
+                foreach (Ligne lca in Rangees)
+                {
+                    foreach (Case ca in lca.Cases)
+                    {
+                        if (ca.Contenu.Count > 1)
+                        {
+                            incomplette = true;
+                        }
+                        else if (ca.Contenu.Count == 0)
+                        {
+                            etatGrille = EnumEtatGrille.Invalide;
+                        }
+                        else if (ca.Contenu.Count < 9)
+                        {
+                            vierge = false;
+                        }
+                    }
+                }
+                if (incomplette)
+                {
+                    etatGrille = EnumEtatGrille.Incomplette;
+                }
+                else if (vierge)
+                {
+                    etatGrille = EnumEtatGrille.Vierge;
+                }
+                else
+                {
+                    etatGrille = EnumEtatGrille.Complette;
+                }
+            }
+            else
+            {
+                etatGrille = EnumEtatGrille.Invalide;
+            }
+
         }
         public Dictionary<int, int> RecupererItteration()
         {
