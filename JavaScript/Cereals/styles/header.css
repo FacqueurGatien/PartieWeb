@@ -25,6 +25,7 @@ fieldset{
     border:none;
     padding: 10px;
     background-color:transparent;
+    color: whitesmoke;
 }
 #rechercherInput::placeholder{
     color: gray;

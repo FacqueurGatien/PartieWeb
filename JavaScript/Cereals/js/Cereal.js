@@ -1,4 +1,3 @@
-import {Cereals} from "./Cereals.js";
 class Cereal{
     constructor(_cereal){
         Object.assign(this,_cereal);

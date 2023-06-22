@@ -1,4 +1,3 @@
-import { Cereals } from "../Cereals.js";
 class GenerationMain{
     constructor(_cereals){
         this.cereals=_cereals;
