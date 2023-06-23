@@ -75,6 +75,9 @@ class Cereals{
     GetKeys(){
         return ["ID","NOM","CALORIES","PROTEÏNES","SEL","FIBRES","GLUCIDES","SUCRE","POTASSIUM","VITAMINES","EVALUATION","NS","DEL"];
     }
+    GetKeysO(){
+        return ["id","name","calories","proteines","sodium","fiber","carbo","sugars","potass","vitamins","rating","rating","del"];
+    }
     CalculeNutriscore(_evaluation){
         if(parseFloat(_evaluation)>=80){
             return "A"

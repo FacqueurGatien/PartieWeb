@@ -79,6 +79,7 @@
 .DEL{
     background-color: rgba(255,255,255,0.2);
     text-align:center;
+    color: red;
 }
 .DEL:hover{
     background-color: rgba(240,128,128,0.5);
