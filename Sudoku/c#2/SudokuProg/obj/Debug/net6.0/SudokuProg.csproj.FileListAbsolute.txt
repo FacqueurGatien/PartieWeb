@@ -78,3 +78,7 @@ C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuProg\obj\Debug\net6.0\refint\
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuProg\obj\Debug\net6.0\SudokuProg.pdb
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuProg\obj\Debug\net6.0\SudokuProg.genruntimeconfig.cache
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuProg\obj\Debug\net6.0\ref\SudokuProg.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\SudokuProg\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\SudokuProg\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\SudokuProg\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\SudokuProg\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

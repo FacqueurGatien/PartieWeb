@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace SudokuAlgo.ChoixDeLAlgorythme
@@ -42,7 +43,6 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
                 grilleFinal.ResolutionMessage = EtatGrilleApresTraitement(grilleFinal,result);
                 return  grilleFinal;
             }
-
         }
         public static Grille AlgoReduction(Grille _grille)
         {
@@ -94,6 +94,16 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
                     break;
             }
             return $"{result}\n{_result}";
+        }
+        public static string Serialisation(Grille _grille)
+        {
+            string jsonString = JsonSerializer.Serialize(_grille);
+            return jsonString;
+        }
+        public static Grille Deserialiser(string _jsonGrille)
+        {
+            Grille? grille = JsonSerializer.Deserialize<Grille?>(_jsonGrille);
+            return grille;
         }
     }
 }

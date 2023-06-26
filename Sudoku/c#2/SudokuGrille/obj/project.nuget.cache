@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "nZwOH3uM8o5Gstb1D9504rlLG24aOfZvBgtbX7D5yKwC26uQl/tFhKStz4JbnJR5A/jEEOCVU2yo81rZjz4e5Q==",
+  "dgSpecHash": "MHKhclr63NVLDDDsYewZfPQH8kCCxUmt1IkHgLETifvyPJWlgy8HJ3HKqu+Bf/OEmWbBJSGVtqC2zWQmY/iRHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuGrille\\SudokuGrille.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuGrille\\SudokuGrille.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gafacqueur\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\gafacqueur\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\gafacqueur\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\gafacqueur\\.nuget\\packages\\system.text.json\\7.0.3\\system.text.json.7.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

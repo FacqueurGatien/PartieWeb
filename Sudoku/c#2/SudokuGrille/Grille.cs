@@ -4,11 +4,11 @@ namespace SudokuGrille
 {
     public class Grille
     {
-        public List<Ligne> Rangees { get;  }
-        public List<Ligne> Colonnes { get; }
-        public List<Ligne> Blocks { get; }
-        public EnumEtatGrille EtatGrille { get=>etatGrille; }
-        private EnumEtatGrille etatGrille;
+        public List<Ligne> Rangees { get; set; }
+        public List<Ligne> Colonnes { get; set; }
+        public List<Ligne> Blocks { get; set; }
+        public EnumEtatGrille EtatGrille { get => etatGrille; set => etatGrille = value; }
+        public EnumEtatGrille etatGrille;
         public string ResolutionMessage { get; set; }
 
         public Grille(List<Ligne> _grille, EnumEtatGrille _etatGrille = EnumEtatGrille.Incomplette)
@@ -43,6 +43,10 @@ namespace SudokuGrille
         }
         public Grille(Grille _grille):this(_grille.Rangees,_grille.EtatGrille)
         {
+        }
+        public Grille(string json)
+        {
+
         }
 
         public void GenererRangees(List<Ligne> _grille)
@@ -106,7 +110,7 @@ namespace SudokuGrille
             int total = 0;
             foreach (Ligne r in Rangees)
             {
-                total += r.CompterItterationLigne();
+                total += ItterationGrille.CompterItterationLigne(r);
             }
             return total;
         }
@@ -169,10 +173,10 @@ namespace SudokuGrille
             };
             foreach (Ligne r in Rangees)
             {
-                r.CompterItteration();
+                ItterationGrille.CompterItteration(r);
                 for (int i = 1; i < 10; i++)
                 {
-                    itteration[i] += r.Itteration[i];
+                    itteration[i] += ItterationGrille.Itteration[i];
                 }
             }
             return itteration;

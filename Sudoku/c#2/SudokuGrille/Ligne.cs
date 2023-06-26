@@ -9,9 +9,9 @@ namespace SudokuGrille
 {
     public class Ligne
     {
-        public List<Case> Cases { get; }
-        public Dictionary<int, int> Itteration { get=> itteration; }
-        private Dictionary<int, int> itteration;
+        public List<Case> Cases { get; set; }
+        //public Dictionary<int, int> Itteration { get=> itteration; }
+        //private Dictionary<int, int> itteration;
 
         public Ligne(Ligne _ligne):this(new List<Case>() {
             new Case(_ligne.Cases[0].Contenu), 
@@ -29,14 +29,14 @@ namespace SudokuGrille
         public Ligne(List<Case> _cases)
         {
             Cases = _cases;
-            ItterationInitialisation();
+            ItterationGrille.ItterationInitialisation();
         }
         public Ligne():this(new List<Case>() {new Case(), new Case() , new Case(), new Case(), new Case(), new Case(), new Case(), new Case(), new Case() })
         {
             
         }
 
-        public void ItterationInitialisation()
+/*        public void ItterationInitialisation()
         {
             itteration = new Dictionary<int, int>()
             {
@@ -73,10 +73,10 @@ namespace SudokuGrille
                 total += i.Value;
             }
             return total;
-        }
+        }*/
         public bool VerifierLigneComplette()
         {
-            CompterItteration();
+            ItterationGrille.CompterItteration(this);
             foreach (Case ca in Cases)
             {
                 if (ca.Contenu.Count == 0)
@@ -110,8 +110,8 @@ namespace SudokuGrille
 
         public bool VerifierPossibiliterPlacement(Case _case, int _chiffre)
         {
-            CompterItteration();
-            if (Itteration[_chiffre] > 1)
+            ItterationGrille.CompterItteration(this);
+            if (ItterationGrille.Itteration[_chiffre] > 1)
             {
                 return true;
             }

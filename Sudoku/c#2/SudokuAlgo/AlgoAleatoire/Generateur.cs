@@ -77,9 +77,9 @@ namespace SudokuAlgo.AlgoAleatoire
                 }
             }
 
-            _ligne.CompterItteration();
+            ItterationGrille.CompterItteration(_ligne);
             List<int> itterationTrie = new List<int>();
-            foreach (KeyValuePair<int, int> i in _ligne.Itteration.OrderBy(key => key.Value))
+            foreach (KeyValuePair<int, int> i in ItterationGrille.Itteration.OrderBy(key => key.Value))
             {
                 if (i.Value >= 1)
                 {
@@ -119,9 +119,9 @@ namespace SudokuAlgo.AlgoAleatoire
 
         public void PlacerChiffreCase(Case _case)
         {
-            GrilleAGenerer.Rangees[_case.NumRangee].CompterItteration();
+            ItterationGrille.CompterItteration(GrilleAGenerer.Rangees[_case.NumRangee]);
             List<int> itterationTrie = new List<int>();
-            foreach (KeyValuePair<int, int> i in GrilleAGenerer.Rangees[_case.NumRangee].Itteration.OrderBy(key => key.Value))
+            foreach (KeyValuePair<int, int> i in ItterationGrille.Itteration.OrderBy(key => key.Value))
             {
                 if (i.Value >= 1)
                 {

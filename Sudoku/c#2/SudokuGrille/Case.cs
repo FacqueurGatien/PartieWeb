@@ -8,7 +8,7 @@ namespace SudokuGrille
 {
     public class Case
     {
-        public List<int> Contenu { get; }
+        public List<int> Contenu { get; set; }
         public int NumRangee { get; set; }
         public int NumColonne { get; set; }
         public int NumBlock { get; set; }
