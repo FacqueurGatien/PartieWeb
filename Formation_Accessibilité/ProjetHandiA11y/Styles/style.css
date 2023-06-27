@@ -1,0 +1,54 @@
+:root
+{
+    /**#6F6866**/
+    --BackgroundColor:#CCDAD1;
+    --FontColor:#38302E;
+    --FontTitle:black;
+    --TableColor:#788585;
+    --ElementColor:#9CAEA9;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+html
+{
+    font-size: 62.5%;
+    background-color: var(--BackgroundColor);
+}
+body
+{
+    margin: 0;
+    font-size: 1.6rem;
+    font:var(--FontColor);
+}
+p
+{
+    font-size: 2rem;
+    margin: 0;
+    color: var(--FontColor);
+}
+
+.h1Titre
+{
+    font-size: 4rem;
+    text-align: center;
+    color: var(--FontTitle);
+    margin: 20px 0 20px 0;
+}
+.h2Titre
+{
+    font-size: 2rem;
+    margin: 5px 0 0 0;
+    text-align: center;
+    color: var(--FontTitle);
+}
+.h3Titre
+{
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+    color: var(--FontTitle);
+}
+

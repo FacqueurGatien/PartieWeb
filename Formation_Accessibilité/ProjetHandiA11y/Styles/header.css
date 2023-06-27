@@ -1,0 +1,71 @@
+#header
+{
+    margin: auto;
+}
+.h2TitrePrincipal
+{
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 5rem;
+}
+#logoImg{
+    width: 40px;
+    margin: auto 0 auto 20px;
+}
+#navBar
+{
+    box-shadow: 0 0 0.5rem 0.1rem black;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--ElementColor);
+}
+#pageLink
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.lienNav
+{
+    color: var(--FontColor);
+    text-decoration: none;
+}
+.textButton
+{
+    font-size: 1.5rem;
+    margin: 0;
+}
+.puceNavBar
+{
+    padding: 3px;
+    list-style: none;
+    font-size: 2rem;
+}
+.separateur
+{
+    margin: 0 5px 0 5px;
+}
+#rechercher
+{
+    margin: auto 10px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+#rechercherInput
+{
+    border: none;
+    background-color: transparent;
+}
+#rechercherButton
+{
+    border: none;
+    border-radius: 2px;
+    background-color: lightgoldenrodyellow;
+}
+#a42-ac-button
+{
+    border: none;
+    border-radius: 2px;
+    background-color: lightgoldenrodyellow;
+}

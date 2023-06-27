@@ -1,0 +1,85 @@
+.table
+{
+    width: 100%;
+}
+#introduction
+{
+    margin: auto;
+    width: 30%;
+}
+.h2Introduction
+{
+    font-size: 4rem;
+}
+#wcagPrincipes
+{
+    margin-top:30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#wcagPrincipesTitre
+{
+    font-size: 3rem;
+    width: 100%;
+}
+.conteneurRectangle
+{
+    border-radius: 5px;
+    width: 22%;
+    margin: 0 10px 0 10px;
+    padding: 10px;
+    background-color: var(--ElementColor);
+    box-shadow: 0 0 0.5rem 0.1rem black;
+}
+.h3Conteneur
+{
+    text-align: start;
+}
+
+.legend
+{
+    font-size: 2rem;
+    text-align: center;
+}
+#wcagTablePrincipe
+{
+    margin: 30px auto 0 auto;
+    width: 80%;
+}
+.table
+{
+    font-size: 2rem;
+    border-collapse: collapse;
+}
+.th
+{   background-color: var(--TableColor);
+    border: 1px solid black;
+}
+.td
+{
+    border: 1px solid black;
+}
+
+#wcagTableNiveaux
+{
+    margin: 30px auto 0 auto;
+    width: 80%;
+}
+#graphic
+{
+    margin: 30px auto 0 auto;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+}
+#graphicImg
+{
+    margin: auto;
+    width: 40%;
+}
+.graphicTable
+{
+    margin: 10px auto 10px auto;
+    width: 40%;
+}

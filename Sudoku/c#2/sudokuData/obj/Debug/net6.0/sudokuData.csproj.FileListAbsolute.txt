@@ -1,0 +1,17 @@
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\bin\Debug\net6.0\sudokuData.deps.json
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\bin\Debug\net6.0\sudokuData.runtimeconfig.json
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\bin\Debug\net6.0\sudokuData.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\bin\Debug\net6.0\sudokuData.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\sudokuData.csproj.AssemblyReference.cache
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\sudokuData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\sudokuData.AssemblyInfoInputs.cache
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\sudokuData.AssemblyInfo.cs
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\sudokuData.csproj.CoreCompileInputs.cache
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\sudokuData.csproj.CopyComplete
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\sudokuData.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\refint\sudokuData.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\sudokuData.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\sudokuData.genruntimeconfig.cache
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\obj\Debug\net6.0\ref\sudokuData.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\bin\Debug\net6.0\Grille.Models.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\sudokuData\bin\Debug\net6.0\Grille.Models.pdb
