@@ -6,6 +6,7 @@ using SudokuAlgo.RechercheIndice;
 using SudokuGrille;
 using System.Diagnostics;
 
+
 namespace SudokuProg
 {
     public class Program
@@ -16,17 +17,11 @@ namespace SudokuProg
             Grille result = ChoixAlgorythme.Redirection(grille);
             Console.WriteLine($"{result.ResolutionMessage}\n{result}");
 
-            grille = new Grille(GrilleEssaie3());
-            result = ChoixAlgorythme.Redirection(grille);
-            Console.WriteLine($"{result.ResolutionMessage}\n{result}");
+            Grilles.Models.Grille grilleS = new Grilles.Models.Grille(/*1,*/ result);
+            Console.WriteLine(ChoixAlgorythme.SerialisationData(grilleS));
 
-            grille = new Grille(GrilleEssaie4());
-            result = ChoixAlgorythme.Redirection(grille);
-            Console.WriteLine($"{result.ResolutionMessage}\n{result}");
 
-            grille = new Grille(GrilleVierge());
-            result = ChoixAlgorythme.Redirection(grille);
-            Console.WriteLine($"{result.ResolutionMessage}\n{result}");
+
         }
         public static List<Ligne> GrilleVierge()
         {

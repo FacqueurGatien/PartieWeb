@@ -5,11 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grille.Models
+namespace Grilles.Models
 {
-    public class Ligne:Model
+    public class Ligne
     {
-        [Required]
-        public List<Case> Cases { get; set; }
+/*        public int id { get;  }*/
+        public List<Case> cases { get; set; }
+
+        public Ligne(/*int _id, */List<SudokuGrille.Case> _cases)
+        {
+/*            id = _id;
+            int idCase = (_id * 9 - 9)+1;*/
+            cases = new List<Case>();
+            foreach (SudokuGrille.Case item in _cases)
+            {
+                cases.Add(new Case(/*idCase++,*/item));
+            }
+        }
     }
 }

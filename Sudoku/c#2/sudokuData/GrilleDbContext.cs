@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Grille.Models;
+using Grilles.Models.GrilleData;
 
 namespace sudokuData
 {
     public class GrilleDbContext:DbContext
     {
-        public DbSet<Grille.Models.Grille> Grille { get; set; }
+        public DbSet<Grille> Grille { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=sudoku_api");
         }
     }

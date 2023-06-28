@@ -16,13 +16,13 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
     {
         public static Grille Redirection(Grille _grille)
         {
-            string result="";
+            string result = "";
             Grille reduction = AlgoReduction(_grille);
 
             if (reduction.EtatGrille == EnumEtatGrille.Complette)
             {
-                result+="Grille Resolu par l'algorythme de Reduction";
-                reduction.ResolutionMessage = EtatGrilleApresTraitement(reduction,result);
+                result += "Grille Resolu par l'algorythme de Reduction";
+                reduction.ResolutionMessage = EtatGrilleApresTraitement(reduction, result);
                 return reduction;
             }
             else
@@ -40,8 +40,8 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
                     grilleFinal = AlgoTraqueur(_grille);
                     result += "Grille Resolu par l'algorythme Traqueur et l'algorythme de Reduction";
                 }
-                grilleFinal.ResolutionMessage = EtatGrilleApresTraitement(grilleFinal,result);
-                return  grilleFinal;
+                grilleFinal.ResolutionMessage = EtatGrilleApresTraitement(grilleFinal, result);
+                return grilleFinal;
             }
         }
         public static Grille AlgoReduction(Grille _grille)
@@ -63,7 +63,7 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
             Grille? traque = new Grille(_grille);
             Traqueur traqueur = new Traqueur(traque);
             traque = traqueur.Resolution();
-            if (traque!=null)
+            if (traque != null)
             {
                 return traque;
             }
@@ -72,10 +72,10 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
                 throw new InvalidDataException();
             }
         }
-        public static string EtatGrilleApresTraitement(Grille _grille,string _result)
+        public static string EtatGrilleApresTraitement(Grille _grille, string _result)
         {
             _grille.VerifierEtatGrille();
-            string result="";
+            string result = "";
             switch (_grille.EtatGrille)
             {
                 case EnumEtatGrille.Incomplette:
@@ -103,6 +103,16 @@ namespace SudokuAlgo.ChoixDeLAlgorythme
         public static Grille Deserialiser(string _jsonGrille)
         {
             Grille? grille = JsonSerializer.Deserialize<Grille?>(_jsonGrille);
+            return grille;
+        }
+        public static string SerialisationData(Grilles.Models.Grille _grille)
+        {
+            string jsonString = JsonSerializer.Serialize(_grille);
+            return jsonString;
+        }
+        public static Grilles.Models.Grille DeserialiserData(string _jsonGrille)
+        {
+            Grilles.Models.Grille? grille = JsonSerializer.Deserialize<Grilles.Models.Grille?>(_jsonGrille);
             return grille;
         }
     }

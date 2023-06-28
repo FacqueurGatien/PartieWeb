@@ -5,17 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grille.Models
+namespace Grilles.Models
 {
-    public class Case:Model
+    public class Case
     {
-        [Required]
-        public int Contenu { get; set; }
-        [Required]
-        public int Num_Rangee { get; set; }
-        [Required]
-        public int Num_Colonne { get; set; }
-        [Required]
-        public int Num_Block { get; set; }
+/*        public int id { get;  }*/
+        public int contenu { get; set; }
+        public int num_Rangee { get; set; }
+        public int num_Colonne { get; set; }
+        public int num_Block { get; set; }
+
+        public Case(/*int _id,*/SudokuGrille.Case _case)
+        {
+/*            id = _id;*/
+            contenu= _case.Contenu[0];
+            num_Rangee= _case.NumRangee;
+            num_Colonne= _case.NumColonne;
+            num_Block= _case.NumBlock;
+        }
     }
 }

@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Grille.Models\Grille.Models.csproj" />
     <ProjectReference Include="..\SudokuGrille\SudokuGrille.Models.csproj" />
   </ItemGroup>
 

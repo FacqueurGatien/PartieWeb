@@ -1,10 +1,22 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Grille.Models
+namespace Grilles.Models
 {
-    public class Grille:Model
+    public class Grille
     {
-        [Required]
-        public List<Ligne> Rangees {  get; set; }
+/*        public int id { get; set; }*/
+        public List<Ligne> rangees {  get; set; }
+
+        public Grille(/*int _id,*/SudokuGrille.Grille _grille)
+        {
+            /*id = _id;
+            int idLigne = _id*9-9+1;*/
+            rangees = new List<Ligne>();
+            foreach (SudokuGrille.Ligne item in _grille.Rangees)
+            {
+                rangees.Add(new Ligne(/*idLigne++,*/item.Cases));
+            }
+
+        }
     }
 }

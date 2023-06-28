@@ -22,7 +22,7 @@ namespace sudokuData.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Grille.Models.Case", b =>
+            modelBuilder.Entity("Grilles.Models.GrilleData.Case", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,7 +52,7 @@ namespace sudokuData.Migrations
                     b.ToTable("Case");
                 });
 
-            modelBuilder.Entity("Grille.Models.Grille", b =>
+            modelBuilder.Entity("Grilles.Models.GrilleData.Grille", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -65,7 +65,7 @@ namespace sudokuData.Migrations
                     b.ToTable("Grille");
                 });
 
-            modelBuilder.Entity("Grille.Models.Ligne", b =>
+            modelBuilder.Entity("Grilles.Models.GrilleData.Ligne", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -83,26 +83,26 @@ namespace sudokuData.Migrations
                     b.ToTable("Ligne");
                 });
 
-            modelBuilder.Entity("Grille.Models.Case", b =>
+            modelBuilder.Entity("Grilles.Models.GrilleData.Case", b =>
                 {
-                    b.HasOne("Grille.Models.Ligne", null)
+                    b.HasOne("Grilles.Models.GrilleData.Ligne", null)
                         .WithMany("Cases")
                         .HasForeignKey("LigneId");
                 });
 
-            modelBuilder.Entity("Grille.Models.Ligne", b =>
+            modelBuilder.Entity("Grilles.Models.GrilleData.Ligne", b =>
                 {
-                    b.HasOne("Grille.Models.Grille", null)
+                    b.HasOne("Grilles.Models.GrilleData.Grille", null)
                         .WithMany("Rangees")
                         .HasForeignKey("GrilleId");
                 });
 
-            modelBuilder.Entity("Grille.Models.Grille", b =>
+            modelBuilder.Entity("Grilles.Models.GrilleData.Grille", b =>
                 {
                     b.Navigation("Rangees");
                 });
 
-            modelBuilder.Entity("Grille.Models.Ligne", b =>
+            modelBuilder.Entity("Grilles.Models.GrilleData.Ligne", b =>
                 {
                     b.Navigation("Cases");
                 });

@@ -1277,6 +1277,21 @@
           }
         }
       },
+      "Grille.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EntityFramework": "6.4.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.8",
+          "SudokuGrille.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Grille.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Grille.Models.dll": {}
+        }
+      },
       "SudokuGrille.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -3955,6 +3970,11 @@
         "version.txt"
       ]
     },
+    "Grille.Models/1.0.0": {
+      "type": "project",
+      "path": "../Grille.Models/Grille.Models.csproj",
+      "msbuildProject": "../Grille.Models/Grille.Models.csproj"
+    },
     "SudokuGrille.Models/1.0.0": {
       "type": "project",
       "path": "../SudokuGrille/SudokuGrille.Models.csproj",
@@ -3964,6 +3984,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "EntityFramework >= 6.4.4",
+      "Grille.Models >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.8",
@@ -3971,25 +3992,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gafacqueur\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Sora\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuAlgo\\SudokuAlgo.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuAlgo\\SudokuAlgo.Models.csproj",
       "projectName": "SudokuAlgo.Models",
-      "projectPath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuAlgo\\SudokuAlgo.Models.csproj",
-      "packagesPath": "C:\\Users\\gafacqueur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuAlgo\\obj\\",
+      "projectPath": "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuAlgo\\SudokuAlgo.Models.csproj",
+      "packagesPath": "C:\\Users\\Sora\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuAlgo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\gafacqueur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sora\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4004,8 +4023,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuGrille\\SudokuGrille.Models.csproj": {
-              "projectPath": "C:\\Users\\gafacqueur\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuGrille\\SudokuGrille.Models.csproj"
+            "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#2\\Grille.Models\\Grille.Models.csproj": {
+              "projectPath": "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#2\\Grille.Models\\Grille.Models.csproj"
+            },
+            "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuGrille\\SudokuGrille.Models.csproj": {
+              "projectPath": "C:\\Users\\Sora\\Documents\\PartieWeb\\Sudoku\\c#2\\SudokuGrille\\SudokuGrille.Models.csproj"
             }
           }
         }
@@ -4057,7 +4079,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
