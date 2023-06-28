@@ -1,3 +1,5 @@
+//npm install next@latest react@latest react-dom@latest     <--- pour installer Next
+//npm install tailwindcss   <--- pour installer tailwindcss
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Test from './pokemon/Test'
