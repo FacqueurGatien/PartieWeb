@@ -1,11 +1,6 @@
-import {Accessibility} from "./Popup/Accessibility.js"
-
-let access = new Accessibility();
-
-let buttonAccess=document.getElementById("ButtonParam").addEventListener("click",(e)=>{
-    if(!access.open){
-        access.open=true;
-        window.open("index.html", "hello", "width=200,height=200");
-    }
-})
-;
+import {Header} from "./GeneratePage/Header.js";
+import {Acceuil} from "./GeneratePage/Acceuil.js";
+import {Footer} from "./GeneratePage/Footer.js";
+import {A11y} from "./GeneratePage/A11y.js"
+let hea = new Header();
+let foo = new Footer();

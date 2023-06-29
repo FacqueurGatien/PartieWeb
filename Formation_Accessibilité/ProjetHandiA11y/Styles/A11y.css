@@ -1,0 +1,25 @@
+#articleA11y
+{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+.imageA11y
+{
+    width: 20rem;
+}
+#h1A11y
+{
+    font-size: 5rem;
+}
+.h2TitreA11Y
+{
+    font-size: 3rem;
+}
+.lienA11y
+{
+    font-size: 2rem;
+}

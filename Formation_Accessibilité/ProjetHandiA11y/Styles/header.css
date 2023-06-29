@@ -23,6 +23,7 @@
 #pageLink
 {
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     align-content: center;
 }
@@ -30,6 +31,7 @@
 {
     color: var(--FontColor);
     text-decoration: none;
+    cursor: pointer;
 }
 .textButton
 {
