@@ -1,0 +1,84 @@
+#divMain
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem;
+}
+.h1TitreDon
+{
+    width: 100%;
+}
+#imageDon
+{
+    width: 25rem;
+}
+#ContainerForm
+{
+    margin: 0 3rem 0 3rem;
+    padding: 2rem;
+    border: 2rem ridge whitesmoke;
+}
+#formDon
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+.fieldsetForm
+{
+    width: 80%;
+    padding: 1rem;
+    margin: 1rem;
+}
+.divBlock
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.inputForm,.selctForm
+{
+    width: 50%;
+    margin: 0;
+    font-size: 2rem;
+}
+.labelForm
+{
+    font-size: 2rem;
+    margin: 1rem;
+}
+.legendForm
+{
+    font-size: 3rem;
+}
+#fieldsetChoixCarte
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto auto 2rem auto;
+}
+.divBlockR,.divBlockC
+{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin: 1rem;
+}
+.radioForm,.inputFormC
+{
+    width: 4rem;
+}
+#submitButtonForm
+{
+    width: 20rem;
+    height: 5rem;
+    margin: 2rem auto 0 auto;
+    font-size: 2rem;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0.1rem gray;
+}

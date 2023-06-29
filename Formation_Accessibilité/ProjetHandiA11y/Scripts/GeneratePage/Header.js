@@ -1,51 +1,33 @@
 import {Root} from "../Root.js"
+import { Tools } from "../Tools/tools.js";
 class Header{
     constructor(){
         this.page="Accueil";
-        this.GenerateHeader();
+        this.navBar = document.getElementById("navBar")
+        this.ul = document.getElementById("pageLink");
         this.root = new Root(this.page);
+        this.GenerateHeader();
     }
     GenerateHeader(){
-        let header1 = document.getElementById("pageLink");
-        let nav = document.getElementById("navBar");
+
+        this.navBar.prepend(Tools.Balise("img","","","logoImg","src","./Image/logo.png","alt","Logo du site"));
+        this.ul.appendChild(Tools.Balise("p","-"));
+        this.ul.appendChild(this.liGenerate("Accueil"));
+        this.ul.appendChild(Tools.Balise("p","-"));
+        this.ul.appendChild(this.liGenerate("A11y"));
+        this.ul.appendChild(Tools.Balise("p","-"));
+        this.ul.appendChild(this.liGenerate("Handicaps"));
+        this.ul.appendChild(Tools.Balise("p","-"));
+        this.ul.appendChild(this.liGenerate("Faite un don"));
+        this.ul.appendChild(Tools.Balise("p","-"));
+        this.ul.appendChild(this.liGenerate("Equipe"));
+        this.ul.appendChild(Tools.Balise("p","-"));
+        this.ul.appendChild(this.liGenerate("Plan du site"));
     
-        let img = document.createElement("img");
-        img.id="logoImg";
-        img.src="./Image/logo.png"
-        img.alt=""
-    
-        let ul = document.getElementById("pageLink");
-        header1.appendChild(this.liGenerate("Equipe"));
-        header1.appendChild(this.separateur());
-        header1.appendChild(this.liGenerate("Faite un don"));
-        header1.appendChild(this.separateur());
-        header1.appendChild(this.liGenerate("Handicaps"));
-        header1.appendChild(this.separateur());
-        header1.appendChild(this.liGenerate("A11y"));
-        header1.appendChild(this.separateur());
-        header1.appendChild(this.liGenerate("Accueil"));
-    
-    
-        let divRecherche = document.createElement("div");
-    
-        let input = document.createElement("input");
-        input.id="rechercherInput";
-        input.ariaLabel="rechercher";
-        input.type="search";
-        input.placeholder="rechercher";
-    
-        let buttonR = document.createElement("button");
-        buttonR.id="rechercherButton";
-        buttonR.onclick="";
-        buttonR.textContent="Rechercher";
-        divRecherche.id="rechercher";
-    
-        divRecherche.appendChild(input);
-        divRecherche.appendChild(buttonR);
-    
-        nav.appendChild(img);
-        nav.append(ul);
-        nav.appendChild(divRecherche);
+        let divRecherche = Tools.Balise("div","","","rechercher");
+        divRecherche.appendChild(Tools.BaliseA("input","","","rechercherInput",["ariaLabel","type","placeholder"],["rechercher","search","Rechercher"]));
+        divRecherche.appendChild(Tools.Balise("button","Rechercher","","rechercherButton"));
+        this.navBar.appendChild(divRecherche);
         
     }
     liGenerate(text,lien=""){

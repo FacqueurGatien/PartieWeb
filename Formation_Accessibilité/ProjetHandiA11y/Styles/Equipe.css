@@ -1,0 +1,51 @@
+#section1Equipe
+{
+    margin: auto;
+    width: 40%;
+}
+#section1bEquipe
+{
+    margin: auto;
+    width: 60%;
+}
+.h2TitreEquipe
+{
+    font-size: 3rem;
+}
+.sectionEquipe
+{
+    padding: 2rem;
+    width: 20rem;
+    border: 0.1rem solid burlywood;
+    box-shadow: 0 0.2rem 0.2rem 0.01rem black;
+    text-align: center;
+    background-color: white;
+}
+#divEquipe
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.imgBlockEquipe
+{
+    width: 100%;
+}
+#DirectriceEquipe
+{
+    margin: auto auto 3rem auto;
+    width: 50rem;
+}
+#DirectriceEquipe img
+{
+    width: 60%;
+}
+#section2Equipe
+{
+    margin: auto;
+}
+.lieuxEquipe
+{
+    margin: 1rem;
+text-align: center;
+}
