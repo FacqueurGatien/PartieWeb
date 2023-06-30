@@ -1,10 +1,9 @@
 class Acceuil{
-    constructor(){
+    constructor(tag){
         this.link=document.getElementById("cssPage");
         this.link.href="./Styles/Accueil.css";
         this.main = document.getElementById("main");
-        this.Accueil();
-        //window.location.href="./index.html#graphicImg"
+        this.Generer();
     }
     rectangle(classDiv,classH3,textH3,textP){
         let div = this.Balise("div","",classDiv);
@@ -137,12 +136,13 @@ class Acceuil{
 
         return section;
     }
-    Accueil(){
+    Generer(){
         this.main.appendChild(this.Introduction());
         this.main.appendChild(this.WcagPrincipes());
         this.main.appendChild(this.WcagTablePrincipe());
         this.main.appendChild(this.XcagTableNiveaux());
         this.main.appendChild(this.Graphic());
     }
+
 }
 export {Acceuil};

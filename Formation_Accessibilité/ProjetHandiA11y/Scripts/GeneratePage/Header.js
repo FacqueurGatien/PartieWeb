@@ -49,7 +49,7 @@ class Header{
     }
     liFunction(e){
         this.page=(e.target.dataset.page);
-        this.root.rooter(this.page);
+        this.root.rooter(this.page,"header");
     }
 }
 export {Header}
