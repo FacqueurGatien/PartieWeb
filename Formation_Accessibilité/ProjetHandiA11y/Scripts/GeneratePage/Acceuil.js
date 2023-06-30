@@ -4,6 +4,7 @@ class Acceuil{
         this.link.href="./Styles/Accueil.css";
         this.main = document.getElementById("main");
         this.Accueil();
+        //window.location.href="./index.html#graphicImg"
     }
     rectangle(classDiv,classH3,textH3,textP){
         let div = this.Balise("div","",classDiv);

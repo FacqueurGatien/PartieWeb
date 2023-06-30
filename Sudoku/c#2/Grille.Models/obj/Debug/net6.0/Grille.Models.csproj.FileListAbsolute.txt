@@ -27,3 +27,8 @@ C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\Grille.Models\bin\Debug\net6.0\Sudo
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\Grille.Models\bin\Debug\net6.0\SudokuGrille.Models.pdb
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\Grille.Models\obj\Debug\net6.0\Grille.Models.csproj.CopyComplete
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\Grille.Models\obj\Debug\net6.0\Grille.Models.genruntimeconfig.cache
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\Grille.Models\bin\Debug\net6.0\Grille.Models.runtimeconfig.json
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\Grille.Models\bin\Debug\net6.0\SudokuGrille.Models.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\Grille.Models\bin\Debug\net6.0\SudokuGrille.Models.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\Grille.Models\obj\Debug\net6.0\Grille.Models.csproj.CopyComplete
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\Grille.Models\obj\Debug\net6.0\Grille.Models.genruntimeconfig.cache

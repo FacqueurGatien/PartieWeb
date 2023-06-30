@@ -208,3 +208,5 @@ C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuProg\bin\Debug\net6.0\SudokuA
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuProg\bin\Debug\net6.0\SudokuGrille.Models.pdb
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuProg\bin\Debug\net6.0\Grille.Models.dll
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuProg\bin\Debug\net6.0\Grille.Models.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\SudokuProg\bin\Debug\net6.0\Grille.Models.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\SudokuProg\bin\Debug\net6.0\Grille.Models.pdb

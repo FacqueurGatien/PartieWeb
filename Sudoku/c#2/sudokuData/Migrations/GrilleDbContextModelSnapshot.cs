@@ -49,7 +49,7 @@ namespace sudokuData.Migrations
 
                     b.HasIndex("LigneId");
 
-                    b.ToTable("Case");
+                    b.ToTable("cases");
                 });
 
             modelBuilder.Entity("Grilles.Models.GrilleData.Grille", b =>
@@ -62,7 +62,7 @@ namespace sudokuData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Grille");
+                    b.ToTable("grilles");
                 });
 
             modelBuilder.Entity("Grilles.Models.GrilleData.Ligne", b =>
@@ -80,7 +80,7 @@ namespace sudokuData.Migrations
 
                     b.HasIndex("GrilleId");
 
-                    b.ToTable("Ligne");
+                    b.ToTable("rangees");
                 });
 
             modelBuilder.Entity("Grilles.Models.GrilleData.Case", b =>

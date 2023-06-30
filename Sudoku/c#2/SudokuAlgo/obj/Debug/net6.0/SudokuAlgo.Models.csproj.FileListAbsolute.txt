@@ -34,3 +34,5 @@ C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuAlgo\obj\Debug\net6.0\SudokuA
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuAlgo\obj\Debug\net6.0\ref\SudokuAlgo.Models.dll
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuAlgo\bin\Debug\net6.0\Grille.Models.dll
 C:\Users\Sora\Documents\PartieWeb\Sudoku\c#2\SudokuAlgo\bin\Debug\net6.0\Grille.Models.pdb
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\SudokuAlgo\bin\Debug\net6.0\Grille.Models.dll
+C:\Users\gafacqueur\Documents\PartieWeb\Sudoku\c#2\SudokuAlgo\bin\Debug\net6.0\Grille.Models.pdb
