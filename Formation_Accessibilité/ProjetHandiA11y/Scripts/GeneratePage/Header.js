@@ -32,7 +32,6 @@ class Header{
     }
     liGenerate(text,lien=""){
         let li = document.createElement("li");
-
         li.classList.add("puceNavBar");
         li.classList.add("lienNav");
         li.textContent=text;
@@ -49,7 +48,7 @@ class Header{
     }
     liFunction(e){
         this.page=(e.target.dataset.page);
-        this.root.rooter(this.page,"header");
+        this.root.rooter(this.page,"");
     }
 }
 export {Header}

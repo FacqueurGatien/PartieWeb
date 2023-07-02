@@ -10,10 +10,9 @@ class Root{
     }   
     rooter(page,tag){
         document.getElementById("main").innerHTML=""
-        console.log(page +" "+ tag)
         switch(page){
             case "Accueil":
-                new Acceuil(tag);
+                new Acceuil();
                 break;
             case "A11y":
                 new A11y();
@@ -30,6 +29,9 @@ class Root{
             case "Plan du site":
                 new PlanSite();
                 break;
+        }
+        if(tag!=""){
+            setTimeout(()=>{document.location.href="#"+tag;},10);
         }
     }
 }

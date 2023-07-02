@@ -1,5 +1,6 @@
 class Acceuil{
     constructor(tag){
+        this.anchor=tag
         this.link=document.getElementById("cssPage");
         this.link.href="./Styles/Accueil.css";
         this.main = document.getElementById("main");

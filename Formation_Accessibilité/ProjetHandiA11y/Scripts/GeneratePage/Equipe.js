@@ -10,10 +10,10 @@ class Equipe{
         let section1=Tools.Balise("section","","","section1Equipe");
         section1.appendChild(Tools.Balise("h1","Notre présence dans le monde !","h1Titre h1TitreEquipe"));
         section1.appendChild(Tools.Balise("p","HandiA11y est un site fictif en cours de création permettant d'effectuer des tests d'accessibilité avec un un lecteur d'écran comme NVDA ou JAWS."));
-        section1.appendChild(Tools.Balise("h2","Une équipe dirigeante à la pointe de la technologie (Paris)","h2Titre h2TitreEquipe"));
-        section1.append(this.Block("./Image/Equipe/directrice.png","Photo de Raymonde Muche","Directrice et experte en développement web","Raymonde Muche","DirectriceEquipe"));
-        let section1b=Tools.Balise("section","","","section1bEquipe");
 
+        let section1b=Tools.Balise("section","","","section1bEquipe");
+        section1b.appendChild(Tools.Balise("h2","Une équipe dirigeante à la pointe de la technologie (Paris)","h2Titre h2TitreEquipe"));
+        section1b.append(this.Block("./Image/Equipe/directrice.png","Photo de Raymonde Muche","Directrice et experte en développement web","Raymonde Muche","DirectriceEquipe"));
         let divEquipe = Tools.Balise("div","","","divEquipe");
         divEquipe.appendChild(this.Block("./Image/Equipe/communication.png","Photo de Barbara Coiffure","Communication","Barbara Coiffure"));
         divEquipe.appendChild(this.Block("./Image/Equipe/rh.png","Photo de Johnny PasDepp","Relations clients","Johnny PasDepp"));

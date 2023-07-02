@@ -8,7 +8,7 @@ class A11y{
     }
     GenerateTest(){
         let article = Tools.Balise("article","","","articleA11y");
-        article.appendChild(Tools.Balise("h1","Quelques bonnes pratiques d'accessibilité...","h1Titre"));
+        article.appendChild(Tools.Balise("h1","Quelques bonnes pratiques d'accessibilité...","h1Titre","bonnePratique"));
 
         article.appendChild(Tools.Balise("img","","imageA11y","","src","./Image/A11yImage/compoFloral.jpg","alt","Image d'une composition floral"))
         article.appendChild(Tools.Balise("h2","Que faire avec des images décorativces ?","h2TitreA11Y"));
@@ -35,7 +35,7 @@ class A11y{
         article.appendChild(Tools.Balise("h2","Comment rendre les formulaires accessibles ?","h2TitreA11Y"));
         article.appendChild(Tools.BaliseT("p","Il faut utiliser des balises HTML sémantiques telles que <form>, <input>, <label>, <select>, <textarea>, etc... pour améliorer la compréhension du contenu par les technologies d'assistance."));
         
-        article.appendChild(Tools.Balise("h2","Comment réaliser un audit d'accessibilité de votre site web ?","h2TitreA11Y"));
+        article.appendChild(Tools.Balise("h2","Comment réaliser un audit d'accessibilité de votre site web ?","h2TitreA11Y","audit"));
         article.appendChild(Tools.Balise("img","","imageA11y","","src","./Image/A11yImage/peroquet.png","alt","dessin d'un peroquet"))
         article.appendChild(Tools.Balise("h2","Comment rendre les formulaires accessibles ?","h2TitreA11Y"));
         
