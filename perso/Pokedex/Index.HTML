@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./script/main.js" type="module"></script>
+    <title>Pokedex</title>
+</head>
+    <body>
+        <header id="header">
+
+        </header>
+        <main id="main">
+            <section id="ListeBox">
+                <input type="search"></button>
+                <div id="Liste">
+
+                </div>
+            </section>
+            <section id="vue">
+                <div id="carte">
+                    <div id="cartetColor">
+                        <section id="carteHeader">
+                            <h2 id="nom"></h2>
+                            <div id="blockType">
+                                <p><span>Type</span></p>
+                                <div id="typeImg">
+                                </div> 
+                            </div>
+                        </section>
+                        <section id="carteBody">
+                            <article id="imageCarte">
+                                <img id="imagepkmn" src="" alt="">
+                                <figcaption id="details" >
+                                    <span id="categorie"></span> 
+                                    - Taille : <span id="taille"></span> 
+                                    - Poids : <span id="poids"></span></figcaption>
+                            </article>
+                            <article id="description">
+                                <h2>Description</h2>
+                                <p id="descriptionText"></p>
+                            </article>
+                            <article id="statistique">
+                                <div class="stat"><p>atk</p> <p id="atk"></p></div>
+                                <div class="stat"><p>def</p><p id="def"></p></div>
+                                <div class="stat"><p>hp</p> <p id="hp"></p></div>
+                                <div class="stat"><p>atak spe</p> <p id="atkSpe"></p></div>
+                                <div class="stat"><p>def spe</p> <p id="defSpe"></p></div>
+                                <div class="stat"><p>vit</p> <p id="vit"></p></div>
+                                <div class="stat"><p>Talent </p> <div id="talent"></div></div>
+                                <div class="stat"><p>Evolution</p><p id="evolution"></p></div>
+                                <div class="stat"><p>Prevolution</p><p id="prevolution"></p></div>
+                            </article>
+                        </section>
+                        <section id="carteFooter">
+                            <div class="blockFoot">
+                                <p>id : </p>
+                                <p id="id"></p>
+                            </div>
+                            <div class="blockFoot">
+                                <p>Generation : </p>
+                                <p id="gen"></p>
+                            </div>
+
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+
+        </footer>
+    </body>
+</html>

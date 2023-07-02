@@ -1,0 +1,221 @@
+*
+{
+    box-sizing: border-box;
+}
+html
+{
+    font-size: 62.5%;
+}
+body
+{
+    font-size:1.6rem;
+}
+#ListeBox{
+    display: flex;
+    flex-direction: column;
+    height: 60rem;
+    overflow: auto;
+    width: 30rem;
+}
+#Liste{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+#header
+{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+}
+#header p
+{
+    margin: 0;
+    font-size: 2rem;
+}
+#main
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2rem;
+    justify-content: flex-start;
+}
+#vue
+{
+    overflow: auto;
+}
+#carte
+{
+    margin: 0 0 0 5rem;
+    border-radius: 2rem;
+    border: 2rem outset rgba(0,0,0,0.5);
+    width: 50rem;
+    background-image: url(../image/texture.png);
+}
+#nom
+{
+    font-weight: bolder;
+    font-size: 3.5rem;
+    margin: 1rem;
+    border: 0.5rem groove rgb(207, 207, 207);
+    border-radius: 1rem 0 1rem 0;
+    padding:  0 1rem 0 1rem;
+}
+#carteHeader
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+    margin-top: 0;
+}
+#blockType
+{
+    margin: 1rem;
+    display: flex;
+}
+.logoType
+{
+    margin: auto 0 auto 1rem;
+    border-radius: 3rem;
+    width: 5rem;
+    height: 5rem;
+}
+#carteBody
+{
+    width: 85%;
+    margin: 0 auto 0 auto;
+}
+#imageCarte img
+{
+    border-top: 0.5rem solid rgba(192, 192, 192,0.5) ;
+    border-left: 0.5rem solid rgba(192, 192, 192,0.5) ;
+    border-right: 0.5rem solid rgba(192, 192, 192,0.5) ;
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+#imageCarte
+{
+    display: flex;
+    flex-direction: column;
+}
+#details
+{
+    font-size: 1.5rem;
+    padding: 0.5rem 0 0.5rem 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    border-bottom: 0.5rem solid rgba(192, 192, 192,0.5) ;
+    border-left: 0.5rem solid rgba(192, 192, 192,0.5) ;
+    border-right: 0.5rem solid rgba(192, 192, 192,0.5) ;
+    border-radius: 0 0 1rem 1rem;
+    margin-bottom:1rem ;
+}
+
+#description{
+    border: 0.5rem double rgb(104, 104, 104);
+    border-bottom: 0.5rem ridge rgb(104, 104, 104);
+    border-radius: 2rem 2rem 0 0;
+}
+#description h2
+{
+    text-align: center;
+    margin: 2rem auto 0 auto;
+    color: black;
+}
+#descriptionText
+{
+    width: 90%;
+    margin: 0.5rem auto 2rem auto;
+    text-align: center;
+}
+
+
+
+#attaque
+{
+    margin: 3rem 0 0 0;
+}
+#attaque div 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+#attaqueIMG img
+{
+    margin: auto 0 auto 0;
+    width: 3rem;
+    height: 3rem;
+}
+#attaque p
+{
+    margin: 0;
+}
+#attaque h2
+{
+    margin: 0;
+}
+
+#statistique
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 0.5rem double rgb(104, 104, 104) ;
+    border-left: 0.5rem double rgb(104, 104, 104) ;
+    border-right: 0.5rem double rgb(104, 104, 104) ;
+    border-radius: 0 0 1rem 1rem;
+}
+.stat
+{
+    width: 33.3333333%;
+    border: 0.1rem dashed rgb(104, 104, 104);
+}
+#talent 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+}
+.talent
+{
+    margin: 0 1rem 0 1rem !important;
+}
+.stat p
+{
+    text-align: center;
+    margin: 0;
+}
+.stat:nth-child(7)
+{
+    width: 100%;
+}
+.stat:nth-child(8),.stat:nth-child(9)
+{
+    width: 50%;
+}
+
+#carteFooter
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+    margin-bottom: 0;
+}
+.blockFoot
+{
+    display: flex;
+    flex-direction: row;
+}
+#id,#gen
+{
+    margin-left: 1rem;
+}
