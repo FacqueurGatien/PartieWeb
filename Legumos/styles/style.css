@@ -1,0 +1,43 @@
+*
+{
+    box-sizing: border-box;
+}
+html
+{
+    font-size: 62.5%;
+}
+body
+{
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+#header
+{
+
+}
+#banner
+{
+    width: 100%;
+}
+#navBar
+{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: green;
+    min-height: 10rem;
+}
+.navPart
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.navPart a
+{
+    margin: 2rem;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+}

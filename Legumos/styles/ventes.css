@@ -1,0 +1,19 @@
+/* VentesTable */
+#ventMain
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    height: 85rem;
+    margin: auto;
+    overflow: auto;
+}
+.cardVente
+{
+    width: 40rem;
+    margin: 1rem;
+    text-align: center;
+    color: white;
+    background-color: green;
+}

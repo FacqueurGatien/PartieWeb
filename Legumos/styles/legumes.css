@@ -1,0 +1,44 @@
+/* LegumeTable */
+#main
+{
+    overflow: auto;
+}
+#legumeTable
+{
+    margin: 2rem;
+    border-collapse: collapse;
+}
+.cellContent th
+{
+    background-color: green;
+    border: 0.1rem solid black;
+}
+.cellContent td
+{
+    border: 0.1rem solid black;
+}
+.espAction
+{
+    margin: 0;
+}
+.actionCell
+{
+    display: flex;
+}
+.actionCell a
+{
+    margin: 0.5rem;
+    cursor: pointer;
+}
+.delButton
+{
+    color: red;
+}
+.editButton
+{
+    color: blue ;
+}
+.sortHead
+{
+    cursor: pointer;
+}
