@@ -7,12 +7,36 @@ class VenteTable{
     generateTable(array=this.ventesCollectionData.data){
         this.main.innerHTML="";
         let pagniationControl = document.createElement("div");
+
         let buttonG = document.createElement("button");
         buttonG.textContent="<";
+        if(this.page>1){
+            buttonG.disabled=false;
+        }
+        else{
+            buttonG.disabled=true;
+        }
+        buttonG.addEventListener("click",()=>{
+            this.page--;
+            this.generateTable(array);
+        });
+
         let num = document.createElement("p");
         num.textContent=this.page;
+
         let buttonD = document.createElement("button");
         buttonD.textContent=">";
+
+        if(this.page<(this.ventesCollectionData.data.length/15).toFixed(0)){
+            buttonD.disabled=false;
+        }
+        else{
+            buttonD.disabled=true;
+        }
+        buttonD.addEventListener("click",()=>{
+            this.page++;
+            this.generateTable(array);
+        });
 
         pagniationControl.appendChild(buttonG);
         pagniationControl.appendChild(num);
@@ -21,12 +45,21 @@ class VenteTable{
         this.main.appendChild(pagniationControl);
 
         let div = document.createElement("div");
-        div.id="ventMain"
-        array.forEach(v => {
+        div.id="ventMain";
+        this.reduceArray().forEach(v => {
             div.appendChild(this.generateCard(v))
         });
         this.main.appendChild(div);
-
+    }
+    reduceArray(){
+        let array = [];
+        let start = this.page*15-15;
+        let stop = this.page*15;
+        while(start!=stop){
+            array.push(this.ventesCollectionData.data[start]);
+            start++;
+        }
+        return array;
     }
     generateCard(vente){
         let div = document.createElement("div");
