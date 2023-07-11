@@ -5,7 +5,7 @@
 }
 #legumeTable
 {
-    margin: 2rem;
+    margin: 2rem auto 2rem auto;
     border-collapse: collapse;
 }
 .cellContent th
